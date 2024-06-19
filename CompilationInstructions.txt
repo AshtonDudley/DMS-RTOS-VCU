@@ -1,9 +1,0 @@
-Required Software:
-STM32CubeMX
-STM32CubeProg
-VSCode
-Make
-gcc-arm-none-eabi-
-
-
-Step 1:

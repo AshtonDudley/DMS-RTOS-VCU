@@ -20,7 +20,6 @@
 #include "main.h"
 #include "cmsis_os.h"
 #include "usb_host.h"
-#include <stm32f4xx_hal_rcc.h>
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -438,7 +437,7 @@ void StartBlink01(void *argument)
   for(;;)
   {
     HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_15);
-    osDelay(500);
+    osDelay(100);
   }
   /* USER CODE END 5 */
 }
@@ -456,7 +455,8 @@ void StartBlink02(void *argument)
   /* Infinite loop */
   for(;;)
   {
-    osDelay(1);
+    HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_14);
+    osDelay(50);
   }
   /* USER CODE END StartBlink02 */
 }
