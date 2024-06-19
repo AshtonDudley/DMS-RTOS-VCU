@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "cmsis_os.h": "c",
+        "main.h": "c",
+        "stm32f4xx_hal_rcc.h": "c",
+        "usb_host.h": "c"
+    }
+}
