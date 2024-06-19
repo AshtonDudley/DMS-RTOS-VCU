@@ -70,7 +70,6 @@ const osThreadAttr_t blink02_attributes = {
 void StartBlink01(void *argument);
 void StartBlink02(void *argument);
 
-extern void MX_USB_HOST_Init(void);
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
 
 /**
@@ -125,8 +124,6 @@ void MX_FREERTOS_Init(void) {
 /* USER CODE END Header_StartBlink01 */
 void StartBlink01(void *argument)
 {
-  /* init code for USB_HOST */
-  MX_USB_HOST_Init();
   /* USER CODE BEGIN StartBlink01 */
   /* Infinite loop */
   for(;;)
