@@ -1167,10 +1167,10 @@
 			[
 				{
 					"name" : "HELPSTRING",
-					"value" : "The CMake toolchain file"
+					"value" : "No help, variable specified on the command line."
 				}
 			],
-			"type" : "FILEPATH",
+			"type" : "UNINITIALIZED",
 			"value" : "C:/dal-fsae/DMS-24-RTOS-VCU/cmake/gcc-arm-none-eabi.cmake"
 		},
 		{
