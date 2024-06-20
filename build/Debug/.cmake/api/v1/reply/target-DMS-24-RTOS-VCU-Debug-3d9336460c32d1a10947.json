@@ -155,7 +155,8 @@
 				46,
 				47,
 				48,
-				50
+				50,
+				51
 			]
 		},
 		{
@@ -300,7 +301,8 @@
 				46,
 				47,
 				48,
-				50
+				50,
+				51
 			]
 		},
 		{
@@ -308,13 +310,6 @@
 			"sourceIndexes" : 
 			[
 				49
-			]
-		},
-		{
-			"name" : "Header Files",
-			"sourceIndexes" : 
-			[
-				51
 			]
 		}
 	],
@@ -628,8 +623,9 @@
 		},
 		{
 			"backtrace" : 2,
-			"path" : "Core/Src/app_main.h",
-			"sourceGroupIndex" : 2
+			"compileGroupIndex" : 0,
+			"path" : "Core/Src/sensor_input.c",
+			"sourceGroupIndex" : 0
 		}
 	],
 	"type" : "EXECUTABLE"

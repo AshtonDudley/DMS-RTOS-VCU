@@ -490,6 +490,10 @@ Discarded input sections
  .text          0x00000000        0x0 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/freertos.c.obj
  .data          0x00000000        0x0 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/freertos.c.obj
  .bss           0x00000000        0x0 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/freertos.c.obj
+ .text.status_leds_entry
+                0x00000000       0x20 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/freertos.c.obj
+ .text.sensor_input_entry
+                0x00000000       0x10 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/freertos.c.obj
  .debug_macro   0x00000000      0xab4 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/freertos.c.obj
  .debug_macro   0x00000000      0x189 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/freertos.c.obj
  .debug_macro   0x00000000       0x22 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/freertos.c.obj
@@ -1518,12 +1522,12 @@ Discarded input sections
                 0x00000000      0x1bc CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.c.obj
  .text.HAL_ADC_Stop_IT
                 0x00000000       0x7a CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.c.obj
- .text.HAL_ADC_Start_DMA
-                0x00000000      0x220 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.c.obj
  .text.HAL_ADC_Stop_DMA
                 0x00000000       0xb4 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.c.obj
  .text.HAL_ADC_GetValue
                 0x00000000       0x1a CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.c.obj
+ .text.HAL_ADC_ConvCpltCallback
+                0x00000000       0x14 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.c.obj
  .text.HAL_ADC_ConvHalfCpltCallback
                 0x00000000       0x14 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.c.obj
  .text.HAL_ADC_AnalogWDGConfig
@@ -1532,12 +1536,6 @@ Discarded input sections
                 0x00000000       0x18 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.c.obj
  .text.HAL_ADC_GetError
                 0x00000000       0x18 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.c.obj
- .text.ADC_DMAConvCplt
-                0x00000000       0xba CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.c.obj
- .text.ADC_DMAHalfConvCplt
-                0x00000000       0x1c CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.c.obj
- .text.ADC_DMAError
-                0x00000000       0x2e CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.c.obj
  .debug_macro   0x00000000      0xab4 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.c.obj
  .debug_macro   0x00000000      0x2ad CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.c.obj
  .debug_macro   0x00000000       0x2e CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.c.obj
@@ -2633,8 +2631,6 @@ Discarded input sections
                 0x00000000       0xbc CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj
  .text.HAL_DMA_Start
                 0x00000000       0x76 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj
- .text.HAL_DMA_Start_IT
-                0x00000000       0xb0 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj
  .text.HAL_DMA_Abort
                 0x00000000       0xe0 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj
  .text.HAL_DMA_Abort_IT
@@ -2649,8 +2645,6 @@ Discarded input sections
                 0x00000000       0x1c CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj
  .text.HAL_DMA_GetError
                 0x00000000       0x18 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj
- .text.DMA_SetConfig
-                0x00000000       0x5c CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj
  .debug_macro   0x00000000      0xab4 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj
  .debug_macro   0x00000000      0x2ad CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj
  .debug_macro   0x00000000       0x2e CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj
@@ -6228,6 +6222,103 @@ Discarded input sections
  .debug_macro   0x00000000      0x293 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/app_main.c.obj
  .debug_macro   0x00000000       0xba CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/app_main.c.obj
  .debug_macro   0x00000000      0x12d CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/app_main.c.obj
+ .group         0x00000000        0xc CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_input.c.obj
+ .group         0x00000000        0xc CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_input.c.obj
+ .group         0x00000000        0xc CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_input.c.obj
+ .group         0x00000000        0xc CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_input.c.obj
+ .group         0x00000000        0xc CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_input.c.obj
+ .group         0x00000000        0xc CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_input.c.obj
+ .group         0x00000000        0xc CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_input.c.obj
+ .group         0x00000000        0xc CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_input.c.obj
+ .group         0x00000000        0xc CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_input.c.obj
+ .group         0x00000000        0xc CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_input.c.obj
+ .group         0x00000000        0xc CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_input.c.obj
+ .group         0x00000000        0xc CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_input.c.obj
+ .group         0x00000000        0xc CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_input.c.obj
+ .group         0x00000000        0xc CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_input.c.obj
+ .group         0x00000000        0xc CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_input.c.obj
+ .group         0x00000000        0xc CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_input.c.obj
+ .group         0x00000000        0xc CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_input.c.obj
+ .group         0x00000000        0xc CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_input.c.obj
+ .group         0x00000000        0xc CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_input.c.obj
+ .group         0x00000000        0xc CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_input.c.obj
+ .group         0x00000000        0xc CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_input.c.obj
+ .group         0x00000000        0xc CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_input.c.obj
+ .group         0x00000000        0xc CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_input.c.obj
+ .group         0x00000000        0xc CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_input.c.obj
+ .group         0x00000000        0xc CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_input.c.obj
+ .group         0x00000000        0xc CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_input.c.obj
+ .group         0x00000000        0xc CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_input.c.obj
+ .group         0x00000000        0xc CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_input.c.obj
+ .group         0x00000000        0xc CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_input.c.obj
+ .group         0x00000000        0xc CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_input.c.obj
+ .group         0x00000000        0xc CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_input.c.obj
+ .group         0x00000000        0xc CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_input.c.obj
+ .group         0x00000000        0xc CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_input.c.obj
+ .group         0x00000000        0xc CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_input.c.obj
+ .group         0x00000000        0xc CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_input.c.obj
+ .group         0x00000000        0xc CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_input.c.obj
+ .group         0x00000000        0xc CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_input.c.obj
+ .group         0x00000000        0xc CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_input.c.obj
+ .group         0x00000000        0xc CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_input.c.obj
+ .group         0x00000000        0xc CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_input.c.obj
+ .group         0x00000000        0xc CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_input.c.obj
+ .group         0x00000000        0xc CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_input.c.obj
+ .group         0x00000000        0xc CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_input.c.obj
+ .group         0x00000000        0xc CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_input.c.obj
+ .group         0x00000000        0xc CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_input.c.obj
+ .group         0x00000000        0xc CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_input.c.obj
+ .group         0x00000000        0xc CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_input.c.obj
+ .text          0x00000000        0x0 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_input.c.obj
+ .data          0x00000000        0x0 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_input.c.obj
+ .bss           0x00000000        0x0 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_input.c.obj
+ .debug_macro   0x00000000      0xab4 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_input.c.obj
+ .debug_macro   0x00000000      0x2ad CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_input.c.obj
+ .debug_macro   0x00000000       0x2e CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_input.c.obj
+ .debug_macro   0x00000000       0x2f CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_input.c.obj
+ .debug_macro   0x00000000       0x22 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_input.c.obj
+ .debug_macro   0x00000000       0x8e CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_input.c.obj
+ .debug_macro   0x00000000       0x51 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_input.c.obj
+ .debug_macro   0x00000000      0x103 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_input.c.obj
+ .debug_macro   0x00000000       0x6a CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_input.c.obj
+ .debug_macro   0x00000000      0x1df CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_input.c.obj
+ .debug_macro   0x00000000       0x1c CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_input.c.obj
+ .debug_macro   0x00000000       0x22 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_input.c.obj
+ .debug_macro   0x00000000       0xfb CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_input.c.obj
+ .debug_macro   0x00000000     0x1011 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_input.c.obj
+ .debug_macro   0x00000000      0x11f CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_input.c.obj
+ .debug_macro   0x00000000    0x15e97 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_input.c.obj
+ .debug_macro   0x00000000       0x6d CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_input.c.obj
+ .debug_macro   0x00000000     0x368c CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_input.c.obj
+ .debug_macro   0x00000000      0x189 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_input.c.obj
+ .debug_macro   0x00000000       0x5c CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_input.c.obj
+ .debug_macro   0x00000000      0x980 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_input.c.obj
+ .debug_macro   0x00000000      0x9e9 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_input.c.obj
+ .debug_macro   0x00000000      0x115 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_input.c.obj
+ .debug_macro   0x00000000      0x13e CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_input.c.obj
+ .debug_macro   0x00000000       0xa5 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_input.c.obj
+ .debug_macro   0x00000000      0x174 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_input.c.obj
+ .debug_macro   0x00000000      0x287 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_input.c.obj
+ .debug_macro   0x00000000       0x5f CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_input.c.obj
+ .debug_macro   0x00000000      0x236 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_input.c.obj
+ .debug_macro   0x00000000      0xb5b CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_input.c.obj
+ .debug_macro   0x00000000      0x38b CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_input.c.obj
+ .debug_macro   0x00000000      0x176 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_input.c.obj
+ .debug_macro   0x00000000       0xf9 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_input.c.obj
+ .debug_macro   0x00000000      0x122 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_input.c.obj
+ .debug_macro   0x00000000       0xa6 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_input.c.obj
+ .debug_macro   0x00000000      0x12c CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_input.c.obj
+ .debug_macro   0x00000000      0x21e CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_input.c.obj
+ .debug_macro   0x00000000       0x2e CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_input.c.obj
+ .debug_macro   0x00000000      0x127 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_input.c.obj
+ .debug_macro   0x00000000       0x7e CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_input.c.obj
+ .debug_macro   0x00000000       0x89 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_input.c.obj
+ .debug_macro   0x00000000      0x225 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_input.c.obj
+ .debug_macro   0x00000000      0x8ed CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_input.c.obj
+ .debug_macro   0x00000000       0x4d CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_input.c.obj
+ .debug_macro   0x00000000      0x293 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_input.c.obj
+ .debug_macro   0x00000000       0xba CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_input.c.obj
+ .debug_macro   0x00000000      0x12d CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_input.c.obj
  .data          0x00000000        0x0 C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard\libgcc.a(_aeabi_uldivmod.o)
  .bss           0x00000000        0x0 C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard\libgcc.a(_aeabi_uldivmod.o)
  .data          0x00000000        0x0 C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard\libgcc.a(_udivmoddi4.o)
@@ -6333,6 +6424,7 @@ LOAD CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sysmem.c.obj
 LOAD CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/syscalls.c.obj
 LOAD CMakeFiles/DMS-24-RTOS-VCU.dir/startup_stm32f407xx.s.obj
 LOAD CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/app_main.c.obj
+LOAD CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_input.c.obj
 START GROUP
 LOAD C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard\libgcc.a
 LOAD C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a
@@ -6355,7 +6447,7 @@ LOAD C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/
                 0x08000000                g_pfnVectors
                 0x08000188                        . = ALIGN (0x4)
 
-.text           0x08000190     0x8504
+.text           0x08000190     0x89b0
                 0x08000190                        . = ALIGN (0x4)
  *(.text)
  .text          0x08000190       0x40 C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtbegin.o
@@ -6387,759 +6479,785 @@ LOAD C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/
                 0x08000658      0x240 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/gpio.c.obj
                 0x08000658                MX_GPIO_Init
  .text.MX_FREERTOS_Init
-                0x08000898       0x40 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/freertos.c.obj
+                0x08000898       0x44 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/freertos.c.obj
                 0x08000898                MX_FREERTOS_Init
- .text.StartBlink01
-                0x080008d8       0x20 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/freertos.c.obj
-                0x080008d8                StartBlink01
- .text.StartBlink02
-                0x080008f8       0x10 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/freertos.c.obj
-                0x080008f8                StartBlink02
  .text.MX_ADC1_Init
-                0x08000908       0xec CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/adc.c.obj
-                0x08000908                MX_ADC1_Init
+                0x080008dc       0xec CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/adc.c.obj
+                0x080008dc                MX_ADC1_Init
  .text.HAL_ADC_MspInit
-                0x080009f4      0x100 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/adc.c.obj
-                0x080009f4                HAL_ADC_MspInit
+                0x080009c8      0x100 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/adc.c.obj
+                0x080009c8                HAL_ADC_MspInit
  .text.MX_DAC_Init
-                0x08000af4       0x54 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/dac.c.obj
-                0x08000af4                MX_DAC_Init
+                0x08000ac8       0x54 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/dac.c.obj
+                0x08000ac8                MX_DAC_Init
  .text.HAL_DAC_MspInit
-                0x08000b48       0x98 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/dac.c.obj
-                0x08000b48                HAL_DAC_MspInit
+                0x08000b1c       0x98 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/dac.c.obj
+                0x08000b1c                HAL_DAC_MspInit
  .text.MX_DMA_Init
-                0x08000be0       0x40 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/dma.c.obj
-                0x08000be0                MX_DMA_Init
+                0x08000bb4       0x40 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/dma.c.obj
+                0x08000bb4                MX_DMA_Init
  .text.MX_SPI1_Init
-                0x08000c20       0x6c CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/spi.c.obj
-                0x08000c20                MX_SPI1_Init
+                0x08000bf4       0x6c CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/spi.c.obj
+                0x08000bf4                MX_SPI1_Init
  .text.HAL_SPI_MspInit
-                0x08000c8c       0x90 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/spi.c.obj
-                0x08000c8c                HAL_SPI_MspInit
+                0x08000c60       0x90 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/spi.c.obj
+                0x08000c60                HAL_SPI_MspInit
  .text.MX_TIM2_Init
-                0x08000d1c       0xac CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/tim.c.obj
-                0x08000d1c                MX_TIM2_Init
+                0x08000cf0       0xac CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/tim.c.obj
+                0x08000cf0                MX_TIM2_Init
  .text.HAL_TIM_PWM_MspInit
-                0x08000dc8       0x40 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/tim.c.obj
-                0x08000dc8                HAL_TIM_PWM_MspInit
+                0x08000d9c       0x40 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/tim.c.obj
+                0x08000d9c                HAL_TIM_PWM_MspInit
  .text.MX_USB_OTG_FS_PCD_Init
-                0x08000e08       0x5c CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/usb_otg.c.obj
-                0x08000e08                MX_USB_OTG_FS_PCD_Init
+                0x08000ddc       0x5c CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/usb_otg.c.obj
+                0x08000ddc                MX_USB_OTG_FS_PCD_Init
  .text.HAL_PCD_MspInit
-                0x08000e64       0xc4 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/usb_otg.c.obj
-                0x08000e64                HAL_PCD_MspInit
+                0x08000e38       0xc4 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/usb_otg.c.obj
+                0x08000e38                HAL_PCD_MspInit
  .text.NMI_Handler
-                0x08000f28        0x8 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/stm32f4xx_it.c.obj
-                0x08000f28                NMI_Handler
+                0x08000efc        0x8 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/stm32f4xx_it.c.obj
+                0x08000efc                NMI_Handler
  .text.HardFault_Handler
-                0x08000f30        0x8 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/stm32f4xx_it.c.obj
-                0x08000f30                HardFault_Handler
+                0x08000f04        0x8 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/stm32f4xx_it.c.obj
+                0x08000f04                HardFault_Handler
  .text.MemManage_Handler
-                0x08000f38        0x8 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/stm32f4xx_it.c.obj
-                0x08000f38                MemManage_Handler
+                0x08000f0c        0x8 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/stm32f4xx_it.c.obj
+                0x08000f0c                MemManage_Handler
  .text.BusFault_Handler
-                0x08000f40        0x8 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/stm32f4xx_it.c.obj
-                0x08000f40                BusFault_Handler
+                0x08000f14        0x8 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/stm32f4xx_it.c.obj
+                0x08000f14                BusFault_Handler
  .text.UsageFault_Handler
-                0x08000f48        0x8 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/stm32f4xx_it.c.obj
-                0x08000f48                UsageFault_Handler
+                0x08000f1c        0x8 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/stm32f4xx_it.c.obj
+                0x08000f1c                UsageFault_Handler
  .text.DebugMon_Handler
-                0x08000f50        0xe CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/stm32f4xx_it.c.obj
-                0x08000f50                DebugMon_Handler
- *fill*         0x08000f5e        0x2 
+                0x08000f24        0xe CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/stm32f4xx_it.c.obj
+                0x08000f24                DebugMon_Handler
+ *fill*         0x08000f32        0x2 
  .text.ADC_IRQHandler
-                0x08000f60       0x14 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/stm32f4xx_it.c.obj
-                0x08000f60                ADC_IRQHandler
+                0x08000f34       0x14 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/stm32f4xx_it.c.obj
+                0x08000f34                ADC_IRQHandler
  .text.TIM6_DAC_IRQHandler
-                0x08000f74       0x28 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/stm32f4xx_it.c.obj
-                0x08000f74                TIM6_DAC_IRQHandler
+                0x08000f48       0x28 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/stm32f4xx_it.c.obj
+                0x08000f48                TIM6_DAC_IRQHandler
  .text.DMA2_Stream0_IRQHandler
-                0x08000f9c       0x14 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/stm32f4xx_it.c.obj
-                0x08000f9c                DMA2_Stream0_IRQHandler
+                0x08000f70       0x14 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/stm32f4xx_it.c.obj
+                0x08000f70                DMA2_Stream0_IRQHandler
  .text.OTG_FS_IRQHandler
-                0x08000fb0       0x14 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/stm32f4xx_it.c.obj
-                0x08000fb0                OTG_FS_IRQHandler
+                0x08000f84       0x14 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/stm32f4xx_it.c.obj
+                0x08000f84                OTG_FS_IRQHandler
  .text.HAL_MspInit
-                0x08000fc4       0x58 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/stm32f4xx_hal_msp.c.obj
-                0x08000fc4                HAL_MspInit
+                0x08000f98       0x58 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/stm32f4xx_hal_msp.c.obj
+                0x08000f98                HAL_MspInit
  .text.HAL_InitTick
-                0x0800101c       0xf8 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/stm32f4xx_hal_timebase_tim.c.obj
-                0x0800101c                HAL_InitTick
+                0x08000ff0       0xf8 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/stm32f4xx_hal_timebase_tim.c.obj
+                0x08000ff0                HAL_InitTick
  .text.HAL_ADC_Init
-                0x08001114       0x86 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.c.obj
-                0x08001114                HAL_ADC_Init
+                0x080010e8       0x86 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.c.obj
+                0x080010e8                HAL_ADC_Init
  .text.HAL_ADC_IRQHandler
-                0x0800119a      0x220 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.c.obj
-                0x0800119a                HAL_ADC_IRQHandler
- .text.HAL_ADC_ConvCpltCallback
-                0x080013ba       0x14 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.c.obj
-                0x080013ba                HAL_ADC_ConvCpltCallback
+                0x0800116e      0x220 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.c.obj
+                0x0800116e                HAL_ADC_IRQHandler
+ *fill*         0x0800138e        0x2 
+ .text.HAL_ADC_Start_DMA
+                0x08001390      0x220 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.c.obj
+                0x08001390                HAL_ADC_Start_DMA
  .text.HAL_ADC_LevelOutOfWindowCallback
-                0x080013ce       0x14 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.c.obj
-                0x080013ce                HAL_ADC_LevelOutOfWindowCallback
+                0x080015b0       0x14 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.c.obj
+                0x080015b0                HAL_ADC_LevelOutOfWindowCallback
  .text.HAL_ADC_ErrorCallback
-                0x080013e2       0x14 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.c.obj
-                0x080013e2                HAL_ADC_ErrorCallback
- *fill*         0x080013f6        0x2 
+                0x080015c4       0x14 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.c.obj
+                0x080015c4                HAL_ADC_ErrorCallback
  .text.HAL_ADC_ConfigChannel
-                0x080013f8      0x244 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.c.obj
-                0x080013f8                HAL_ADC_ConfigChannel
+                0x080015d8      0x244 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.c.obj
+                0x080015d8                HAL_ADC_ConfigChannel
  .text.ADC_Init
-                0x0800163c      0x1f8 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.c.obj
+                0x0800181c      0x1f8 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.c.obj
+ .text.ADC_DMAConvCplt
+                0x08001a14       0xba CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.c.obj
+ .text.ADC_DMAHalfConvCplt
+                0x08001ace       0x1c CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.c.obj
+ .text.ADC_DMAError
+                0x08001aea       0x2e CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.c.obj
  .text.HAL_ADCEx_InjectedConvCpltCallback
-                0x08001834       0x14 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.c.obj
-                0x08001834                HAL_ADCEx_InjectedConvCpltCallback
+                0x08001b18       0x14 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.c.obj
+                0x08001b18                HAL_ADCEx_InjectedConvCpltCallback
  .text.HAL_RCC_OscConfig
-                0x08001848      0x4f0 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj
-                0x08001848                HAL_RCC_OscConfig
+                0x08001b2c      0x4f0 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj
+                0x08001b2c                HAL_RCC_OscConfig
  .text.HAL_RCC_ClockConfig
-                0x08001d38      0x1cc CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj
-                0x08001d38                HAL_RCC_ClockConfig
+                0x0800201c      0x1cc CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj
+                0x0800201c                HAL_RCC_ClockConfig
  .text.HAL_RCC_GetSysClockFreq
-                0x08001f04      0x20c CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj
-                0x08001f04                HAL_RCC_GetSysClockFreq
+                0x080021e8      0x20c CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj
+                0x080021e8                HAL_RCC_GetSysClockFreq
  .text.HAL_RCC_GetHCLKFreq
-                0x08002110       0x18 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj
-                0x08002110                HAL_RCC_GetHCLKFreq
+                0x080023f4       0x18 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj
+                0x080023f4                HAL_RCC_GetHCLKFreq
  .text.HAL_RCC_GetPCLK1Freq
-                0x08002128       0x28 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj
-                0x08002128                HAL_RCC_GetPCLK1Freq
+                0x0800240c       0x28 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj
+                0x0800240c                HAL_RCC_GetPCLK1Freq
  .text.HAL_RCC_GetClockConfig
-                0x08002150       0x64 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj
-                0x08002150                HAL_RCC_GetClockConfig
+                0x08002434       0x64 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj
+                0x08002434                HAL_RCC_GetClockConfig
  .text.HAL_GPIO_Init
-                0x080021b4      0x338 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj
-                0x080021b4                HAL_GPIO_Init
+                0x08002498      0x338 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj
+                0x08002498                HAL_GPIO_Init
  .text.HAL_GPIO_WritePin
-                0x080024ec       0x32 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj
-                0x080024ec                HAL_GPIO_WritePin
+                0x080027d0       0x32 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj
+                0x080027d0                HAL_GPIO_WritePin
  .text.HAL_GPIO_TogglePin
-                0x0800251e       0x34 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj
-                0x0800251e                HAL_GPIO_TogglePin
- *fill*         0x08002552        0x2 
+                0x08002802       0x34 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj
+                0x08002802                HAL_GPIO_TogglePin
+ *fill*         0x08002836        0x2 
  .text.HAL_DMA_Init
-                0x08002554      0x15c CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj
-                0x08002554                HAL_DMA_Init
+                0x08002838      0x15c CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj
+                0x08002838                HAL_DMA_Init
+ .text.HAL_DMA_Start_IT
+                0x08002994       0xb0 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj
+                0x08002994                HAL_DMA_Start_IT
  .text.HAL_DMA_IRQHandler
-                0x080026b0      0x314 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj
-                0x080026b0                HAL_DMA_IRQHandler
+                0x08002a44      0x314 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj
+                0x08002a44                HAL_DMA_IRQHandler
+ .text.DMA_SetConfig
+                0x08002d58       0x5c CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj
  .text.DMA_CalcBaseAndBitshift
-                0x080029c4       0x6c CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj
+                0x08002db4       0x6c CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj
  .text.DMA_CheckFifoParam
-                0x08002a30       0xf8 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj
+                0x08002e20       0xf8 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj
  .text.__NVIC_SetPriorityGrouping
-                0x08002b28       0x48 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj
+                0x08002f18       0x48 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj
  .text.__NVIC_GetPriorityGrouping
-                0x08002b70       0x1c CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj
+                0x08002f60       0x1c CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj
  .text.__NVIC_EnableIRQ
-                0x08002b8c       0x3c CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj
+                0x08002f7c       0x3c CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj
  .text.__NVIC_SetPriority
-                0x08002bc8       0x54 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj
+                0x08002fb8       0x54 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj
  .text.NVIC_EncodePriority
-                0x08002c1c       0x66 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj
+                0x0800300c       0x66 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj
  .text.HAL_NVIC_SetPriorityGrouping
-                0x08002c82       0x16 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj
-                0x08002c82                HAL_NVIC_SetPriorityGrouping
+                0x08003072       0x16 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj
+                0x08003072                HAL_NVIC_SetPriorityGrouping
  .text.HAL_NVIC_SetPriority
-                0x08002c98       0x38 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj
-                0x08002c98                HAL_NVIC_SetPriority
+                0x08003088       0x38 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj
+                0x08003088                HAL_NVIC_SetPriority
  .text.HAL_NVIC_EnableIRQ
-                0x08002cd0       0x1c CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj
-                0x08002cd0                HAL_NVIC_EnableIRQ
+                0x080030c0       0x1c CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj
+                0x080030c0                HAL_NVIC_EnableIRQ
  .text.HAL_Init
-                0x08002cec       0x44 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj
-                0x08002cec                HAL_Init
+                0x080030dc       0x44 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj
+                0x080030dc                HAL_Init
  .text.HAL_IncTick
-                0x08002d30       0x28 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj
-                0x08002d30                HAL_IncTick
+                0x08003120       0x28 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj
+                0x08003120                HAL_IncTick
  .text.HAL_GetTick
-                0x08002d58       0x18 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj
-                0x08002d58                HAL_GetTick
+                0x08003148       0x18 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj
+                0x08003148                HAL_GetTick
  .text.HAL_Delay
-                0x08002d70       0x48 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj
-                0x08002d70                HAL_Delay
+                0x08003160       0x48 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj
+                0x08003160                HAL_Delay
  .text.HAL_DAC_Init
-                0x08002db8       0x44 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dac.c.obj
-                0x08002db8                HAL_DAC_Init
+                0x080031a8       0x44 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dac.c.obj
+                0x080031a8                HAL_DAC_Init
  .text.HAL_DAC_Start
-                0x08002dfc       0xae CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dac.c.obj
-                0x08002dfc                HAL_DAC_Start
+                0x080031ec       0xae CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dac.c.obj
+                0x080031ec                HAL_DAC_Start
  .text.HAL_DAC_IRQHandler
-                0x08002eaa       0xac CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dac.c.obj
-                0x08002eaa                HAL_DAC_IRQHandler
+                0x0800329a       0xac CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dac.c.obj
+                0x0800329a                HAL_DAC_IRQHandler
  .text.HAL_DAC_DMAUnderrunCallbackCh1
-                0x08002f56       0x14 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dac.c.obj
-                0x08002f56                HAL_DAC_DMAUnderrunCallbackCh1
+                0x08003346       0x14 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dac.c.obj
+                0x08003346                HAL_DAC_DMAUnderrunCallbackCh1
  .text.HAL_DAC_ConfigChannel
-                0x08002f6a       0xb2 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dac.c.obj
-                0x08002f6a                HAL_DAC_ConfigChannel
+                0x0800335a       0xb2 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dac.c.obj
+                0x0800335a                HAL_DAC_ConfigChannel
  .text.HAL_DACEx_DMAUnderrunCallbackCh2
-                0x0800301c       0x14 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dac_ex.c.obj
-                0x0800301c                HAL_DACEx_DMAUnderrunCallbackCh2
+                0x0800340c       0x14 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dac_ex.c.obj
+                0x0800340c                HAL_DACEx_DMAUnderrunCallbackCh2
  .text.HAL_SPI_Init
-                0x08003030      0x112 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c.obj
-                0x08003030                HAL_SPI_Init
+                0x08003420      0x112 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c.obj
+                0x08003420                HAL_SPI_Init
  .text.HAL_TIM_Base_Init
-                0x08003142       0x9e CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj
-                0x08003142                HAL_TIM_Base_Init
+                0x08003532       0x9e CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj
+                0x08003532                HAL_TIM_Base_Init
  .text.HAL_TIM_Base_MspInit
-                0x080031e0       0x14 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj
-                0x080031e0                HAL_TIM_Base_MspInit
+                0x080035d0       0x14 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj
+                0x080035d0                HAL_TIM_Base_MspInit
  .text.HAL_TIM_Base_Start
-                0x080031f4       0xd0 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj
-                0x080031f4                HAL_TIM_Base_Start
+                0x080035e4       0xd0 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj
+                0x080035e4                HAL_TIM_Base_Start
  .text.HAL_TIM_Base_Start_IT
-                0x080032c4       0xe0 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj
-                0x080032c4                HAL_TIM_Base_Start_IT
+                0x080036b4       0xe0 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj
+                0x080036b4                HAL_TIM_Base_Start_IT
  .text.HAL_TIM_PWM_Init
-                0x080033a4       0x9e CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj
-                0x080033a4                HAL_TIM_PWM_Init
+                0x08003794       0x9e CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj
+                0x08003794                HAL_TIM_PWM_Init
  .text.HAL_TIM_IRQHandler
-                0x08003442      0x1e0 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj
-                0x08003442                HAL_TIM_IRQHandler
- *fill*         0x08003622        0x2 
+                0x08003832      0x1e0 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj
+                0x08003832                HAL_TIM_IRQHandler
+ *fill*         0x08003a12        0x2 
  .text.HAL_TIM_PWM_ConfigChannel
-                0x08003624      0x184 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj
-                0x08003624                HAL_TIM_PWM_ConfigChannel
+                0x08003a14      0x184 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj
+                0x08003a14                HAL_TIM_PWM_ConfigChannel
  .text.HAL_TIM_OC_DelayElapsedCallback
-                0x080037a8       0x14 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj
-                0x080037a8                HAL_TIM_OC_DelayElapsedCallback
+                0x08003b98       0x14 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj
+                0x08003b98                HAL_TIM_OC_DelayElapsedCallback
  .text.HAL_TIM_IC_CaptureCallback
-                0x080037bc       0x14 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj
-                0x080037bc                HAL_TIM_IC_CaptureCallback
+                0x08003bac       0x14 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj
+                0x08003bac                HAL_TIM_IC_CaptureCallback
  .text.HAL_TIM_PWM_PulseFinishedCallback
-                0x080037d0       0x14 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj
-                0x080037d0                HAL_TIM_PWM_PulseFinishedCallback
+                0x08003bc0       0x14 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj
+                0x08003bc0                HAL_TIM_PWM_PulseFinishedCallback
  .text.HAL_TIM_TriggerCallback
-                0x080037e4       0x14 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj
-                0x080037e4                HAL_TIM_TriggerCallback
+                0x08003bd4       0x14 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj
+                0x08003bd4                HAL_TIM_TriggerCallback
  .text.TIM_Base_SetConfig
-                0x080037f8      0x158 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj
-                0x080037f8                TIM_Base_SetConfig
+                0x08003be8      0x158 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj
+                0x08003be8                TIM_Base_SetConfig
  .text.TIM_OC1_SetConfig
-                0x08003950       0xe0 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj
+                0x08003d40       0xe0 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj
  .text.TIM_OC2_SetConfig
-                0x08003a30       0xec CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj
-                0x08003a30                TIM_OC2_SetConfig
+                0x08003e20       0xec CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj
+                0x08003e20                TIM_OC2_SetConfig
  .text.TIM_OC3_SetConfig
-                0x08003b1c       0xe8 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj
+                0x08003f0c       0xe8 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj
  .text.TIM_OC4_SetConfig
-                0x08003c04       0xac CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj
+                0x08003ff4       0xac CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj
  .text.HAL_TIMEx_MasterConfigSynchronization
-                0x08003cb0       0xf8 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.obj
-                0x08003cb0                HAL_TIMEx_MasterConfigSynchronization
+                0x080040a0       0xf8 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.obj
+                0x080040a0                HAL_TIMEx_MasterConfigSynchronization
  .text.HAL_TIMEx_CommutCallback
-                0x08003da8       0x14 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.obj
-                0x08003da8                HAL_TIMEx_CommutCallback
+                0x08004198       0x14 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.obj
+                0x08004198                HAL_TIMEx_CommutCallback
  .text.HAL_TIMEx_BreakCallback
-                0x08003dbc       0x14 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.obj
-                0x08003dbc                HAL_TIMEx_BreakCallback
+                0x080041ac       0x14 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.obj
+                0x080041ac                HAL_TIMEx_BreakCallback
  .text.HAL_PCD_Init
-                0x08003dd0      0x21e CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd.c.obj
-                0x08003dd0                HAL_PCD_Init
+                0x080041c0      0x21e CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd.c.obj
+                0x080041c0                HAL_PCD_Init
  .text.HAL_PCD_IRQHandler
-                0x08003fee      0x942 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd.c.obj
-                0x08003fee                HAL_PCD_IRQHandler
+                0x080043de      0x942 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd.c.obj
+                0x080043de                HAL_PCD_IRQHandler
  .text.HAL_PCD_DataOutStageCallback
-                0x08004930       0x18 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd.c.obj
-                0x08004930                HAL_PCD_DataOutStageCallback
+                0x08004d20       0x18 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd.c.obj
+                0x08004d20                HAL_PCD_DataOutStageCallback
  .text.HAL_PCD_DataInStageCallback
-                0x08004948       0x18 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd.c.obj
-                0x08004948                HAL_PCD_DataInStageCallback
+                0x08004d38       0x18 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd.c.obj
+                0x08004d38                HAL_PCD_DataInStageCallback
  .text.HAL_PCD_SetupStageCallback
-                0x08004960       0x14 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd.c.obj
-                0x08004960                HAL_PCD_SetupStageCallback
+                0x08004d50       0x14 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd.c.obj
+                0x08004d50                HAL_PCD_SetupStageCallback
  .text.HAL_PCD_SOFCallback
-                0x08004974       0x14 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd.c.obj
-                0x08004974                HAL_PCD_SOFCallback
+                0x08004d64       0x14 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd.c.obj
+                0x08004d64                HAL_PCD_SOFCallback
  .text.HAL_PCD_ResetCallback
-                0x08004988       0x14 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd.c.obj
-                0x08004988                HAL_PCD_ResetCallback
+                0x08004d78       0x14 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd.c.obj
+                0x08004d78                HAL_PCD_ResetCallback
  .text.HAL_PCD_SuspendCallback
-                0x0800499c       0x14 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd.c.obj
-                0x0800499c                HAL_PCD_SuspendCallback
+                0x08004d8c       0x14 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd.c.obj
+                0x08004d8c                HAL_PCD_SuspendCallback
  .text.HAL_PCD_ResumeCallback
-                0x080049b0       0x14 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd.c.obj
-                0x080049b0                HAL_PCD_ResumeCallback
+                0x08004da0       0x14 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd.c.obj
+                0x08004da0                HAL_PCD_ResumeCallback
  .text.HAL_PCD_ISOOUTIncompleteCallback
-                0x080049c4       0x18 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd.c.obj
-                0x080049c4                HAL_PCD_ISOOUTIncompleteCallback
+                0x08004db4       0x18 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd.c.obj
+                0x08004db4                HAL_PCD_ISOOUTIncompleteCallback
  .text.HAL_PCD_ISOINIncompleteCallback
-                0x080049dc       0x18 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd.c.obj
-                0x080049dc                HAL_PCD_ISOINIncompleteCallback
+                0x08004dcc       0x18 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd.c.obj
+                0x08004dcc                HAL_PCD_ISOINIncompleteCallback
  .text.HAL_PCD_ConnectCallback
-                0x080049f4       0x14 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd.c.obj
-                0x080049f4                HAL_PCD_ConnectCallback
+                0x08004de4       0x14 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd.c.obj
+                0x08004de4                HAL_PCD_ConnectCallback
  .text.HAL_PCD_DisconnectCallback
-                0x08004a08       0x14 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd.c.obj
-                0x08004a08                HAL_PCD_DisconnectCallback
+                0x08004df8       0x14 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd.c.obj
+                0x08004df8                HAL_PCD_DisconnectCallback
  .text.HAL_PCD_EP_Abort
-                0x08004a1c       0x62 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd.c.obj
-                0x08004a1c                HAL_PCD_EP_Abort
+                0x08004e0c       0x62 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd.c.obj
+                0x08004e0c                HAL_PCD_EP_Abort
  .text.PCD_WriteEmptyTxFifo
-                0x08004a7e      0x118 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd.c.obj
- *fill*         0x08004b96        0x2 
+                0x08004e6e      0x118 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd.c.obj
+ *fill*         0x08004f86        0x2 
  .text.PCD_EP_OutXfrComplete_int
-                0x08004b98      0x1d0 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd.c.obj
+                0x08004f88      0x1d0 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd.c.obj
  .text.PCD_EP_OutSetupPacket_int
-                0x08004d68       0x8c CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd.c.obj
+                0x08005158       0x8c CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd.c.obj
  .text.HAL_PCDEx_LPM_Callback
-                0x08004df4       0x18 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd_ex.c.obj
-                0x08004df4                HAL_PCDEx_LPM_Callback
+                0x080051e4       0x18 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd_ex.c.obj
+                0x080051e4                HAL_PCDEx_LPM_Callback
  .text.USB_CoreInit
-                0x08004e0c       0xc8 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usb.c.obj
-                0x08004e0c                USB_CoreInit
+                0x080051fc       0xc8 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usb.c.obj
+                0x080051fc                USB_CoreInit
  .text.USB_SetTurnaroundTime
-                0x08004ed4      0x144 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usb.c.obj
-                0x08004ed4                USB_SetTurnaroundTime
+                0x080052c4      0x144 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usb.c.obj
+                0x080052c4                USB_SetTurnaroundTime
  .text.USB_DisableGlobalInt
-                0x08005018       0x22 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usb.c.obj
-                0x08005018                USB_DisableGlobalInt
+                0x08005408       0x22 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usb.c.obj
+                0x08005408                USB_DisableGlobalInt
  .text.USB_SetCurrentMode
-                0x0800503a       0x98 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usb.c.obj
-                0x0800503a                USB_SetCurrentMode
- *fill*         0x080050d2        0x2 
+                0x0800542a       0x98 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usb.c.obj
+                0x0800542a                USB_SetCurrentMode
+ *fill*         0x080054c2        0x2 
  .text.USB_DevInit
-                0x080050d4      0x2c8 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usb.c.obj
-                0x080050d4                USB_DevInit
+                0x080054c4      0x2c8 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usb.c.obj
+                0x080054c4                USB_DevInit
  .text.USB_FlushTxFifo
-                0x0800539c       0x64 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usb.c.obj
-                0x0800539c                USB_FlushTxFifo
+                0x0800578c       0x64 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usb.c.obj
+                0x0800578c                USB_FlushTxFifo
  .text.USB_FlushRxFifo
-                0x08005400       0x5c CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usb.c.obj
-                0x08005400                USB_FlushRxFifo
+                0x080057f0       0x5c CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usb.c.obj
+                0x080057f0                USB_FlushRxFifo
  .text.USB_SetDevSpeed
-                0x0800545c       0x32 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usb.c.obj
-                0x0800545c                USB_SetDevSpeed
+                0x0800584c       0x32 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usb.c.obj
+                0x0800584c                USB_SetDevSpeed
  .text.USB_GetDevSpeed
-                0x0800548e       0x4a CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usb.c.obj
-                0x0800548e                USB_GetDevSpeed
+                0x0800587e       0x4a CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usb.c.obj
+                0x0800587e                USB_GetDevSpeed
  .text.USB_EPStopXfer
-                0x080054d8      0x154 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usb.c.obj
-                0x080054d8                USB_EPStopXfer
+                0x080058c8      0x154 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usb.c.obj
+                0x080058c8                USB_EPStopXfer
  .text.USB_WritePacket
-                0x0800562c       0x7c CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usb.c.obj
-                0x0800562c                USB_WritePacket
+                0x08005a1c       0x7c CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usb.c.obj
+                0x08005a1c                USB_WritePacket
  .text.USB_ReadPacket
-                0x080056a8       0xb0 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usb.c.obj
-                0x080056a8                USB_ReadPacket
+                0x08005a98       0xb0 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usb.c.obj
+                0x08005a98                USB_ReadPacket
  .text.USB_DevDisconnect
-                0x08005758       0x42 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usb.c.obj
-                0x08005758                USB_DevDisconnect
+                0x08005b48       0x42 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usb.c.obj
+                0x08005b48                USB_DevDisconnect
  .text.USB_ReadInterrupts
-                0x0800579a       0x26 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usb.c.obj
-                0x0800579a                USB_ReadInterrupts
+                0x08005b8a       0x26 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usb.c.obj
+                0x08005b8a                USB_ReadInterrupts
  .text.USB_ReadDevAllOutEpInterrupt
-                0x080057c0       0x34 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usb.c.obj
-                0x080057c0                USB_ReadDevAllOutEpInterrupt
+                0x08005bb0       0x34 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usb.c.obj
+                0x08005bb0                USB_ReadDevAllOutEpInterrupt
  .text.USB_ReadDevAllInEpInterrupt
-                0x080057f4       0x34 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usb.c.obj
-                0x080057f4                USB_ReadDevAllInEpInterrupt
+                0x08005be4       0x34 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usb.c.obj
+                0x08005be4                USB_ReadDevAllInEpInterrupt
  .text.USB_ReadDevOutEPInterrupt
-                0x08005828       0x3c CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usb.c.obj
-                0x08005828                USB_ReadDevOutEPInterrupt
+                0x08005c18       0x3c CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usb.c.obj
+                0x08005c18                USB_ReadDevOutEPInterrupt
  .text.USB_ReadDevInEPInterrupt
-                0x08005864       0x5c CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usb.c.obj
-                0x08005864                USB_ReadDevInEPInterrupt
+                0x08005c54       0x5c CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usb.c.obj
+                0x08005c54                USB_ReadDevInEPInterrupt
  .text.USB_GetMode
-                0x080058c0       0x1c CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usb.c.obj
-                0x080058c0                USB_GetMode
+                0x08005cb0       0x1c CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usb.c.obj
+                0x08005cb0                USB_GetMode
  .text.USB_ActivateSetup
-                0x080058dc       0x46 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usb.c.obj
-                0x080058dc                USB_ActivateSetup
- *fill*         0x08005922        0x2 
+                0x08005ccc       0x46 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usb.c.obj
+                0x08005ccc                USB_ActivateSetup
+ *fill*         0x08005d12        0x2 
  .text.USB_EP0_OutStart
-                0x08005924       0xbc CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usb.c.obj
-                0x08005924                USB_EP0_OutStart
+                0x08005d14       0xbc CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usb.c.obj
+                0x08005d14                USB_EP0_OutStart
  .text.USB_CoreReset
-                0x080059e0       0x62 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usb.c.obj
- *fill*         0x08005a42        0x2 
+                0x08005dd0       0x62 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usb.c.obj
+ *fill*         0x08005e32        0x2 
  .text.SystemInit
-                0x08005a44       0x24 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/system_stm32f4xx.c.obj
-                0x08005a44                SystemInit
+                0x08005e34       0x24 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/system_stm32f4xx.c.obj
+                0x08005e34                SystemInit
  .text.vListInitialise
-                0x08005a68       0x40 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/list.c.obj
-                0x08005a68                vListInitialise
+                0x08005e58       0x40 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/list.c.obj
+                0x08005e58                vListInitialise
  .text.vListInitialiseItem
-                0x08005aa8       0x1a CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/list.c.obj
-                0x08005aa8                vListInitialiseItem
+                0x08005e98       0x1a CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/list.c.obj
+                0x08005e98                vListInitialiseItem
  .text.vListInsertEnd
-                0x08005ac2       0x48 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/list.c.obj
-                0x08005ac2                vListInsertEnd
+                0x08005eb2       0x48 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/list.c.obj
+                0x08005eb2                vListInsertEnd
  .text.vListInsert
-                0x08005b0a       0x72 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/list.c.obj
-                0x08005b0a                vListInsert
+                0x08005efa       0x72 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/list.c.obj
+                0x08005efa                vListInsert
  .text.uxListRemove
-                0x08005b7c       0x54 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/list.c.obj
-                0x08005b7c                uxListRemove
+                0x08005f6c       0x54 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/list.c.obj
+                0x08005f6c                uxListRemove
  .text.xQueueGenericReset
-                0x08005bd0       0xd4 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/queue.c.obj
-                0x08005bd0                xQueueGenericReset
+                0x08005fc0       0xd4 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/queue.c.obj
+                0x08005fc0                xQueueGenericReset
  .text.xQueueGenericCreateStatic
-                0x08005ca4       0xfa CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/queue.c.obj
-                0x08005ca4                xQueueGenericCreateStatic
+                0x08006094       0xfa CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/queue.c.obj
+                0x08006094                xQueueGenericCreateStatic
  .text.prvInitialiseNewQueue
-                0x08005d9e       0x46 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/queue.c.obj
+                0x0800618e       0x46 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/queue.c.obj
  .text.xQueueGenericSend
-                0x08005de4      0x204 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/queue.c.obj
-                0x08005de4                xQueueGenericSend
+                0x080061d4      0x204 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/queue.c.obj
+                0x080061d4                xQueueGenericSend
  .text.xQueueGenericSendFromISR
-                0x08005fe8      0x13c CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/queue.c.obj
-                0x08005fe8                xQueueGenericSendFromISR
+                0x080063d8      0x13c CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/queue.c.obj
+                0x080063d8                xQueueGenericSendFromISR
  .text.xQueueReceive
-                0x08006124      0x1c4 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/queue.c.obj
-                0x08006124                xQueueReceive
+                0x08006514      0x1c4 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/queue.c.obj
+                0x08006514                xQueueReceive
  .text.prvCopyDataToQueue
-                0x080062e8       0xd4 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/queue.c.obj
+                0x080066d8       0xd4 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/queue.c.obj
  .text.prvCopyDataFromQueue
-                0x080063bc       0x4c CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/queue.c.obj
+                0x080067ac       0x4c CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/queue.c.obj
  .text.prvUnlockQueue
-                0x08006408       0xa4 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/queue.c.obj
+                0x080067f8       0xa4 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/queue.c.obj
  .text.prvIsQueueEmpty
-                0x080064ac       0x2c CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/queue.c.obj
+                0x0800689c       0x2c CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/queue.c.obj
  .text.prvIsQueueFull
-                0x080064d8       0x30 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/queue.c.obj
+                0x080068c8       0x30 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/queue.c.obj
  .text.vQueueAddToRegistry
-                0x08006508       0x54 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/queue.c.obj
-                0x08006508                vQueueAddToRegistry
+                0x080068f8       0x54 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/queue.c.obj
+                0x080068f8                vQueueAddToRegistry
  .text.vQueueWaitForMessageRestricted
-                0x0800655c       0x68 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/queue.c.obj
-                0x0800655c                vQueueWaitForMessageRestricted
+                0x0800694c       0x68 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/queue.c.obj
+                0x0800694c                vQueueWaitForMessageRestricted
  .text.xTaskCreateStatic
-                0x080065c4       0xc0 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
-                0x080065c4                xTaskCreateStatic
+                0x080069b4       0xc0 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
+                0x080069b4                xTaskCreateStatic
  .text.xTaskCreate
-                0x08006684       0x8a CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
-                0x08006684                xTaskCreate
+                0x08006a74       0x8a CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
+                0x08006a74                xTaskCreate
  .text.prvInitialiseNewTask
-                0x0800670e      0x120 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
- *fill*         0x0800682e        0x2 
+                0x08006afe      0x120 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
+ *fill*         0x08006c1e        0x2 
  .text.prvAddNewTaskToReadyList
-                0x08006830       0xe0 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
+                0x08006c20       0xe0 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
  .text.vTaskDelay
-                0x08006910       0x6c CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
-                0x08006910                vTaskDelay
+                0x08006d00       0x6c CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
+                0x08006d00                vTaskDelay
  .text.vTaskStartScheduler
-                0x0800697c       0xd0 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
-                0x0800697c                vTaskStartScheduler
+                0x08006d6c       0xd0 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
+                0x08006d6c                vTaskStartScheduler
  .text.vTaskSuspendAll
-                0x08006a4c       0x1c CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
-                0x08006a4c                vTaskSuspendAll
+                0x08006e3c       0x1c CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
+                0x08006e3c                vTaskSuspendAll
  .text.xTaskResumeAll
-                0x08006a68      0x13c CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
-                0x08006a68                xTaskResumeAll
+                0x08006e58      0x13c CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
+                0x08006e58                xTaskResumeAll
  .text.xTaskGetTickCount
-                0x08006ba4       0x20 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
-                0x08006ba4                xTaskGetTickCount
+                0x08006f94       0x20 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
+                0x08006f94                xTaskGetTickCount
  .text.xTaskIncrementTick
-                0x08006bc4      0x174 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
-                0x08006bc4                xTaskIncrementTick
+                0x08006fb4      0x174 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
+                0x08006fb4                xTaskIncrementTick
  .text.vTaskSwitchContext
-                0x08006d38       0xbc CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
-                0x08006d38                vTaskSwitchContext
+                0x08007128       0xbc CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
+                0x08007128                vTaskSwitchContext
  .text.vTaskPlaceOnEventList
-                0x08006df4       0x4c CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
-                0x08006df4                vTaskPlaceOnEventList
+                0x080071e4       0x4c CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
+                0x080071e4                vTaskPlaceOnEventList
  .text.vTaskPlaceOnEventListRestricted
-                0x08006e40       0x58 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
-                0x08006e40                vTaskPlaceOnEventListRestricted
+                0x08007230       0x58 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
+                0x08007230                vTaskPlaceOnEventListRestricted
  .text.xTaskRemoveFromEventList
-                0x08006e98       0xc8 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
-                0x08006e98                xTaskRemoveFromEventList
+                0x08007288       0xc8 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
+                0x08007288                xTaskRemoveFromEventList
  .text.vTaskInternalSetTimeOutState
-                0x08006f60       0x2c CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
-                0x08006f60                vTaskInternalSetTimeOutState
+                0x08007350       0x2c CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
+                0x08007350                vTaskInternalSetTimeOutState
  .text.xTaskCheckForTimeOut
-                0x08006f8c       0xc8 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
-                0x08006f8c                xTaskCheckForTimeOut
+                0x0800737c       0xc8 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
+                0x0800737c                xTaskCheckForTimeOut
  .text.vTaskMissedYield
-                0x08007054       0x18 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
-                0x08007054                vTaskMissedYield
+                0x08007444       0x18 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
+                0x08007444                vTaskMissedYield
  .text.prvIdleTask
-                0x0800706c       0x30 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
+                0x0800745c       0x30 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
  .text.prvInitialiseTaskLists
-                0x0800709c       0x80 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
+                0x0800748c       0x80 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
  .text.prvCheckTasksWaitingTermination
-                0x0800711c       0x5c CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
+                0x0800750c       0x5c CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
  .text.prvDeleteTCB
-                0x08007178       0x60 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
+                0x08007568       0x60 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
  .text.prvResetNextTaskUnblockTime
-                0x080071d8       0x40 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
+                0x080075c8       0x40 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
  .text.xTaskGetSchedulerState
-                0x08007218       0x3c CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
-                0x08007218                xTaskGetSchedulerState
+                0x08007608       0x3c CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
+                0x08007608                xTaskGetSchedulerState
  .text.xTaskPriorityDisinherit
-                0x08007254       0xe0 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
-                0x08007254                xTaskPriorityDisinherit
+                0x08007644       0xe0 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
+                0x08007644                xTaskPriorityDisinherit
  .text.prvAddCurrentTaskToDelayedList
-                0x08007334       0xa8 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
+                0x08007724       0xa8 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
  .text.xTimerCreateTimerTask
-                0x080073dc       0x94 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj
-                0x080073dc                xTimerCreateTimerTask
+                0x080077cc       0x94 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj
+                0x080077cc                xTimerCreateTimerTask
  .text.xTimerGenericCommand
-                0x08007470       0x9c CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj
-                0x08007470                xTimerGenericCommand
+                0x08007860       0x9c CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj
+                0x08007860                xTimerGenericCommand
  .text.prvProcessExpiredTimer
-                0x0800750c       0x9c CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj
+                0x080078fc       0x9c CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj
  .text.prvTimerTask
-                0x080075a8       0x26 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj
- *fill*         0x080075ce        0x2 
+                0x08007998       0x26 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj
+ *fill*         0x080079be        0x2 
  .text.prvProcessTimerOrBlockTask
-                0x080075d0       0x9c CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj
+                0x080079c0       0x9c CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj
  .text.prvGetNextExpireTime
-                0x0800766c       0x48 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj
+                0x08007a5c       0x48 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj
  .text.prvSampleTimeNow
-                0x080076b4       0x40 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj
+                0x08007aa4       0x40 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj
  .text.prvInsertTimerInActiveList
-                0x080076f4       0x84 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj
+                0x08007ae4       0x84 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj
  .text.prvProcessReceivedCommands
-                0x08007778      0x1cc CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj
+                0x08007b68      0x1cc CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj
  .text.prvSwitchTimerLists
-                0x08007944       0xcc CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj
+                0x08007d34       0xcc CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj
  .text.prvCheckForValidListAndQueue
-                0x08007a10       0x80 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj
+                0x08007e00       0x80 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj
  .text.__NVIC_SetPriority
-                0x08007a90       0x54 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.obj
+                0x08007e80       0x54 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.obj
  .text.SysTick_Handler
-                0x08007ae4       0x20 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.obj
-                0x08007ae4                SysTick_Handler
+                0x08007ed4       0x20 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.obj
+                0x08007ed4                SysTick_Handler
  .text.SVC_Setup
-                0x08007b04       0x12 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.obj
- *fill*         0x08007b16        0x2 
+                0x08007ef4       0x12 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.obj
+ *fill*         0x08007f06        0x2 
  .text.osKernelInitialize
-                0x08007b18       0x48 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.obj
-                0x08007b18                osKernelInitialize
+                0x08007f08       0x48 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.obj
+                0x08007f08                osKernelInitialize
  .text.osKernelStart
-                0x08007b60       0x4c CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.obj
-                0x08007b60                osKernelStart
+                0x08007f50       0x4c CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.obj
+                0x08007f50                osKernelStart
  .text.osThreadNew
-                0x08007bac      0x124 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.obj
-                0x08007bac                osThreadNew
- .text.osDelay  0x08007cd0       0x36 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.obj
-                0x08007cd0                osDelay
- *fill*         0x08007d06        0x2 
+                0x08007f9c      0x124 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.obj
+                0x08007f9c                osThreadNew
+ .text.osDelay  0x080080c0       0x36 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.obj
+                0x080080c0                osDelay
+ *fill*         0x080080f6        0x2 
  .text.vApplicationGetIdleTaskMemory
-                0x08007d08       0x34 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.obj
-                0x08007d08                vApplicationGetIdleTaskMemory
+                0x080080f8       0x34 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.obj
+                0x080080f8                vApplicationGetIdleTaskMemory
  .text.vApplicationGetTimerTaskMemory
-                0x08007d3c       0x34 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.obj
-                0x08007d3c                vApplicationGetTimerTaskMemory
+                0x0800812c       0x34 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.obj
+                0x0800812c                vApplicationGetTimerTaskMemory
  .text.pvPortMalloc
-                0x08007d70      0x19c CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.obj
-                0x08007d70                pvPortMalloc
+                0x08008160      0x19c CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.obj
+                0x08008160                pvPortMalloc
  .text.vPortFree
-                0x08007f0c       0xc8 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.obj
-                0x08007f0c                vPortFree
+                0x080082fc       0xc8 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.obj
+                0x080082fc                vPortFree
  .text.prvHeapInit
-                0x08007fd4       0xc4 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.obj
+                0x080083c4       0xc4 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.obj
  .text.prvInsertBlockIntoFreeList
-                0x08008098       0xb4 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.obj
+                0x08008488       0xb4 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.obj
  .text.pxPortInitialiseStack
-                0x0800814c       0x68 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c.obj
-                0x0800814c                pxPortInitialiseStack
+                0x0800853c       0x68 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c.obj
+                0x0800853c                pxPortInitialiseStack
  .text.prvTaskExitError
-                0x080081b4       0x5c CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c.obj
+                0x080085a4       0x5c CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c.obj
  .text.SVC_Handler
-                0x08008210       0x28 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c.obj
-                0x08008210                SVC_Handler
+                0x08008600       0x28 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c.obj
+                0x08008600                SVC_Handler
  .text.prvPortStartFirstTask
-                0x08008238       0x28 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c.obj
+                0x08008628       0x28 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c.obj
  .text.xPortStartScheduler
-                0x08008260      0x148 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c.obj
-                0x08008260                xPortStartScheduler
+                0x08008650      0x148 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c.obj
+                0x08008650                xPortStartScheduler
  .text.vPortEnterCritical
-                0x080083a8       0x64 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c.obj
-                0x080083a8                vPortEnterCritical
+                0x08008798       0x64 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c.obj
+                0x08008798                vPortEnterCritical
  .text.vPortExitCritical
-                0x0800840c       0x54 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c.obj
-                0x0800840c                vPortExitCritical
+                0x080087fc       0x54 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c.obj
+                0x080087fc                vPortExitCritical
  .text.PendSV_Handler
-                0x08008460       0x68 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c.obj
-                0x08008460                PendSV_Handler
+                0x08008850       0x68 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c.obj
+                0x08008850                PendSV_Handler
  .text.xPortSysTickHandler
-                0x080084c8       0x44 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c.obj
-                0x080084c8                xPortSysTickHandler
+                0x080088b8       0x44 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c.obj
+                0x080088b8                xPortSysTickHandler
  .text.vPortSetupTimerInterrupt
-                0x0800850c       0x48 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c.obj
-                0x0800850c                vPortSetupTimerInterrupt
+                0x080088fc       0x48 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c.obj
+                0x080088fc                vPortSetupTimerInterrupt
  .text.vPortEnableVFP
-                0x08008554       0x14 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c.obj
+                0x08008944       0x14 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c.obj
  .text.vPortValidateInterruptPriority
-                0x08008568       0x84 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c.obj
-                0x08008568                vPortValidateInterruptPriority
+                0x08008958       0x84 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c.obj
+                0x08008958                vPortValidateInterruptPriority
  .text.Reset_Handler
-                0x080085ec       0x50 CMakeFiles/DMS-24-RTOS-VCU.dir/startup_stm32f407xx.s.obj
-                0x080085ec                Reset_Handler
+                0x080089dc       0x50 CMakeFiles/DMS-24-RTOS-VCU.dir/startup_stm32f407xx.s.obj
+                0x080089dc                Reset_Handler
  .text.Default_Handler
-                0x0800863c        0x2 CMakeFiles/DMS-24-RTOS-VCU.dir/startup_stm32f407xx.s.obj
-                0x0800863c                RTC_Alarm_IRQHandler
-                0x0800863c                HASH_RNG_IRQHandler
-                0x0800863c                EXTI2_IRQHandler
-                0x0800863c                TIM8_CC_IRQHandler
-                0x0800863c                TIM1_CC_IRQHandler
-                0x0800863c                DMA2_Stream5_IRQHandler
-                0x0800863c                DMA1_Stream5_IRQHandler
-                0x0800863c                PVD_IRQHandler
-                0x0800863c                SDIO_IRQHandler
-                0x0800863c                TAMP_STAMP_IRQHandler
-                0x0800863c                CAN2_RX1_IRQHandler
-                0x0800863c                EXTI3_IRQHandler
-                0x0800863c                TIM8_TRG_COM_TIM14_IRQHandler
-                0x0800863c                TIM1_UP_TIM10_IRQHandler
-                0x0800863c                TIM8_UP_TIM13_IRQHandler
-                0x0800863c                I2C3_ER_IRQHandler
-                0x0800863c                EXTI0_IRQHandler
-                0x0800863c                I2C2_EV_IRQHandler
-                0x0800863c                DMA1_Stream2_IRQHandler
-                0x0800863c                CAN1_RX0_IRQHandler
-                0x0800863c                FPU_IRQHandler
-                0x0800863c                OTG_HS_WKUP_IRQHandler
-                0x0800863c                CAN2_SCE_IRQHandler
-                0x0800863c                DMA2_Stream2_IRQHandler
-                0x0800863c                SPI1_IRQHandler
-                0x0800863c                TIM1_BRK_TIM9_IRQHandler
-                0x0800863c                DCMI_IRQHandler
-                0x0800863c                CAN2_RX0_IRQHandler
-                0x0800863c                DMA2_Stream3_IRQHandler
-                0x0800863c                USART6_IRQHandler
-                0x0800863c                USART3_IRQHandler
-                0x0800863c                CAN1_RX1_IRQHandler
-                0x0800863c                UART5_IRQHandler
-                0x0800863c                TIM4_IRQHandler
-                0x0800863c                I2C1_EV_IRQHandler
-                0x0800863c                DMA1_Stream6_IRQHandler
-                0x0800863c                DMA1_Stream1_IRQHandler
-                0x0800863c                UART4_IRQHandler
-                0x0800863c                TIM3_IRQHandler
-                0x0800863c                RCC_IRQHandler
-                0x0800863c                TIM8_BRK_TIM12_IRQHandler
-                0x0800863c                Default_Handler
-                0x0800863c                EXTI15_10_IRQHandler
-                0x0800863c                DMA1_Stream7_IRQHandler
-                0x0800863c                TIM7_IRQHandler
-                0x0800863c                CAN2_TX_IRQHandler
-                0x0800863c                TIM5_IRQHandler
-                0x0800863c                DMA2_Stream7_IRQHandler
-                0x0800863c                I2C3_EV_IRQHandler
-                0x0800863c                EXTI9_5_IRQHandler
-                0x0800863c                RTC_WKUP_IRQHandler
-                0x0800863c                ETH_WKUP_IRQHandler
-                0x0800863c                SPI2_IRQHandler
-                0x0800863c                OTG_HS_EP1_IN_IRQHandler
-                0x0800863c                DMA1_Stream0_IRQHandler
-                0x0800863c                CAN1_TX_IRQHandler
-                0x0800863c                EXTI4_IRQHandler
-                0x0800863c                FSMC_IRQHandler
-                0x0800863c                ETH_IRQHandler
-                0x0800863c                OTG_HS_EP1_OUT_IRQHandler
-                0x0800863c                WWDG_IRQHandler
-                0x0800863c                TIM2_IRQHandler
-                0x0800863c                OTG_FS_WKUP_IRQHandler
-                0x0800863c                TIM1_TRG_COM_TIM11_IRQHandler
-                0x0800863c                OTG_HS_IRQHandler
-                0x0800863c                EXTI1_IRQHandler
-                0x0800863c                USART2_IRQHandler
-                0x0800863c                I2C2_ER_IRQHandler
-                0x0800863c                DMA2_Stream1_IRQHandler
-                0x0800863c                CAN1_SCE_IRQHandler
-                0x0800863c                FLASH_IRQHandler
-                0x0800863c                DMA2_Stream4_IRQHandler
-                0x0800863c                USART1_IRQHandler
-                0x0800863c                SPI3_IRQHandler
-                0x0800863c                DMA1_Stream4_IRQHandler
-                0x0800863c                I2C1_ER_IRQHandler
-                0x0800863c                DMA2_Stream6_IRQHandler
-                0x0800863c                DMA1_Stream3_IRQHandler
- *fill*         0x0800863e        0x2 
+                0x08008a2c        0x2 CMakeFiles/DMS-24-RTOS-VCU.dir/startup_stm32f407xx.s.obj
+                0x08008a2c                RTC_Alarm_IRQHandler
+                0x08008a2c                HASH_RNG_IRQHandler
+                0x08008a2c                EXTI2_IRQHandler
+                0x08008a2c                TIM8_CC_IRQHandler
+                0x08008a2c                TIM1_CC_IRQHandler
+                0x08008a2c                DMA2_Stream5_IRQHandler
+                0x08008a2c                DMA1_Stream5_IRQHandler
+                0x08008a2c                PVD_IRQHandler
+                0x08008a2c                SDIO_IRQHandler
+                0x08008a2c                TAMP_STAMP_IRQHandler
+                0x08008a2c                CAN2_RX1_IRQHandler
+                0x08008a2c                EXTI3_IRQHandler
+                0x08008a2c                TIM8_TRG_COM_TIM14_IRQHandler
+                0x08008a2c                TIM1_UP_TIM10_IRQHandler
+                0x08008a2c                TIM8_UP_TIM13_IRQHandler
+                0x08008a2c                I2C3_ER_IRQHandler
+                0x08008a2c                EXTI0_IRQHandler
+                0x08008a2c                I2C2_EV_IRQHandler
+                0x08008a2c                DMA1_Stream2_IRQHandler
+                0x08008a2c                CAN1_RX0_IRQHandler
+                0x08008a2c                FPU_IRQHandler
+                0x08008a2c                OTG_HS_WKUP_IRQHandler
+                0x08008a2c                CAN2_SCE_IRQHandler
+                0x08008a2c                DMA2_Stream2_IRQHandler
+                0x08008a2c                SPI1_IRQHandler
+                0x08008a2c                TIM1_BRK_TIM9_IRQHandler
+                0x08008a2c                DCMI_IRQHandler
+                0x08008a2c                CAN2_RX0_IRQHandler
+                0x08008a2c                DMA2_Stream3_IRQHandler
+                0x08008a2c                USART6_IRQHandler
+                0x08008a2c                USART3_IRQHandler
+                0x08008a2c                CAN1_RX1_IRQHandler
+                0x08008a2c                UART5_IRQHandler
+                0x08008a2c                TIM4_IRQHandler
+                0x08008a2c                I2C1_EV_IRQHandler
+                0x08008a2c                DMA1_Stream6_IRQHandler
+                0x08008a2c                DMA1_Stream1_IRQHandler
+                0x08008a2c                UART4_IRQHandler
+                0x08008a2c                TIM3_IRQHandler
+                0x08008a2c                RCC_IRQHandler
+                0x08008a2c                TIM8_BRK_TIM12_IRQHandler
+                0x08008a2c                Default_Handler
+                0x08008a2c                EXTI15_10_IRQHandler
+                0x08008a2c                DMA1_Stream7_IRQHandler
+                0x08008a2c                TIM7_IRQHandler
+                0x08008a2c                CAN2_TX_IRQHandler
+                0x08008a2c                TIM5_IRQHandler
+                0x08008a2c                DMA2_Stream7_IRQHandler
+                0x08008a2c                I2C3_EV_IRQHandler
+                0x08008a2c                EXTI9_5_IRQHandler
+                0x08008a2c                RTC_WKUP_IRQHandler
+                0x08008a2c                ETH_WKUP_IRQHandler
+                0x08008a2c                SPI2_IRQHandler
+                0x08008a2c                OTG_HS_EP1_IN_IRQHandler
+                0x08008a2c                DMA1_Stream0_IRQHandler
+                0x08008a2c                CAN1_TX_IRQHandler
+                0x08008a2c                EXTI4_IRQHandler
+                0x08008a2c                FSMC_IRQHandler
+                0x08008a2c                ETH_IRQHandler
+                0x08008a2c                OTG_HS_EP1_OUT_IRQHandler
+                0x08008a2c                WWDG_IRQHandler
+                0x08008a2c                TIM2_IRQHandler
+                0x08008a2c                OTG_FS_WKUP_IRQHandler
+                0x08008a2c                TIM1_TRG_COM_TIM11_IRQHandler
+                0x08008a2c                OTG_HS_IRQHandler
+                0x08008a2c                EXTI1_IRQHandler
+                0x08008a2c                USART2_IRQHandler
+                0x08008a2c                I2C2_ER_IRQHandler
+                0x08008a2c                DMA2_Stream1_IRQHandler
+                0x08008a2c                CAN1_SCE_IRQHandler
+                0x08008a2c                FLASH_IRQHandler
+                0x08008a2c                DMA2_Stream4_IRQHandler
+                0x08008a2c                USART1_IRQHandler
+                0x08008a2c                SPI3_IRQHandler
+                0x08008a2c                DMA1_Stream4_IRQHandler
+                0x08008a2c                I2C1_ER_IRQHandler
+                0x08008a2c                DMA2_Stream6_IRQHandler
+                0x08008a2c                DMA1_Stream3_IRQHandler
+ *fill*         0x08008a2e        0x2 
  .text.app_config
-                0x08008640       0x20 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/app_main.c.obj
-                0x08008640                app_config
- .text.memcpy   0x08008660       0x1c C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-memcpy-stub.o)
-                0x08008660                memcpy
+                0x08008a30       0x28 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/app_main.c.obj
+                0x08008a30                app_config
+ .text.sensor_int
+                0x08008a58        0xe CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_input.c.obj
+                0x08008a58                sensor_int
+ *fill*         0x08008a66        0x2 
+ .text.status_leds_entry
+                0x08008a68       0x20 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_input.c.obj
+                0x08008a68                status_leds_entry
+ .text.sensor_input_entry
+                0x08008a88       0x12 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_input.c.obj
+                0x08008a88                sensor_input_entry
+ *fill*         0x08008a9a        0x2 
+ .text.sensor_init
+                0x08008a9c       0x20 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_input.c.obj
+                0x08008a9c                sensor_init
+ .text.HAL_ADC_ConvHalfCpltCallback
+                0x08008abc       0x14 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_input.c.obj
+                0x08008abc                HAL_ADC_ConvHalfCpltCallback
+ .text.HAL_ADC_ConvCpltCallback
+                0x08008ad0       0x3c CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_input.c.obj
+                0x08008ad0                HAL_ADC_ConvCpltCallback
+ .text.memcpy   0x08008b0c       0x1c C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-memcpy-stub.o)
+                0x08008b0c                memcpy
  *(.glue_7)
- .glue_7        0x0800867c        0x0 linker stubs
+ .glue_7        0x08008b28        0x0 linker stubs
  *(.glue_7t)
- .glue_7t       0x0800867c        0x0 linker stubs
+ .glue_7t       0x08008b28        0x0 linker stubs
  *(.eh_frame)
- .eh_frame      0x0800867c        0x0 C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+ .eh_frame      0x08008b28        0x0 C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtbegin.o
  *(.init)
- .init          0x0800867c        0x4 C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crti.o
-                0x0800867c                _init
- .init          0x08008680        0x8 C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtn.o
+ .init          0x08008b28        0x4 C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crti.o
+                0x08008b28                _init
+ .init          0x08008b2c        0x8 C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtn.o
  *(.fini)
- .fini          0x08008688        0x4 C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crti.o
-                0x08008688                _fini
- .fini          0x0800868c        0x8 C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtn.o
-                0x08008694                        . = ALIGN (0x4)
-                0x08008694                        _etext = .
+ .fini          0x08008b34        0x4 C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crti.o
+                0x08008b34                _fini
+ .fini          0x08008b38        0x8 C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtn.o
+                0x08008b40                        . = ALIGN (0x4)
+                0x08008b40                        _etext = .
 
-.vfp11_veneer   0x08008694        0x0
- .vfp11_veneer  0x08008694        0x0 linker stubs
+.vfp11_veneer   0x08008b40        0x0
+ .vfp11_veneer  0x08008b40        0x0 linker stubs
 
-.v4_bx          0x08008694        0x0
- .v4_bx         0x08008694        0x0 linker stubs
+.v4_bx          0x08008b40        0x0
+ .v4_bx         0x08008b40        0x0 linker stubs
 
-.iplt           0x08008694        0x0
- .iplt          0x08008694        0x0 C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+.iplt           0x08008b40        0x0
+ .iplt          0x08008b40        0x0 C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtbegin.o
 
-.rodata         0x08008694       0x90
-                0x08008694                        . = ALIGN (0x4)
+.rodata         0x08008b40       0x9c
+                0x08008b40                        . = ALIGN (0x4)
  *(.rodata)
- .rodata        0x08008694       0x10 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/freertos.c.obj
- .rodata        0x080086a4        0x5 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
- *fill*         0x080086a9        0x3 
- .rodata        0x080086ac        0xd CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj
+ .rodata        0x08008b40       0x19 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/freertos.c.obj
+ *fill*         0x08008b59        0x3 
+ .rodata        0x08008b5c        0x5 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
+ *fill*         0x08008b61        0x3 
+ .rodata        0x08008b64        0xd CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj
  *(.rodata*)
- *fill*         0x080086b9        0x3 
- .rodata.blink01_attributes
-                0x080086bc       0x24 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/freertos.c.obj
-                0x080086bc                blink01_attributes
- .rodata.blink02_attributes
-                0x080086e0       0x24 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/freertos.c.obj
-                0x080086e0                blink02_attributes
+ *fill*         0x08008b71        0x3 
+ .rodata.status_leds_attributes
+                0x08008b74       0x24 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/freertos.c.obj
+                0x08008b74                status_leds_attributes
+ .rodata.sensor_input_attributes
+                0x08008b98       0x24 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/freertos.c.obj
+                0x08008b98                sensor_input_attributes
  .rodata.flagBitshiftOffset.0
-                0x08008704        0x8 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj
+                0x08008bbc        0x8 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj
  .rodata.AHBPrescTable
-                0x0800870c       0x10 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/system_stm32f4xx.c.obj
-                0x0800870c                AHBPrescTable
+                0x08008bc4       0x10 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/system_stm32f4xx.c.obj
+                0x08008bc4                AHBPrescTable
  .rodata.APBPrescTable
-                0x0800871c        0x8 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/system_stm32f4xx.c.obj
-                0x0800871c                APBPrescTable
-                0x08008724                        . = ALIGN (0x4)
+                0x08008bd4        0x8 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/system_stm32f4xx.c.obj
+                0x08008bd4                APBPrescTable
+                0x08008bdc                        . = ALIGN (0x4)
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
 
-.ARM            0x08008724        0x8
-                0x08008724                        __exidx_start = .
+.ARM            0x08008bdc        0x8
+                0x08008bdc                        __exidx_start = .
  *(.ARM.exidx*)
- .ARM.exidx     0x08008724        0x8 C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard\libgcc.a(_udivmoddi4.o)
-                0x0800872c                        __exidx_end = .
+ .ARM.exidx     0x08008bdc        0x8 C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard\libgcc.a(_udivmoddi4.o)
+                0x08008be4                        __exidx_end = .
 
-.rel.dyn        0x0800872c        0x0
- .rel.iplt      0x0800872c        0x0 C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+.rel.dyn        0x08008be4        0x0
+ .rel.iplt      0x08008be4        0x0 C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtbegin.o
 
-.preinit_array  0x0800872c        0x0
-                0x0800872c                        PROVIDE (__preinit_array_start = .)
+.preinit_array  0x08008be4        0x0
+                0x08008be4                        PROVIDE (__preinit_array_start = .)
  *(.preinit_array*)
-                0x0800872c                        PROVIDE (__preinit_array_end = .)
+                0x08008be4                        PROVIDE (__preinit_array_end = .)
 
-.init_array     0x0800872c        0x4
-                0x0800872c                        PROVIDE (__init_array_start = .)
+.init_array     0x08008be4        0x4
+                0x08008be4                        PROVIDE (__init_array_start = .)
  *(SORT_BY_NAME(.init_array.*))
  *(.init_array*)
- .init_array    0x0800872c        0x4 C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtbegin.o
-                0x08008730                        PROVIDE (__init_array_end = .)
+ .init_array    0x08008be4        0x4 C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+                0x08008be8                        PROVIDE (__init_array_end = .)
 
-.fini_array     0x08008730        0x4
+.fini_array     0x08008be8        0x4
                 [!provide]                        PROVIDE (__fini_array_start = .)
  *(SORT_BY_NAME(.fini_array.*))
  *(.fini_array*)
- .fini_array    0x08008730        0x4 C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+ .fini_array    0x08008be8        0x4 C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtbegin.o
                 [!provide]                        PROVIDE (__fini_array_end = .)
-                0x08008734                        _sidata = LOADADDR (.data)
+                0x08008bec                        _sidata = LOADADDR (.data)
 
-.data           0x20000000       0x10 load address 0x08008734
+.data           0x20000000       0x14 load address 0x08008bec
                 0x20000000                        . = ALIGN (0x4)
                 0x20000000                        _sdata = .
  *(.data)
@@ -7156,14 +7274,16 @@ LOAD C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/
                 0x20000008                SystemCoreClock
  .data.uxCriticalNesting
                 0x2000000c        0x4 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c.obj
-                0x20000010                        . = ALIGN (0x4)
-                0x20000010                        _edata = .
-                0x08008744                        _siccmram = LOADADDR (.ccmram)
+ .data.outBufPtr
+                0x20000010        0x4 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_input.c.obj
+                0x20000014                        . = ALIGN (0x4)
+                0x20000014                        _edata = .
+                0x08008c00                        _siccmram = LOADADDR (.ccmram)
 
-.igot.plt       0x20000010        0x0 load address 0x08008744
- .igot.plt      0x20000010        0x0 C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+.igot.plt       0x20000014        0x0 load address 0x08008c00
+ .igot.plt      0x20000014        0x0 C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtbegin.o
 
-.ccmram         0x10000000        0x0 load address 0x08008744
+.ccmram         0x10000000        0x0 load address 0x08008c00
                 0x10000000                        . = ALIGN (0x4)
                 0x10000000                        _sccmram = .
  *(.ccmram)
@@ -7172,143 +7292,148 @@ LOAD C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/
                 0x10000000                        _eccmram = .
                 0x10000000                        . = ALIGN (0x4)
 
-.bss            0x20000010     0x5000
-                0x20000010                        _sbss = .
-                0x20000010                        __bss_start__ = _sbss
+.bss            0x20000014     0x5204
+                0x20000014                        _sbss = .
+                0x20000014                        __bss_start__ = _sbss
  *(.bss)
- .bss           0x20000010       0x1c C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+ .bss           0x20000014       0x1c C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtbegin.o
  *(.bss*)
- .bss.blink01Handle
-                0x2000002c        0x4 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/freertos.c.obj
-                0x2000002c                blink01Handle
- .bss.blink02Handle
+ .bss.status_ledsHandle
                 0x20000030        0x4 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/freertos.c.obj
-                0x20000030                blink02Handle
- .bss.hadc1     0x20000034       0x48 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/adc.c.obj
-                0x20000034                hadc1
+                0x20000030                status_ledsHandle
+ .bss.sensor_inputHandle
+                0x20000034        0x4 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/freertos.c.obj
+                0x20000034                sensor_inputHandle
+ .bss.hadc1     0x20000038       0x48 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/adc.c.obj
+                0x20000038                hadc1
  .bss.hdma_adc1
-                0x2000007c       0x60 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/adc.c.obj
-                0x2000007c                hdma_adc1
- .bss.hdac      0x200000dc       0x14 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/dac.c.obj
-                0x200000dc                hdac
- .bss.hspi1     0x200000f0       0x58 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/spi.c.obj
-                0x200000f0                hspi1
- .bss.htim2     0x20000148       0x48 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/tim.c.obj
-                0x20000148                htim2
+                0x20000080       0x60 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/adc.c.obj
+                0x20000080                hdma_adc1
+ .bss.hdac      0x200000e0       0x14 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/dac.c.obj
+                0x200000e0                hdac
+ .bss.hspi1     0x200000f4       0x58 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/spi.c.obj
+                0x200000f4                hspi1
+ .bss.htim2     0x2000014c       0x48 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/tim.c.obj
+                0x2000014c                htim2
  .bss.hpcd_USB_OTG_FS
-                0x20000190      0x4e4 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/usb_otg.c.obj
-                0x20000190                hpcd_USB_OTG_FS
- .bss.htim6     0x20000674       0x48 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/stm32f4xx_hal_timebase_tim.c.obj
-                0x20000674                htim6
- .bss.uwTick    0x200006bc        0x4 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj
-                0x200006bc                uwTick
+                0x20000194      0x4e4 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/usb_otg.c.obj
+                0x20000194                hpcd_USB_OTG_FS
+ .bss.htim6     0x20000678       0x48 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/stm32f4xx_hal_timebase_tim.c.obj
+                0x20000678                htim6
+ .bss.uwTick    0x200006c0        0x4 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj
+                0x200006c0                uwTick
  .bss.xQueueRegistry
-                0x200006c0       0x40 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/queue.c.obj
-                0x200006c0                xQueueRegistry
+                0x200006c4       0x40 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/queue.c.obj
+                0x200006c4                xQueueRegistry
  .bss.pxCurrentTCB
-                0x20000700        0x4 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
-                0x20000700                pxCurrentTCB
+                0x20000704        0x4 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
+                0x20000704                pxCurrentTCB
  .bss.pxReadyTasksLists
-                0x20000704      0x460 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
+                0x20000708      0x460 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
  .bss.xDelayedTaskList1
-                0x20000b64       0x14 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
+                0x20000b68       0x14 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
  .bss.xDelayedTaskList2
-                0x20000b78       0x14 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
+                0x20000b7c       0x14 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
  .bss.pxDelayedTaskList
-                0x20000b8c        0x4 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
- .bss.pxOverflowDelayedTaskList
                 0x20000b90        0x4 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
+ .bss.pxOverflowDelayedTaskList
+                0x20000b94        0x4 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
  .bss.xPendingReadyList
-                0x20000b94       0x14 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
+                0x20000b98       0x14 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
  .bss.xTasksWaitingTermination
-                0x20000ba8       0x14 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
+                0x20000bac       0x14 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
  .bss.uxDeletedTasksWaitingCleanUp
-                0x20000bbc        0x4 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
+                0x20000bc0        0x4 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
  .bss.xSuspendedTaskList
-                0x20000bc0       0x14 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
+                0x20000bc4       0x14 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
  .bss.uxCurrentNumberOfTasks
-                0x20000bd4        0x4 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
- .bss.xTickCount
                 0x20000bd8        0x4 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
- .bss.uxTopReadyPriority
+ .bss.xTickCount
                 0x20000bdc        0x4 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
- .bss.xSchedulerRunning
+ .bss.uxTopReadyPriority
                 0x20000be0        0x4 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
- .bss.xPendedTicks
+ .bss.xSchedulerRunning
                 0x20000be4        0x4 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
- .bss.xYieldPending
+ .bss.xPendedTicks
                 0x20000be8        0x4 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
- .bss.xNumOfOverflows
+ .bss.xYieldPending
                 0x20000bec        0x4 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
- .bss.uxTaskNumber
+ .bss.xNumOfOverflows
                 0x20000bf0        0x4 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
- .bss.xNextTaskUnblockTime
+ .bss.uxTaskNumber
                 0x20000bf4        0x4 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
- .bss.xIdleTaskHandle
+ .bss.xNextTaskUnblockTime
                 0x20000bf8        0x4 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
- .bss.uxSchedulerSuspended
+ .bss.xIdleTaskHandle
                 0x20000bfc        0x4 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
+ .bss.uxSchedulerSuspended
+                0x20000c00        0x4 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
  .bss.xActiveTimerList1
-                0x20000c00       0x14 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj
+                0x20000c04       0x14 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj
  .bss.xActiveTimerList2
-                0x20000c14       0x14 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj
+                0x20000c18       0x14 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj
  .bss.pxCurrentTimerList
-                0x20000c28        0x4 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj
- .bss.pxOverflowTimerList
                 0x20000c2c        0x4 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj
- .bss.xTimerQueue
+ .bss.pxOverflowTimerList
                 0x20000c30        0x4 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj
- .bss.xTimerTaskHandle
+ .bss.xTimerQueue
                 0x20000c34        0x4 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj
- .bss.xLastTime.2
+ .bss.xTimerTaskHandle
                 0x20000c38        0x4 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj
+ .bss.xLastTime.2
+                0x20000c3c        0x4 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj
  .bss.ucStaticTimerQueueStorage.1
-                0x20000c3c       0xa0 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj
+                0x20000c40       0xa0 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj
  .bss.xStaticTimerQueue.0
-                0x20000cdc       0x50 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj
+                0x20000ce0       0x50 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj
  .bss.KernelState
-                0x20000d2c        0x4 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.obj
+                0x20000d30        0x4 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.obj
  .bss.Idle_TCB.3
-                0x20000d30       0x5c CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.obj
+                0x20000d34       0x5c CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.obj
  .bss.Idle_Stack.2
-                0x20000d8c      0x200 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.obj
+                0x20000d90      0x200 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.obj
  .bss.Timer_TCB.1
-                0x20000f8c       0x5c CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.obj
+                0x20000f90       0x5c CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.obj
  .bss.Timer_Stack.0
-                0x20000fe8      0x400 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.obj
- .bss.ucHeap    0x200013e8     0x3c00 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.obj
- .bss.xStart    0x20004fe8        0x8 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.obj
- .bss.pxEnd     0x20004ff0        0x4 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.obj
+                0x20000fec      0x400 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.obj
+ .bss.ucHeap    0x200013ec     0x3c00 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.obj
+ .bss.xStart    0x20004fec        0x8 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.obj
+ .bss.pxEnd     0x20004ff4        0x4 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.obj
  .bss.xFreeBytesRemaining
-                0x20004ff4        0x4 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.obj
- .bss.xMinimumEverFreeBytesRemaining
                 0x20004ff8        0x4 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.obj
- .bss.xNumberOfSuccessfulAllocations
+ .bss.xMinimumEverFreeBytesRemaining
                 0x20004ffc        0x4 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.obj
- .bss.xNumberOfSuccessfulFrees
+ .bss.xNumberOfSuccessfulAllocations
                 0x20005000        0x4 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.obj
- .bss.xBlockAllocatedBit
+ .bss.xNumberOfSuccessfulFrees
                 0x20005004        0x4 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.obj
+ .bss.xBlockAllocatedBit
+                0x20005008        0x4 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.obj
  .bss.ucMaxSysCallPriority
-                0x20005008        0x1 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c.obj
- *fill*         0x20005009        0x3 
+                0x2000500c        0x1 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c.obj
+ *fill*         0x2000500d        0x3 
  .bss.ulMaxPRIGROUPValue
-                0x2000500c        0x4 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c.obj
+                0x20005010        0x4 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c.obj
+ .bss.adc_buf   0x20005014      0x100 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_input.c.obj
+                0x20005014                adc_buf
+ .bss.dac_buf   0x20005114      0x100 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_input.c.obj
+                0x20005114                dac_buf
+ .bss.inBufPtr  0x20005214        0x4 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_input.c.obj
  *(COMMON)
-                0x20005010                        . = ALIGN (0x4)
-                0x20005010                        _ebss = .
-                0x20005010                        __bss_end__ = _ebss
+                0x20005218                        . = ALIGN (0x4)
+                0x20005218                        _ebss = .
+                0x20005218                        __bss_end__ = _ebss
 
 ._user_heap_stack
-                0x20005010      0x600
-                0x20005010                        . = ALIGN (0x8)
+                0x20005218      0x600
+                0x20005218                        . = ALIGN (0x8)
                 [!provide]                        PROVIDE (end = .)
-                0x20005010                        PROVIDE (_end = .)
-                0x20005210                        . = (. + _Min_Heap_Size)
- *fill*         0x20005010      0x200 
-                0x20005610                        . = (. + _Min_Stack_Size)
- *fill*         0x20005210      0x400 
-                0x20005610                        . = ALIGN (0x8)
+                0x20005218                        PROVIDE (_end = .)
+                0x20005418                        . = (. + _Min_Heap_Size)
+ *fill*         0x20005218      0x200 
+                0x20005818                        . = (. + _Min_Stack_Size)
+ *fill*         0x20005418      0x400 
+                0x20005818                        . = ALIGN (0x8)
 
 /DISCARD/
  libc.a(*)
@@ -7401,22 +7526,24 @@ LOAD C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/
  .ARM.attributes
                 0x000007fb       0x34 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/app_main.c.obj
  .ARM.attributes
-                0x0000082f       0x22 C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard\libgcc.a(_aeabi_uldivmod.o)
+                0x0000082f       0x34 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_input.c.obj
  .ARM.attributes
-                0x00000851       0x34 C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard\libgcc.a(_udivmoddi4.o)
+                0x00000863       0x22 C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard\libgcc.a(_aeabi_uldivmod.o)
  .ARM.attributes
-                0x00000885       0x22 C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard\libgcc.a(_dvmd_tls.o)
+                0x00000885       0x34 C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard\libgcc.a(_udivmoddi4.o)
  .ARM.attributes
-                0x000008a7       0x34 C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-memcpy-stub.o)
+                0x000008b9       0x22 C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard\libgcc.a(_dvmd_tls.o)
  .ARM.attributes
-                0x000008db       0x22 C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtn.o
+                0x000008db       0x34 C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-memcpy-stub.o)
+ .ARM.attributes
+                0x0000090f       0x22 C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtn.o
 OUTPUT(DMS-24-RTOS-VCU.elf elf32-littlearm)
 LOAD linker stubs
 LOAD C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc.a
 LOAD C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libm.a
 LOAD C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard\libgcc.a
 
-.debug_frame    0x00000000     0x7100
+.debug_frame    0x00000000     0x71e0
  .debug_frame   0x00000000       0x20 C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-memset.o)
  .debug_frame   0x00000020       0x2c C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-init.o)
  .debug_frame   0x0000004c       0x8c CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/main.c.obj
@@ -7455,91 +7582,94 @@ LOAD C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/
  .debug_frame   0x00006d58      0x12c CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.obj
  .debug_frame   0x00006e84      0x1a8 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c.obj
  .debug_frame   0x0000702c       0x4c CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/app_main.c.obj
- .debug_frame   0x00007078       0x2c C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard\libgcc.a(_aeabi_uldivmod.o)
- .debug_frame   0x000070a4       0x34 C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard\libgcc.a(_udivmoddi4.o)
- .debug_frame   0x000070d8       0x28 C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-memcpy-stub.o)
+ .debug_frame   0x00007078       0xe0 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_input.c.obj
+ .debug_frame   0x00007158       0x2c C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard\libgcc.a(_aeabi_uldivmod.o)
+ .debug_frame   0x00007184       0x34 C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard\libgcc.a(_udivmoddi4.o)
+ .debug_frame   0x000071b8       0x28 C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-memcpy-stub.o)
 
-.debug_info     0x00000000    0x1f97a
+.debug_info     0x00000000    0x203e1
  .debug_info    0x00000000      0xb54 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/main.c.obj
  .debug_info    0x00000b54      0x459 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/gpio.c.obj
- .debug_info    0x00000fad      0x49f CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/freertos.c.obj
- .debug_info    0x0000144c      0xc45 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/adc.c.obj
- .debug_info    0x00002091      0xaf1 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/dac.c.obj
- .debug_info    0x00002b82      0x4ad CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/dma.c.obj
- .debug_info    0x0000302f      0x943 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/spi.c.obj
- .debug_info    0x00003972      0x9c0 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/tim.c.obj
- .debug_info    0x00004332      0xba2 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/usb_otg.c.obj
- .debug_info    0x00004ed4      0xfe0 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/stm32f4xx_it.c.obj
- .debug_info    0x00005eb4      0x4b7 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/stm32f4xx_hal_msp.c.obj
- .debug_info    0x0000636b      0xbee CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/stm32f4xx_hal_timebase_tim.c.obj
- .debug_info    0x00006f59      0xcd4 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.c.obj
- .debug_info    0x00007c2d      0xb59 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.c.obj
- .debug_info    0x00008786      0x8b1 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj
- .debug_info    0x00009037      0x6c3 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj
- .debug_info    0x000096fa      0x8e7 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj
- .debug_info    0x00009fe1      0xd57 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj
- .debug_info    0x0000ad38      0x944 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj
- .debug_info    0x0000b67c      0xa01 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dac.c.obj
- .debug_info    0x0000c07d      0x750 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dac_ex.c.obj
- .debug_info    0x0000c7cd     0x15fb CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c.obj
- .debug_info    0x0000ddc8     0x299d CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj
- .debug_info    0x00010765     0x14db CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.obj
- .debug_info    0x00011c40     0x156f CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd.c.obj
- .debug_info    0x000131af      0x6ea CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd_ex.c.obj
- .debug_info    0x00013899     0x1993 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usb.c.obj
- .debug_info    0x0001522c      0x512 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/system_stm32f4xx.c.obj
- .debug_info    0x0001573e      0x2af CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/list.c.obj
- .debug_info    0x000159ed     0x1b79 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/queue.c.obj
- .debug_info    0x00017566     0x21ec CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
- .debug_info    0x00019752     0x1488 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj
- .debug_info    0x0001abda     0x3a6d CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.obj
- .debug_info    0x0001e647      0x4d5 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.obj
- .debug_info    0x0001eb1c      0x4de CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c.obj
- .debug_info    0x0001effa       0x30 CMakeFiles/DMS-24-RTOS-VCU.dir/startup_stm32f407xx.s.obj
- .debug_info    0x0001f02a      0x82f CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/app_main.c.obj
- .debug_info    0x0001f859      0x121 C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-memcpy-stub.o)
+ .debug_info    0x00000fad      0x4c2 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/freertos.c.obj
+ .debug_info    0x0000146f      0xc45 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/adc.c.obj
+ .debug_info    0x000020b4      0xaf1 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/dac.c.obj
+ .debug_info    0x00002ba5      0x4ad CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/dma.c.obj
+ .debug_info    0x00003052      0x943 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/spi.c.obj
+ .debug_info    0x00003995      0x9c0 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/tim.c.obj
+ .debug_info    0x00004355      0xba2 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/usb_otg.c.obj
+ .debug_info    0x00004ef7      0xfe0 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/stm32f4xx_it.c.obj
+ .debug_info    0x00005ed7      0x4b7 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/stm32f4xx_hal_msp.c.obj
+ .debug_info    0x0000638e      0xbee CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/stm32f4xx_hal_timebase_tim.c.obj
+ .debug_info    0x00006f7c      0xcd4 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.c.obj
+ .debug_info    0x00007c50      0xb59 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.c.obj
+ .debug_info    0x000087a9      0x8b1 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj
+ .debug_info    0x0000905a      0x6c3 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj
+ .debug_info    0x0000971d      0x8e7 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj
+ .debug_info    0x0000a004      0xd57 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj
+ .debug_info    0x0000ad5b      0x944 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj
+ .debug_info    0x0000b69f      0xa01 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dac.c.obj
+ .debug_info    0x0000c0a0      0x750 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dac_ex.c.obj
+ .debug_info    0x0000c7f0     0x15fb CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c.obj
+ .debug_info    0x0000ddeb     0x299d CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj
+ .debug_info    0x00010788     0x14db CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.obj
+ .debug_info    0x00011c63     0x156f CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd.c.obj
+ .debug_info    0x000131d2      0x6ea CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd_ex.c.obj
+ .debug_info    0x000138bc     0x1993 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usb.c.obj
+ .debug_info    0x0001524f      0x512 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/system_stm32f4xx.c.obj
+ .debug_info    0x00015761      0x2af CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/list.c.obj
+ .debug_info    0x00015a10     0x1b79 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/queue.c.obj
+ .debug_info    0x00017589     0x21ec CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
+ .debug_info    0x00019775     0x1488 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj
+ .debug_info    0x0001abfd     0x3a6d CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.obj
+ .debug_info    0x0001e66a      0x4d5 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.obj
+ .debug_info    0x0001eb3f      0x4de CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c.obj
+ .debug_info    0x0001f01d       0x30 CMakeFiles/DMS-24-RTOS-VCU.dir/startup_stm32f407xx.s.obj
+ .debug_info    0x0001f04d      0xaa5 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/app_main.c.obj
+ .debug_info    0x0001faf2      0x7ce CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_input.c.obj
+ .debug_info    0x000202c0      0x121 C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-memcpy-stub.o)
 
-.debug_abbrev   0x00000000     0x51b3
+.debug_abbrev   0x00000000     0x5416
  .debug_abbrev  0x00000000      0x25e CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/main.c.obj
  .debug_abbrev  0x0000025e      0x152 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/gpio.c.obj
- .debug_abbrev  0x000003b0      0x1a2 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/freertos.c.obj
- .debug_abbrev  0x00000552      0x224 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/adc.c.obj
- .debug_abbrev  0x00000776      0x219 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/dac.c.obj
- .debug_abbrev  0x0000098f      0x10e CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/dma.c.obj
- .debug_abbrev  0x00000a9d      0x1f3 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/spi.c.obj
- .debug_abbrev  0x00000c90      0x1d8 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/tim.c.obj
- .debug_abbrev  0x00000e68      0x238 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/usb_otg.c.obj
- .debug_abbrev  0x000010a0      0x1d5 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/stm32f4xx_it.c.obj
- .debug_abbrev  0x00001275      0x119 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/stm32f4xx_hal_msp.c.obj
- .debug_abbrev  0x0000138e      0x1f4 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/stm32f4xx_hal_timebase_tim.c.obj
- .debug_abbrev  0x00001582      0x252 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.c.obj
- .debug_abbrev  0x000017d4      0x270 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.c.obj
- .debug_abbrev  0x00001a44      0x2b6 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj
- .debug_abbrev  0x00001cfa      0x1d4 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj
- .debug_abbrev  0x00001ece      0x264 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj
- .debug_abbrev  0x00002132      0x328 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj
- .debug_abbrev  0x0000245a      0x214 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj
- .debug_abbrev  0x0000266e      0x1fa CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dac.c.obj
- .debug_abbrev  0x00002868      0x1ef CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dac_ex.c.obj
- .debug_abbrev  0x00002a57      0x284 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c.obj
- .debug_abbrev  0x00002cdb      0x278 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj
- .debug_abbrev  0x00002f53      0x283 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.obj
- .debug_abbrev  0x000031d6      0x2b9 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd.c.obj
- .debug_abbrev  0x0000348f      0x1da CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd_ex.c.obj
- .debug_abbrev  0x00003669      0x2b3 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usb.c.obj
- .debug_abbrev  0x0000391c      0x11a CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/system_stm32f4xx.c.obj
- .debug_abbrev  0x00003a36       0xf5 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/list.c.obj
- .debug_abbrev  0x00003b2b      0x3b6 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/queue.c.obj
- .debug_abbrev  0x00003ee1      0x386 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
- .debug_abbrev  0x00004267      0x352 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj
- .debug_abbrev  0x000045b9      0x520 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.obj
- .debug_abbrev  0x00004ad9      0x21d CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.obj
- .debug_abbrev  0x00004cf6      0x25c CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c.obj
- .debug_abbrev  0x00004f52       0x24 CMakeFiles/DMS-24-RTOS-VCU.dir/startup_stm32f407xx.s.obj
- .debug_abbrev  0x00004f76      0x17c CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/app_main.c.obj
- .debug_abbrev  0x000050f2       0xc1 C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-memcpy-stub.o)
+ .debug_abbrev  0x000003b0      0x1ce CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/freertos.c.obj
+ .debug_abbrev  0x0000057e      0x224 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/adc.c.obj
+ .debug_abbrev  0x000007a2      0x219 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/dac.c.obj
+ .debug_abbrev  0x000009bb      0x10e CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/dma.c.obj
+ .debug_abbrev  0x00000ac9      0x1f3 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/spi.c.obj
+ .debug_abbrev  0x00000cbc      0x1d8 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/tim.c.obj
+ .debug_abbrev  0x00000e94      0x238 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/usb_otg.c.obj
+ .debug_abbrev  0x000010cc      0x1d5 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/stm32f4xx_it.c.obj
+ .debug_abbrev  0x000012a1      0x119 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/stm32f4xx_hal_msp.c.obj
+ .debug_abbrev  0x000013ba      0x1f4 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/stm32f4xx_hal_timebase_tim.c.obj
+ .debug_abbrev  0x000015ae      0x252 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.c.obj
+ .debug_abbrev  0x00001800      0x270 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.c.obj
+ .debug_abbrev  0x00001a70      0x2b6 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj
+ .debug_abbrev  0x00001d26      0x1d4 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj
+ .debug_abbrev  0x00001efa      0x264 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj
+ .debug_abbrev  0x0000215e      0x328 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj
+ .debug_abbrev  0x00002486      0x214 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj
+ .debug_abbrev  0x0000269a      0x1fa CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dac.c.obj
+ .debug_abbrev  0x00002894      0x1ef CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dac_ex.c.obj
+ .debug_abbrev  0x00002a83      0x284 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c.obj
+ .debug_abbrev  0x00002d07      0x278 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj
+ .debug_abbrev  0x00002f7f      0x283 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.obj
+ .debug_abbrev  0x00003202      0x2b9 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd.c.obj
+ .debug_abbrev  0x000034bb      0x1da CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd_ex.c.obj
+ .debug_abbrev  0x00003695      0x2b3 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usb.c.obj
+ .debug_abbrev  0x00003948      0x11a CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/system_stm32f4xx.c.obj
+ .debug_abbrev  0x00003a62       0xf5 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/list.c.obj
+ .debug_abbrev  0x00003b57      0x3b6 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/queue.c.obj
+ .debug_abbrev  0x00003f0d      0x386 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
+ .debug_abbrev  0x00004293      0x352 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj
+ .debug_abbrev  0x000045e5      0x520 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.obj
+ .debug_abbrev  0x00004b05      0x21d CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.obj
+ .debug_abbrev  0x00004d22      0x25c CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c.obj
+ .debug_abbrev  0x00004f7e       0x24 CMakeFiles/DMS-24-RTOS-VCU.dir/startup_stm32f407xx.s.obj
+ .debug_abbrev  0x00004fa2      0x1a4 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/app_main.c.obj
+ .debug_abbrev  0x00005146      0x20f CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_input.c.obj
+ .debug_abbrev  0x00005355       0xc1 C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-memcpy-stub.o)
 
-.debug_aranges  0x00000000     0x1b60
+.debug_aranges  0x00000000     0x1ba8
  .debug_aranges
                 0x00000000       0x38 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/main.c.obj
  .debug_aranges
@@ -7615,10 +7745,12 @@ LOAD C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/
  .debug_aranges
                 0x00001b18       0x28 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/app_main.c.obj
  .debug_aranges
-                0x00001b40       0x20 C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-memcpy-stub.o)
+                0x00001b40       0x48 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_input.c.obj
+ .debug_aranges
+                0x00001b88       0x20 C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-memcpy-stub.o)
 
 .debug_rnglists
-                0x00000000     0x14e4
+                0x00000000     0x1515
  .debug_rnglists
                 0x00000000       0x26 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/main.c.obj
  .debug_rnglists
@@ -7694,9 +7826,11 @@ LOAD C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/
  .debug_rnglists
                 0x000014b8       0x19 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/app_main.c.obj
  .debug_rnglists
-                0x000014d1       0x13 C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-memcpy-stub.o)
+                0x000014d1       0x31 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_input.c.obj
+ .debug_rnglists
+                0x00001502       0x13 C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-memcpy-stub.o)
 
-.debug_macro    0x00000000    0x2660d
+.debug_macro    0x00000000    0x2685f
  .debug_macro   0x00000000      0x321 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/main.c.obj
  .debug_macro   0x00000321      0xab4 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/main.c.obj
  .debug_macro   0x00000dd5      0x2ad CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/main.c.obj
@@ -7758,171 +7892,175 @@ LOAD C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/
  .debug_macro   0x00021073       0x74 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/main.c.obj
  .debug_macro   0x000210e7       0xdd CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/main.c.obj
  .debug_macro   0x000211c4      0x247 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/gpio.c.obj
- .debug_macro   0x0002140b      0x2c7 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/freertos.c.obj
- .debug_macro   0x000216d2      0x169 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/freertos.c.obj
- .debug_macro   0x0002183b       0x6c CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/freertos.c.obj
- .debug_macro   0x000218a7      0x247 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/adc.c.obj
- .debug_macro   0x00021aee      0x247 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/dac.c.obj
- .debug_macro   0x00021d35      0x247 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/dma.c.obj
- .debug_macro   0x00021f7c      0x247 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/spi.c.obj
- .debug_macro   0x000221c3      0x247 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/tim.c.obj
- .debug_macro   0x0002240a      0x247 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/usb_otg.c.obj
- .debug_macro   0x00022651      0x247 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/stm32f4xx_it.c.obj
- .debug_macro   0x00022898      0x23d CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/stm32f4xx_hal_msp.c.obj
- .debug_macro   0x00022ad5      0x22e CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/stm32f4xx_hal_timebase_tim.c.obj
- .debug_macro   0x00022d03      0x22f CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.c.obj
- .debug_macro   0x00022f32      0x22e CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.c.obj
- .debug_macro   0x00023160      0x252 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj
- .debug_macro   0x000233b2      0x234 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj
- .debug_macro   0x000235e6      0x234 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj
- .debug_macro   0x0002381a      0x22e CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj
- .debug_macro   0x00023a48      0x28e CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj
- .debug_macro   0x00023cd6      0x22f CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dac.c.obj
- .debug_macro   0x00023f05      0x22e CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dac_ex.c.obj
- .debug_macro   0x00024133      0x23d CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c.obj
- .debug_macro   0x00024370      0x22f CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj
- .debug_macro   0x0002459f      0x22e CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.obj
- .debug_macro   0x000247cd      0x23a CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd.c.obj
- .debug_macro   0x00024a07      0x22e CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd_ex.c.obj
- .debug_macro   0x00024c35      0x22e CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usb.c.obj
- .debug_macro   0x00024e63      0x22e CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/system_stm32f4xx.c.obj
- .debug_macro   0x00025091      0x178 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/list.c.obj
- .debug_macro   0x00025209      0x207 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/queue.c.obj
- .debug_macro   0x00025410       0x16 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/queue.c.obj
- .debug_macro   0x00025426       0x35 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/queue.c.obj
- .debug_macro   0x0002545b       0x20 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/queue.c.obj
- .debug_macro   0x0002547b       0x87 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/queue.c.obj
- .debug_macro   0x00025502      0x270 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
- .debug_macro   0x00025772       0x10 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
- .debug_macro   0x00025782      0x1cd CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj
- .debug_macro   0x0002594f       0x97 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj
- .debug_macro   0x000259e6      0x416 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.obj
- .debug_macro   0x00025dfc       0x10 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.obj
- .debug_macro   0x00025e0c       0xf5 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.obj
- .debug_macro   0x00025f01       0x8d CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.obj
- .debug_macro   0x00025f8e       0x9a CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.obj
- .debug_macro   0x00026028       0x22 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.obj
- .debug_macro   0x0002604a       0x56 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.obj
- .debug_macro   0x000260a0      0x19f CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.obj
- .debug_macro   0x0002623f      0x196 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c.obj
- .debug_macro   0x000263d5      0x238 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/app_main.c.obj
+ .debug_macro   0x0002140b      0x2d1 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/freertos.c.obj
+ .debug_macro   0x000216dc      0x169 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/freertos.c.obj
+ .debug_macro   0x00021845       0x6c CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/freertos.c.obj
+ .debug_macro   0x000218b1      0x247 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/adc.c.obj
+ .debug_macro   0x00021af8      0x247 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/dac.c.obj
+ .debug_macro   0x00021d3f      0x247 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/dma.c.obj
+ .debug_macro   0x00021f86      0x247 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/spi.c.obj
+ .debug_macro   0x000221cd      0x247 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/tim.c.obj
+ .debug_macro   0x00022414      0x247 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/usb_otg.c.obj
+ .debug_macro   0x0002265b      0x247 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/stm32f4xx_it.c.obj
+ .debug_macro   0x000228a2      0x23d CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/stm32f4xx_hal_msp.c.obj
+ .debug_macro   0x00022adf      0x22e CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/stm32f4xx_hal_timebase_tim.c.obj
+ .debug_macro   0x00022d0d      0x22f CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.c.obj
+ .debug_macro   0x00022f3c      0x22e CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.c.obj
+ .debug_macro   0x0002316a      0x252 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj
+ .debug_macro   0x000233bc      0x234 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj
+ .debug_macro   0x000235f0      0x234 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj
+ .debug_macro   0x00023824      0x22e CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj
+ .debug_macro   0x00023a52      0x28e CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj
+ .debug_macro   0x00023ce0      0x22f CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dac.c.obj
+ .debug_macro   0x00023f0f      0x22e CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dac_ex.c.obj
+ .debug_macro   0x0002413d      0x23d CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c.obj
+ .debug_macro   0x0002437a      0x22f CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj
+ .debug_macro   0x000245a9      0x22e CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.obj
+ .debug_macro   0x000247d7      0x23a CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd.c.obj
+ .debug_macro   0x00024a11      0x22e CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd_ex.c.obj
+ .debug_macro   0x00024c3f      0x22e CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usb.c.obj
+ .debug_macro   0x00024e6d      0x22e CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/system_stm32f4xx.c.obj
+ .debug_macro   0x0002509b      0x178 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/list.c.obj
+ .debug_macro   0x00025213      0x207 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/queue.c.obj
+ .debug_macro   0x0002541a       0x16 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/queue.c.obj
+ .debug_macro   0x00025430       0x35 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/queue.c.obj
+ .debug_macro   0x00025465       0x20 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/queue.c.obj
+ .debug_macro   0x00025485       0x87 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/queue.c.obj
+ .debug_macro   0x0002550c      0x270 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
+ .debug_macro   0x0002577c       0x10 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
+ .debug_macro   0x0002578c      0x1cd CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj
+ .debug_macro   0x00025959       0x97 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj
+ .debug_macro   0x000259f0      0x416 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.obj
+ .debug_macro   0x00025e06       0x10 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.obj
+ .debug_macro   0x00025e16       0xf5 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.obj
+ .debug_macro   0x00025f0b       0x8d CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.obj
+ .debug_macro   0x00025f98       0x9a CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.obj
+ .debug_macro   0x00026032       0x22 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.obj
+ .debug_macro   0x00026054       0x56 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.obj
+ .debug_macro   0x000260aa      0x19f CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.obj
+ .debug_macro   0x00026249      0x196 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c.obj
+ .debug_macro   0x000263df      0x242 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/app_main.c.obj
+ .debug_macro   0x00026621      0x23e CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_input.c.obj
 
-.debug_line     0x00000000    0x211d9
- .debug_line    0x00000000      0xa56 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/main.c.obj
- .debug_line    0x00000a56      0x813 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/gpio.c.obj
- .debug_line    0x00001269      0x9aa CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/freertos.c.obj
- .debug_line    0x00001c13      0x84c CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/adc.c.obj
- .debug_line    0x0000245f      0x7dd CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/dac.c.obj
- .debug_line    0x00002c3c      0x77a CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/dma.c.obj
- .debug_line    0x000033b6      0x7f0 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/spi.c.obj
- .debug_line    0x00003ba6      0x7f0 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/tim.c.obj
- .debug_line    0x00004396      0x7fc CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/usb_otg.c.obj
- .debug_line    0x00004b92      0x86c CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/stm32f4xx_it.c.obj
- .debug_line    0x000053fe      0x77f CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/stm32f4xx_hal_msp.c.obj
- .debug_line    0x00005b7d      0x7fa CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/stm32f4xx_hal_timebase_tim.c.obj
- .debug_line    0x00006377     0x12f4 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.c.obj
- .debug_line    0x0000766b      0xf68 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.c.obj
- .debug_line    0x000085d3      0xddf CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj
- .debug_line    0x000093b2      0xbf8 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj
- .debug_line    0x00009faa      0xfdc CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj
- .debug_line    0x0000af86      0xd34 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj
- .debug_line    0x0000bcba      0xa6c CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj
- .debug_line    0x0000c726      0xbe0 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dac.c.obj
- .debug_line    0x0000d306      0x9c7 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dac_ex.c.obj
- .debug_line    0x0000dccd     0x1d67 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c.obj
- .debug_line    0x0000fa34     0x3810 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj
- .debug_line    0x00013244     0x1a62 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.obj
- .debug_line    0x00014ca6     0x1552 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd.c.obj
- .debug_line    0x000161f8      0x849 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd_ex.c.obj
- .debug_line    0x00016a41     0x1e3b CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usb.c.obj
- .debug_line    0x0001887c      0x803 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/system_stm32f4xx.c.obj
- .debug_line    0x0001907f      0x5dc CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/list.c.obj
- .debug_line    0x0001965b     0x15a6 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/queue.c.obj
- .debug_line    0x0001ac01     0x1c78 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
- .debug_line    0x0001c879      0xc64 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj
- .debug_line    0x0001d4dd     0x2364 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.obj
- .debug_line    0x0001f841      0x807 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.obj
- .debug_line    0x00020048      0x78a CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c.obj
- .debug_line    0x000207d2       0x7a CMakeFiles/DMS-24-RTOS-VCU.dir/startup_stm32f407xx.s.obj
- .debug_line    0x0002084c      0x78b CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/app_main.c.obj
- .debug_line    0x00020fd7      0x202 C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-memcpy-stub.o)
+.debug_line     0x00000000    0x21a14
+ .debug_line    0x00000000      0xa5a CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/main.c.obj
+ .debug_line    0x00000a5a      0x813 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/gpio.c.obj
+ .debug_line    0x0000126d      0x9bf CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/freertos.c.obj
+ .debug_line    0x00001c2c      0x84c CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/adc.c.obj
+ .debug_line    0x00002478      0x7dd CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/dac.c.obj
+ .debug_line    0x00002c55      0x77a CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/dma.c.obj
+ .debug_line    0x000033cf      0x7f0 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/spi.c.obj
+ .debug_line    0x00003bbf      0x7f0 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/tim.c.obj
+ .debug_line    0x000043af      0x7fc CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/usb_otg.c.obj
+ .debug_line    0x00004bab      0x86c CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/stm32f4xx_it.c.obj
+ .debug_line    0x00005417      0x77f CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/stm32f4xx_hal_msp.c.obj
+ .debug_line    0x00005b96      0x7fa CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/stm32f4xx_hal_timebase_tim.c.obj
+ .debug_line    0x00006390     0x12f4 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.c.obj
+ .debug_line    0x00007684      0xf68 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.c.obj
+ .debug_line    0x000085ec      0xddf CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj
+ .debug_line    0x000093cb      0xbf8 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj
+ .debug_line    0x00009fc3      0xfdc CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj
+ .debug_line    0x0000af9f      0xd34 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj
+ .debug_line    0x0000bcd3      0xa6c CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj
+ .debug_line    0x0000c73f      0xbe0 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dac.c.obj
+ .debug_line    0x0000d31f      0x9c7 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dac_ex.c.obj
+ .debug_line    0x0000dce6     0x1d67 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c.obj
+ .debug_line    0x0000fa4d     0x3810 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj
+ .debug_line    0x0001325d     0x1a62 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.obj
+ .debug_line    0x00014cbf     0x1552 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd.c.obj
+ .debug_line    0x00016211      0x849 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd_ex.c.obj
+ .debug_line    0x00016a5a     0x1e3b CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usb.c.obj
+ .debug_line    0x00018895      0x803 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/system_stm32f4xx.c.obj
+ .debug_line    0x00019098      0x5dc CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/list.c.obj
+ .debug_line    0x00019674     0x15a6 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/queue.c.obj
+ .debug_line    0x0001ac1a     0x1c78 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
+ .debug_line    0x0001c892      0xc64 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj
+ .debug_line    0x0001d4f6     0x2364 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.obj
+ .debug_line    0x0001f85a      0x807 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.obj
+ .debug_line    0x00020061      0x78a CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c.obj
+ .debug_line    0x000207eb       0x7a CMakeFiles/DMS-24-RTOS-VCU.dir/startup_stm32f407xx.s.obj
+ .debug_line    0x00020865      0x7a2 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/app_main.c.obj
+ .debug_line    0x00021007      0x80b CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_input.c.obj
+ .debug_line    0x00021812      0x202 C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-memcpy-stub.o)
 
-.debug_str      0x00000000    0xe57c3
+.debug_str      0x00000000    0xe5878
  .debug_str     0x00000000    0xd765a CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/main.c.obj
                               0xd79aa (size before relaxing)
  .debug_str     0x000d765a       0xe3 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/gpio.c.obj
                               0xd28cb (size before relaxing)
- .debug_str     0x000d773d      0x525 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/freertos.c.obj
-                              0xd75e0 (size before relaxing)
- .debug_str     0x000d7c62      0x71a CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/adc.c.obj
+ .debug_str     0x000d773d      0x55d CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/freertos.c.obj
+                              0xd7618 (size before relaxing)
+ .debug_str     0x000d7c9a      0x714 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/adc.c.obj
                               0xd3285 (size before relaxing)
- .debug_str     0x000d837c      0x1ba CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/dac.c.obj
+ .debug_str     0x000d83ae      0x1ba CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/dac.c.obj
                               0xd31e2 (size before relaxing)
- .debug_str     0x000d8536       0x2b CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/dma.c.obj
+ .debug_str     0x000d8568       0x2b CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/dma.c.obj
                               0xd2d0b (size before relaxing)
- .debug_str     0x000d8561      0x220 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/spi.c.obj
+ .debug_str     0x000d8593      0x220 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/spi.c.obj
                               0xd2d45 (size before relaxing)
- .debug_str     0x000d8781      0x169 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/tim.c.obj
+ .debug_str     0x000d87b3      0x169 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/tim.c.obj
                               0xd2e91 (size before relaxing)
- .debug_str     0x000d88ea      0x3e0 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/usb_otg.c.obj
+ .debug_str     0x000d891c      0x3e0 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/usb_otg.c.obj
                               0xd3245 (size before relaxing)
- .debug_str     0x000d8cca      0x14e CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/stm32f4xx_it.c.obj
+ .debug_str     0x000d8cfc      0x14e CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/stm32f4xx_it.c.obj
                               0xd3375 (size before relaxing)
- .debug_str     0x000d8e18       0x45 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/stm32f4xx_hal_msp.c.obj
+ .debug_str     0x000d8e4a       0x45 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/stm32f4xx_hal_msp.c.obj
                               0xd2cfb (size before relaxing)
- .debug_str     0x000d8e5d      0x11a CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/stm32f4xx_hal_timebase_tim.c.obj
+ .debug_str     0x000d8e8f      0x11a CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/stm32f4xx_hal_timebase_tim.c.obj
                               0xd2d5f (size before relaxing)
- .debug_str     0x000d8f77      0x2ec CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.c.obj
+ .debug_str     0x000d8fa9      0x2ec CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.c.obj
                               0xd2855 (size before relaxing)
- .debug_str     0x000d9263      0x2f8 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.c.obj
+ .debug_str     0x000d9295      0x2f8 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.c.obj
                               0xd28a9 (size before relaxing)
- .debug_str     0x000d955b      0x266 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj
+ .debug_str     0x000d958d      0x266 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj
                               0xd269c (size before relaxing)
- .debug_str     0x000d97c1      0x127 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj
+ .debug_str     0x000d97f3      0x127 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj
                               0xd23e3 (size before relaxing)
- .debug_str     0x000d98e8      0x2e0 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj
+ .debug_str     0x000d991a      0x2e0 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj
                               0xd2682 (size before relaxing)
- .debug_str     0x000d9bc8      0x3df CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj
+ .debug_str     0x000d9bfa      0x3df CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj
                               0xd2b36 (size before relaxing)
- .debug_str     0x000d9fa7      0x56b CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj
+ .debug_str     0x000d9fd9      0x56b CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj
                               0xd2dec (size before relaxing)
- .debug_str     0x000da512      0x212 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dac.c.obj
+ .debug_str     0x000da544      0x212 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dac.c.obj
                               0xd26ea (size before relaxing)
- .debug_str     0x000da724      0x159 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dac_ex.c.obj
+ .debug_str     0x000da756      0x159 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dac_ex.c.obj
                               0xd25c5 (size before relaxing)
- .debug_str     0x000da87d      0x575 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c.obj
+ .debug_str     0x000da8af      0x575 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c.obj
                               0xd2b2c (size before relaxing)
- .debug_str     0x000dadf2      0xd88 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj
+ .debug_str     0x000dae24      0xd88 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj
                               0xd35f2 (size before relaxing)
- .debug_str     0x000dbb7a      0x4ac CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.obj
+ .debug_str     0x000dbbac      0x4ac CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.obj
                               0xd2dfe (size before relaxing)
- .debug_str     0x000dc026      0x807 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd.c.obj
+ .debug_str     0x000dc058      0x807 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd.c.obj
                               0xd2d46 (size before relaxing)
- .debug_str     0x000dc82d      0x12e CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd_ex.c.obj
+ .debug_str     0x000dc85f      0x12e CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd_ex.c.obj
                               0xd2636 (size before relaxing)
- .debug_str     0x000dc95b      0x4c0 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usb.c.obj
+ .debug_str     0x000dc98d      0x4c0 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usb.c.obj
                               0xd2c21 (size before relaxing)
- .debug_str     0x000dce1b       0x63 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/system_stm32f4xx.c.obj
+ .debug_str     0x000dce4d       0x63 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/system_stm32f4xx.c.obj
                               0xd2268 (size before relaxing)
- .debug_str     0x000dce7e     0x2d14 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/list.c.obj
+ .debug_str     0x000dceb0     0x2d14 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/list.c.obj
                                0xa502 (size before relaxing)
- .debug_str     0x000dfb92     0x149a CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/queue.c.obj
+ .debug_str     0x000dfbc4     0x149a CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/queue.c.obj
                                0xc042 (size before relaxing)
- .debug_str     0x000e102c     0x1b36 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
+ .debug_str     0x000e105e     0x1b36 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
                                0xcaff (size before relaxing)
- .debug_str     0x000e2b62      0x692 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj
+ .debug_str     0x000e2b94      0x692 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj
                                0xc574 (size before relaxing)
- .debug_str     0x000e31f4     0x18e3 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.obj
+ .debug_str     0x000e3226     0x18e3 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.obj
                               0xdc892 (size before relaxing)
- .debug_str     0x000e4ad7      0x33d CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.obj
+ .debug_str     0x000e4b09      0x33d CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.obj
                                0xae44 (size before relaxing)
- .debug_str     0x000e4e14      0x79c CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c.obj
+ .debug_str     0x000e4e46      0x79c CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c.obj
                                0x873d (size before relaxing)
- .debug_str     0x000e55b0       0x4e CMakeFiles/DMS-24-RTOS-VCU.dir/startup_stm32f407xx.s.obj
+ .debug_str     0x000e55e2       0x4e CMakeFiles/DMS-24-RTOS-VCU.dir/startup_stm32f407xx.s.obj
                                  0x76 (size before relaxing)
- .debug_str     0x000e55fe       0x39 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/app_main.c.obj
-                              0xd2742 (size before relaxing)
- .debug_str     0x000e5637      0x18c C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-memcpy-stub.o)
+ .debug_str     0x000e5630       0x45 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/app_main.c.obj
+                              0xd28ea (size before relaxing)
+ .debug_str     0x000e5675       0x77 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_input.c.obj
+                              0xd25eb (size before relaxing)
+ .debug_str     0x000e56ec      0x18c C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-memcpy-stub.o)
                                 0x22f (size before relaxing)
 
 .comment        0x00000000       0x43
@@ -7963,6 +8101,7 @@ LOAD C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/
  .comment       0x00000043       0x44 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.obj
  .comment       0x00000043       0x44 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c.obj
  .comment       0x00000043       0x44 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/app_main.c.obj
+ .comment       0x00000043       0x44 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_input.c.obj
  .comment       0x00000043       0x44 C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-memcpy-stub.o)
 
 .debug_line_str

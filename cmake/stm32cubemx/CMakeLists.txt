@@ -75,7 +75,7 @@ target_sources(stm32cubemx INTERFACE
     ../../Core/Src/syscalls.c
     ../../startup_stm32f407xx.s
     ../../Core/Src/app_main.c
-    ../../Core/Src/app_main.h
+    ../../Core/Src/sensor_input.c
 )
 
 target_link_directories(stm32cubemx INTERFACE

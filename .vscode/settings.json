@@ -3,6 +3,8 @@
         "main.h": "c",
         "app_main.h": "c",
         "stm32f4xx_hal.h": "c",
-        "gpio.h": "c"
+        "gpio.h": "c",
+        "sensor_input.h": "c",
+        "cmsis_os.h": "c"
     }
 }
