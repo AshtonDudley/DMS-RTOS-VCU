@@ -3,6 +3,6 @@
 
 #include "stm32f4xx_hal.h"
 
-void sensor_init(ADC_HandleTypeDef *sensor_hadc1);
+void sensor_init();
 
  #endif

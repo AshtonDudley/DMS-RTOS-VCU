@@ -1,17 +1,19 @@
 #include "sensor_input.h"
 #include "stm32f4xx_hal.h"
+#include "FreeRTOS.h"
+#include "cmsis_os2.h" 
 
 #define ADC_BUFFER_LEN 128
 
 
 
-extern DAC_HandleTypeDef hdac;
+extern DAC_HandleTypeDef hadc1;
 
-volatile uint16_t adc_buf[ADC_BUFFER_LEN];
-volatile uint16_t dac_buf[ADC_BUFFER_LEN];
+volatile uint16_t adc_buf[3];
+const int adcChannelCount = sizeof(adc_buf) / sizeof (adc_buf[0]);
 
-static volatile uint16_t *inBufPtr;								// TODO: These are currently unused
-static volatile uint16_t *outBufPtr = &adc_buf[0];				// https://www.youtube.com/watch?v=zlGSxZGwj-E for how to use them
+// static volatile uint16_t *inBufPtr;								// TODO: These are currently unused
+// static volatile uint16_t *outBufPtr = &adc_buf[0];				// https://www.youtube.com/watch?v=zlGSxZGwj-E for how to use them
 
 
 void sensor_int(){
@@ -41,8 +43,8 @@ void sensor_input_entry(void *argument)
   /* USER CODE END sensor_input_entry */
 }
 
-void sensor_init(ADC_HandleTypeDef *sensor_hadc1){
-    HAL_ADC_Start_DMA(sensor_hadc1, (uint32_t*)adc_buf, ADC_BUFFER_LEN);
+void sensor_init(){
+    HAL_ADC_Start_DMA(&hadc1, (uint32_t*)adc_buf, adcChannelCount);
 }
 
 void HAL_ADC_ConvHalfCpltCallback(ADC_HandleTypeDef* hadc1){
@@ -61,8 +63,8 @@ void HAL_ADC_ConvHalfCpltCallback(ADC_HandleTypeDef* hadc1){
   * @retval None
   */
 void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc1){
-	inBufPtr  = &adc_buf[ADC_BUFFER_LEN / 2];
-	outBufPtr = &dac_buf[ADC_BUFFER_LEN / 2];
+	// inBufPtr  = &adc_buf[ADC_BUFFER_LEN / 2];
+	// outBufPtr = &dac_buf[ADC_BUFFER_LEN / 2];
 	HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_13);
 	// HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, GPIO_PIN_RESET);
 }
