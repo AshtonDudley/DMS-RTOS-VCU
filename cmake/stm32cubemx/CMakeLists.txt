@@ -29,7 +29,6 @@ target_sources(stm32cubemx INTERFACE
     ../../Core/Src/freertos.c
     ../../Core/Src/adc.c
     ../../Core/Src/dac.c
-    ../../Core/Src/dma.c
     ../../Core/Src/spi.c
     ../../Core/Src/tim.c
     ../../Core/Src/usb_otg.c

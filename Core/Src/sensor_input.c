@@ -7,10 +7,11 @@
 
 
 
-extern DAC_HandleTypeDef hadc1;
+extern ADC_HandleTypeDef hadc1;
 
 volatile uint16_t adc_buf[3];
 const int adcChannelCount = sizeof(adc_buf) / sizeof (adc_buf[0]);
+
 
 // static volatile uint16_t *inBufPtr;								// TODO: These are currently unused
 // static volatile uint16_t *outBufPtr = &adc_buf[0];				// https://www.youtube.com/watch?v=zlGSxZGwj-E for how to use them
@@ -38,25 +39,31 @@ void sensor_input_entry(void *argument)
   /* Infinite loop */
   for(;;)
   {
-    osDelay(1);
+    
+    float adc_val1 = 0.0f;
+    HAL_ADC_Start(&hadc1);
+    HAL_ADC_PollForConversion(&hadc1, 100);
+    adc_val1 = (float)HAL_ADC_GetValue(&hadc1);
+    HAL_ADC_Stop(&hadc1);
+
+    osDelay(500);
   }
   /* USER CODE END sensor_input_entry */
 }
 
 void sensor_init(){
-    HAL_ADC_Start_DMA(&hadc1, (uint32_t*)adc_buf, adcChannelCount);
+  return;
+    // HAL_ADC_Start_DMA(&hadc1, (uint32_t*)adc_buf, adcChannelCount);
 }
 
-void HAL_ADC_ConvHalfCpltCallback(ADC_HandleTypeDef* hadc1){
+// void HAL_ADC_ConvHalfCpltCallback(ADC_HandleTypeDef* hadc1){
 
-	//inBufPtr  = &adc_buf[0];
-	//outBufPtr = &dac_buf[0];
-	//dataReadyFlag = 1;
+// 	//inBufPtr  = &adc_buf[0];
+// 	//outBufPtr = &dac_buf[0];
+// 	//dataReadyFlag = 1;
 
-
-
-	// HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, GPIO_PIN_SET);	// Flashing this LED lets us monitor the state
-}															// of the buffer using the oscilloscope
+// 	// HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, GPIO_PIN_SET);	// Flashing this LED lets us monitor the state
+// }															// of the buffer using the oscilloscope
 
 /**
   * @brief  This function is executed when  TIM buffer is completely full

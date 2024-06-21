@@ -5,6 +5,8 @@
         "stm32f4xx_hal.h": "c",
         "gpio.h": "c",
         "sensor_input.h": "c",
-        "cmsis_os.h": "c"
+        "cmsis_os.h": "c",
+        "adc.h": "c",
+        "cmsis_os2.h": "c"
     }
 }
