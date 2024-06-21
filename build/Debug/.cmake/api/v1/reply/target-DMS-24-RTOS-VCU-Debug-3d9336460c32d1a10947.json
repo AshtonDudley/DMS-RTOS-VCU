@@ -154,8 +154,9 @@
 				45,
 				46,
 				47,
-				49,
-				50
+				48,
+				50,
+				51
 			]
 		},
 		{
@@ -218,7 +219,7 @@
 			"language" : "ASM",
 			"sourceIndexes" : 
 			[
-				48
+				49
 			]
 		}
 	],
@@ -299,15 +300,16 @@
 				45,
 				46,
 				47,
-				49,
-				50
+				48,
+				50,
+				51
 			]
 		},
 		{
 			"name" : "",
 			"sourceIndexes" : 
 			[
-				48
+				49
 			]
 		}
 	],
@@ -341,6 +343,12 @@
 			"backtrace" : 2,
 			"compileGroupIndex" : 0,
 			"path" : "Core/Src/dac.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "Core/Src/dma.c",
 			"sourceGroupIndex" : 0
 		},
 		{

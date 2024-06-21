@@ -7,6 +7,9 @@
         "sensor_input.h": "c",
         "cmsis_os.h": "c",
         "adc.h": "c",
-        "cmsis_os2.h": "c"
+        "cmsis_os2.h": "c",
+        "dma.h": "c",
+        "stdio.h": "c",
+        "compare": "c"
     }
 }

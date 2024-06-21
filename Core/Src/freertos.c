@@ -59,7 +59,7 @@ osThreadId_t sensor_inputHandle;
 const osThreadAttr_t sensor_input_attributes = {
   .name = "sensor_input",
   .stack_size = 128 * 4,
-  .priority = (osPriority_t) osPriorityHigh,
+  .priority = (osPriority_t) osPriorityAboveNormal1,
 };
 
 /* Private function prototypes -----------------------------------------------*/
@@ -79,7 +79,6 @@ void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
   */
 void MX_FREERTOS_Init(void) {
   /* USER CODE BEGIN Init */
-  sensor_int();
   /* USER CODE END Init */
 
   /* USER CODE BEGIN RTOS_MUTEX */
