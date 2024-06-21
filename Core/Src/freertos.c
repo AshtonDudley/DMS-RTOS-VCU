@@ -25,7 +25,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "sensor_input.h"
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -61,14 +61,22 @@ const osThreadAttr_t sensor_input_attributes = {
   .stack_size = 128 * 4,
   .priority = (osPriority_t) osPriorityAboveNormal1,
 };
+/* Definitions for state_machine */
+osThreadId_t state_machineHandle;
+const osThreadAttr_t state_machine_attributes = {
+  .name = "state_machine",
+  .stack_size = 2048 * 4,
+  .priority = (osPriority_t) osPriorityNormal,
+};
 
 /* Private function prototypes -----------------------------------------------*/
 /* USER CODE BEGIN FunctionPrototypes */
 
 /* USER CODE END FunctionPrototypes */
 
-void status_leds_entry(void *argument);
-void sensor_input_entry(void *argument);
+void statusLedsTask(void *argument);
+void sensorInputTask(void *argument);
+void stateMachineTask(void *argument);
 
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
 
@@ -99,10 +107,13 @@ void MX_FREERTOS_Init(void) {
 
   /* Create the thread(s) */
   /* creation of status_leds */
-  status_ledsHandle = osThreadNew(status_leds_entry, NULL, &status_leds_attributes);
+  status_ledsHandle = osThreadNew(statusLedsTask, NULL, &status_leds_attributes);
 
   /* creation of sensor_input */
-  sensor_inputHandle = osThreadNew(sensor_input_entry, NULL, &sensor_input_attributes);
+  sensor_inputHandle = osThreadNew(sensorInputTask, NULL, &sensor_input_attributes);
+
+  /* creation of state_machine */
+  state_machineHandle = osThreadNew(stateMachineTask, NULL, &state_machine_attributes);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
@@ -114,41 +125,58 @@ void MX_FREERTOS_Init(void) {
 
 }
 
-/* USER CODE BEGIN Header_status_leds_entry */
+/* USER CODE BEGIN Header_statusLedsTask */
 /**
   * @brief  Function implementing the status_leds thread.
   * @param  argument: Not used
   * @retval None
   */
-/* USER CODE END Header_status_leds_entry */
-__weak void status_leds_entry(void *argument)
+/* USER CODE END Header_statusLedsTask */
+__weak void statusLedsTask(void *argument)
 {
-  /* USER CODE BEGIN status_leds_entry */
-  /* Infinite loop */
-  for(;;)
-  {
-    HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_15);
-    osDelay(100);
-  }
-  /* USER CODE END status_leds_entry */
-}
-
-/* USER CODE BEGIN Header_sensor_input_entry */
-/**
-* @brief Function implementing the sensor_input thread.
-* @param argument: Not used
-* @retval None
-*/
-/* USER CODE END Header_sensor_input_entry */
-__weak void sensor_input_entry(void *argument)
-{
-  /* USER CODE BEGIN sensor_input_entry */
+  /* USER CODE BEGIN statusLedsTask */
   /* Infinite loop */
   for(;;)
   {
     osDelay(1);
   }
-  /* USER CODE END sensor_input_entry */
+  /* USER CODE END statusLedsTask */
+}
+
+/* USER CODE BEGIN Header_sensorInputTask */
+/**
+* @brief Function implementing the sensor_input thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_sensorInputTask */
+__weak void sensorInputTask(void *argument)
+{
+  /* USER CODE BEGIN sensorInputTask */
+  /* Infinite loop */
+  for(;;)
+  {
+    osDelay(1);
+  }
+  /* USER CODE END sensorInputTask */
+}
+
+/* USER CODE BEGIN Header_stateMachineTask */
+/**
+* @brief Function implementing the state_machine thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_stateMachineTask */
+__weak void stateMachineTask(void *argument)
+{
+  /* USER CODE BEGIN stateMachineTask */
+  /* Infinite loop */
+  for(;;)
+  {
+    osDelay(1);
+  }
+  /* USER CODE END stateMachineTask */
 }
 
 /* Private application code --------------------------------------------------*/

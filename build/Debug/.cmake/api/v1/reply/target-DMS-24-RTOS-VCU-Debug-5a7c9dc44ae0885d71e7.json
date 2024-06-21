@@ -624,7 +624,7 @@
 		{
 			"backtrace" : 2,
 			"compileGroupIndex" : 0,
-			"path" : "Core/Src/sensor_input.c",
+			"path" : "Core/Src/sensor_control.c",
 			"sourceGroupIndex" : 0
 		}
 	],

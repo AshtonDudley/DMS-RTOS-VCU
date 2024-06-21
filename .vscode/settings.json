@@ -10,6 +10,7 @@
         "cmsis_os2.h": "c",
         "dma.h": "c",
         "stdio.h": "c",
-        "compare": "c"
+        "compare": "c",
+        "freertos.h": "c"
     }
 }
