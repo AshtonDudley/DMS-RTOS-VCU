@@ -6,10 +6,17 @@
 #define EXIT_STATE end
 #define ENTRY_STATE entry
 
-/* int (*state[])(void) and enum below must be in sync! */
 typedef enum { entry, idle, forward, reverse, end }state_codes_t;
-int (*state[])(
-		void) = {entry_state, idle_state, forward_state, reverse_state, end_state
+
+/// @brief      Maps a state to it's state transition function, which should be called
+///             when the state transitions into this state.
+/// @warning    This has to stay in sync with the state_codes_t enum!
+int (*state[])(void) = {
+    entry_state, 
+    idle_state, 
+    forward_state, 
+    reverse_state, 
+    end_state
 };
 
 
@@ -66,8 +73,15 @@ int end_state(void){
     return 0;
 }
 
-state_codes_t lookup_transitions(state_codes_t cur_state, ret_codes_t rc){
-	for (int i = 0; i < sizeof(state_transitions) / sizeof(state_transitions[0]); i++) {
+/**
+ * @brief Look up the next state based on the current state and return code.
+ * @param cur_state The current state of the state machine.
+ * @param rc The return code indicating the result of the previous state operation.
+ * @return The next state of the state machine if a valid transition is found,
+ *         otherwise SM_ERROR.
+ */
+state_codes_t lookupTransitions(state_codes_t cur_state, ret_codes_t rc){
+	for (uint16_t i = 0; i < sizeof(state_transitions) / sizeof(state_transitions[0]); i++) {
 		if (state_transitions[i].src_state == cur_state && state_transitions[i].ret_code == rc) {
             return state_transitions[i].dst_state; // Return the next state
 		}
@@ -87,13 +101,8 @@ void stateMachineTask(void *argument){
 
 	    state_fun = state[cur_state];
 	    rc = state_fun(); // runs the corresponding state function 
+	    cur_state = lookupTransitions(cur_state, rc);
 
-        if (rc == SM_ERROR){
-            HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, GPIO_PIN_SET);
-        }
-        else {
-	        cur_state = lookup_transitions(cur_state, rc);
-        }
 
         osDelay(1);
     }

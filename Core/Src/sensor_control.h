@@ -2,6 +2,6 @@
  #define SENSOR_CONTROL
 
 
-void sensorInit();
+void sensor_init();
 
  #endif

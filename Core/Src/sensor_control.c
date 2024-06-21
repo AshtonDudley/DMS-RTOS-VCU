@@ -18,14 +18,14 @@ volatile uint16_t adc_buf[ADC_BUFFER_LEN];
 uint8_t dataReadyFlag = 0;
 
  
-void sensorInit(){
+void sensor_init(){
     HAL_TIM_Base_Start(&htim2);
     HAL_ADC_Start_DMA(&hadc1, (uint32_t*)adc_buf, ADC_BUFFER_LEN);
     HAL_DAC_Start(&hdac, DAC1_CHANNEL_1);
     return;
 }
 
-float calculateTemp(void){
+float calculate_temp(void){
     float temp = (float)(adc_buf[4] * 0.322265625 / ADC_BUFFER_LEN); // TODO: This needs to be re-evaluated 
     dataReadyFlag = 0;
     return temp;
@@ -47,7 +47,7 @@ void statusLedsTask(void *argument)
 void sensorInputTask(void *argument)
 {
     (void)argument;
-    sensorInit();
+    sensor_init();
 
     for(;;) {
         
