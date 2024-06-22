@@ -15,6 +15,8 @@
 
 #define OFFSET_THRESHOLD 10 // Percent 
 
+#define CUT_MOTOR_SIGNAL 0
+
 extern ADC_HandleTypeDef hadc1;
 extern TIM_HandleTypeDef htim2; 
 extern DAC_HandleTypeDef hdac;
@@ -33,8 +35,19 @@ typedef struct pedalStatus_s {
     PDP_StatusTypeDef offsetStatus;
     PDP_StatusTypeDef latchStatus;
     PDP_StatusTypeDef sensorStatus;
+    bool throttleOutputEnabled;
+    bool processADC;
 } pedalStatus_t;
  
+/// @brief  Singular instance of the pedal object
+pedalStatus_t g_pedal = {
+    .latchStatus = PDP_OKAY,
+    .offsetStatus = PDP_OKAY,
+    .sensorStatus = PDP_OKAY,
+    .throttleOutputEnabled = false,
+    .processADC = true
+};
+
 
 /**
  * @brief  Normalization
@@ -61,7 +74,24 @@ float percentDifference(float a, float b) {
     }
 }
 
+/**
+ * @brief Throttle Input Module
+ * @return Throttle value scaled to desired map
+ */
+float linear_interpolation(float adc_input, float xarray[11], float yarray[11]) {
+	float x0 = 0.0f, x1 = 0.0f, y0 = 0.0f, y1 = 0.0f;
+	int i = 0;
+	while (xarray[i] < adc_input && i < 11) { // TODO: Improve the safety of this function
+		i++;
+	}
+	x0 = xarray[i - 1];
+	x1 = xarray[i];
+	y0 = yarray[i - 1];
+	y1 = yarray[i];
 
+	float outputValue = (y1 + (adc_input - x1) * ((y1 - y0) / (x1 - x0))); 
+	return outputValue;
+} 
 
 /**
   * @brief  APPS Agreement Check. Checks if both APPS sensors are within
@@ -90,35 +120,33 @@ PDP_StatusTypeDef pedal_plasability_check(pedalStatus_t *pedal, float apps, floa
     }
 }
 
-
-
-
-
-
-/**
- * @brief Throttle Input Module
- * @return Throttle value scaled to desired map
- */
-float linear_interpolation(float adc_input, float xarray[11], float yarray[11]) {
-	float x0 = 0.0f, x1 = 0.0f, y0 = 0.0f, y1 = 0.0f;
-	int i = 0;
-	while (xarray[i] < adc_input && i < 11) { // TODO: Improve the safety of this function
-		i++;
-	}
-	x0 = xarray[i - 1];
-	x1 = xarray[i];
-	y0 = yarray[i - 1];
-	y1 = yarray[i];
-
-	float outputValue = (y1 + (adc_input - x1) * ((y1 - y0) / (x1 - x0))); 
-	return outputValue;
-} 
+bool check_faults(pedalStatus_t *pedal){
+    if (pedal->latchStatus != PDP_OKAY){
+        return false;
+    }
+    else if (pedal->offsetStatus != PDP_OKAY){
+        return false;
+    }
+    else if (pedal->sensorStatus != PDP_OKAY){
+        return false;
+    }
+    return true;
+}
 
 float calculate_temp(void){
     float temp = (float)(adc_buf[4] * 0.322265625 / ADC_BUFFER_LEN); // TODO: This needs to be re-evaluated 
     dataReadyFlag = 0;
     return temp;
 }
+
+void set_throttle(bool enable){
+    g_pedal.throttleOutputEnabled = enable;
+    if (!enable){
+         HAL_DAC_SetValue(&hdac, DAC_CHANNEL_1, DAC_ALIGN_12B_R, CUT_MOTOR_SIGNAL);
+    }
+    return;
+}
+
 
 void sensor_init() {
     HAL_TIM_Base_Start(&htim2);
@@ -127,53 +155,56 @@ void sensor_init() {
     return;
 }
 
-void sensorInputTask(void *argument) {
-    (void)argument;
-    sensor_init();
 
-    adcChannel_t adcChannel;
-    pedalStatus_t pedals;
+void process_adc(adcChannel_t *adcChannel){
 
-
+    // Normalize ADC inputs
+    float apps1Norm = normalize(adc_buf[0], 0, 4096);
+    float apps2Norm = normalize(adc_buf[1], 0, 4096);
+    float fbpsNorm  = normalize(adc_buf[3], 0, 4096); 
+    float rbpsNorm  = normalize(adc_buf[4], 0, 4096);
+    
+    fbpsNorm = apps2Norm; // FOR TESTING !! 
     float xThrottleMap[] = {0.0f, 0.1f, 0.2f, 0.3f, 0.4f, 0.5f, 0.6f, 0.7f, 0.8f, 0.9f, 1.0f};
     float yThrottleMap[] = {0.0f, 0.1f, 0.2f, 0.3f, 0.4f, 0.5f, 0.6f, 0.7f, 0.8f, 0.9f, 1.0f};
+
+    // Assign values to channel
+    adcChannel->adcAPPS1 = linear_interpolation(apps1Norm, xThrottleMap, yThrottleMap);
+    adcChannel->adcAPPS2 = linear_interpolation(apps2Norm, xThrottleMap, yThrottleMap);
+    adcChannel->adcFBPS  = linear_interpolation(fbpsNorm, xThrottleMap, yThrottleMap);
+    adcChannel->adcRBPS  = linear_interpolation(rbpsNorm, xThrottleMap, yThrottleMap);
+    return;
+}
+
+void sensorInputTask(void *argument) {
+    (void)argument;
+    adcChannel_t adcChannel;
+
+    sensor_init();
+
     for(;;) {
         HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, GPIO_PIN_SET);
 
-        // Normalize ADC inputs
-        float apps1Norm = normalize(adc_buf[0], 0, 4096);
-        float apps2Norm = normalize(adc_buf[1], 0, 4096);
-        float fbpsNorm  = normalize(adc_buf[3], 0, 4096); 
-        float rbpsNorm  = normalize(adc_buf[4], 0, 4096);
-        
-        fbpsNorm = apps2Norm; // FOR TESTING !!
+        g_pedal.offsetStatus = apps_offset_check(adcChannel.adcAPPS1, adcChannel.adcAPPS2, 0.2);
+        g_pedal.latchStatus = pedal_plasability_check(&g_pedal, adcChannel.adcAPPS1, adcChannel.adcFBPS, 0.4, 0.1, 0.3);
 
-        // Assign values to channel
-        adcChannel.adcAPPS1 = linear_interpolation(apps1Norm, xThrottleMap, yThrottleMap);
-        adcChannel.adcAPPS2 = linear_interpolation(apps2Norm, xThrottleMap, yThrottleMap);
-        adcChannel.adcFBPS  = linear_interpolation(fbpsNorm, xThrottleMap, yThrottleMap);
-        adcChannel.adcRBPS  = linear_interpolation(rbpsNorm, xThrottleMap, yThrottleMap);
-            
+        if (g_pedal.processADC){
+            process_adc(&adcChannel);
+            g_pedal.throttleOutputEnabled =  check_faults(&g_pedal);
+        }
 
-        pedals.offsetStatus = apps_offset_check(adcChannel.adcAPPS1, adcChannel.adcAPPS2, 0.2);
-        pedals.latchStatus = pedal_plasability_check(&pedals, adcChannel.adcAPPS1, adcChannel.adcFBPS, 0.4, 0.1, 0.3);
 
-        uint32_t dacOut = denormalize(adcChannel.adcAPPS1, 0, 4096);
-        
-        
-        
-        // TODO Check pedals status
-        HAL_DAC_SetValue(&hdac, DAC_CHANNEL_1, DAC_ALIGN_12B_R, dacOut);      
+
+        if (g_pedal.throttleOutputEnabled == true){
+            uint32_t dacOut = denormalize(adcChannel.adcAPPS1, 0, 4096);
+            HAL_DAC_SetValue(&hdac, DAC_CHANNEL_1, DAC_ALIGN_12B_R, dacOut);  
+        }
+
+        // Cleanup         
         HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, GPIO_PIN_RESET);
-        
         osDelay(10);
     }
 }
-
-// TODO: Pedal Plausibility Checks
-
-// TODO: 
-
 
 
 void HAL_ADC_ConvHalfCpltCallback(ADC_HandleTypeDef* hadc) {

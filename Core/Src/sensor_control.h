@@ -9,6 +9,12 @@ typedef enum {
     PDP_LATCH   = 0x04U
 } PDP_StatusTypeDef;
 
+
+
+/// @brief Enable or disable the throttle output
+/// @param enable true = output enabled 
+void set_throttle(bool enable);
+
 void sensor_init();
 
  #endif

@@ -9,7 +9,7 @@ typedef enum {
 	SM_REPEAT			= 0x02u,
 	SM_DIR_FORWARD		= 0x03u,
 	SM_DIR_REVERSE		= 0x04u,
-	SM_VEHCILE_STOPPED	= 0x05u,
+	SM_VEHICLE_STOPPED	= 0x05u,
 	SM_CHANGE_MAP		= 0x06u,
 	SM_ADC_DATA_READY	= 0x07u,
     SM_ERROR            = 0Xffu

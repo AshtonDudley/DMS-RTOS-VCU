@@ -17,6 +17,9 @@
     },
     "cSpell.words": [
         "fbps",
+        "GPIO",
+        "GPIOD",
+        "hdac",
         "plasability",
         "rbps",
         "yarray"

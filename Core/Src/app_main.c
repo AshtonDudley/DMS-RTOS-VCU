@@ -2,6 +2,9 @@
 #include "stm32f4xx_hal.h"
 #include "FreeRTOS.h"
 #include "cmsis_os2.h"
+#include "stdbool.h"
+
+#include "sensor_control.h"
 
 #define EXIT_STATE end
 #define ENTRY_STATE entry
@@ -37,11 +40,11 @@ struct transition state_transitions[] = {
 	{forward,       SM_OKAY,                forward},
 	{forward,       SM_FAIL,                forward},
 	{forward,       SM_CHANGE_MAP,          forward},
-	{forward,       SM_VEHCILE_STOPPED,     neutral},
+	{forward,       SM_VEHICLE_STOPPED,     neutral},
 	{forward,       SM_ADC_DATA_READY,      forward},
 	{reverse,       SM_OKAY,                reverse},
 	{reverse,       SM_FAIL,                forward},
-	{reverse,       SM_VEHCILE_STOPPED,     neutral},
+	{reverse,       SM_VEHICLE_STOPPED,     neutral},
 };
 
 void statusLedsTask(void *argument) {
@@ -64,11 +67,13 @@ int entry_state(void){
 
 int neutral_state(void){
     // Check if forward or reverse selected
+    set_throttle(false);
     return SM_DIR_FORWARD;
 }
 
 int forward_state(void){
     // Check if neutral or reverse sw is selected
+    set_throttle(true);
     return SM_OKAY;
 }
 

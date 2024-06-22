@@ -6194,6 +6194,7 @@ Discarded input sections
  .group         0x00000000        0xc CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/app_main.c.obj
  .group         0x00000000        0xc CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/app_main.c.obj
  .group         0x00000000        0xc CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/app_main.c.obj
+ .group         0x00000000        0xc CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/app_main.c.obj
  .text          0x00000000        0x0 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/app_main.c.obj
  .data          0x00000000        0x0 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/app_main.c.obj
  .bss           0x00000000        0x0 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/app_main.c.obj
@@ -6387,6 +6388,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x26 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_control.c.obj
  .debug_macro   0x00000000      0x4c5 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_control.c.obj
  .debug_macro   0x00000000       0x74 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_control.c.obj
+ .debug_macro   0x00000000       0x22 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_control.c.obj
  .debug_macro   0x00000000       0x2a CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_control.c.obj
  .debug_macro   0x00000000       0x74 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_control.c.obj
  .debug_macro   0x00000000       0x3c CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_control.c.obj
@@ -6558,7 +6560,7 @@ LOAD C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/
                 0x08000000                g_pfnVectors
                 0x08000188                        . = ALIGN (0x4)
 
-.text           0x08000190     0x9070
+.text           0x08000190     0x9128
                 0x08000190                        . = ALIGN (0x4)
  *(.text)
  .text          0x08000190       0x40 C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtbegin.o
@@ -7302,118 +7304,128 @@ LOAD C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/
  .text.percentDifference
                 0x08008d88       0x74 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_control.c.obj
                 0x08008d88                percentDifference
- .text.apps_offset_check
-                0x08008dfc       0x42 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_control.c.obj
-                0x08008dfc                apps_offset_check
- .text.pedal_plasability_check
-                0x08008e3e       0x90 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_control.c.obj
-                0x08008e3e                pedal_plasability_check
  .text.linear_interpolation
-                0x08008ece       0xda CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_control.c.obj
-                0x08008ece                linear_interpolation
+                0x08008dfc       0xda CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_control.c.obj
+                0x08008dfc                linear_interpolation
+ .text.apps_offset_check
+                0x08008ed6       0x42 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_control.c.obj
+                0x08008ed6                apps_offset_check
+ .text.pedal_plasability_check
+                0x08008f18       0x90 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_control.c.obj
+                0x08008f18                pedal_plasability_check
+ .text.check_faults
+                0x08008fa8       0x3a CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_control.c.obj
+                0x08008fa8                check_faults
+ *fill*         0x08008fe2        0x2 
+ .text.set_throttle
+                0x08008fe4       0x3c CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_control.c.obj
+                0x08008fe4                set_throttle
  .text.sensor_init
-                0x08008fa8       0x30 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_control.c.obj
-                0x08008fa8                sensor_init
+                0x08009020       0x30 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_control.c.obj
+                0x08009020                sensor_init
+ .text.process_adc
+                0x08009050      0x11c CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_control.c.obj
+                0x08009050                process_adc
  .text.sensorInputTask
-                0x08008fd8      0x1b8 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_control.c.obj
-                0x08008fd8                sensorInputTask
+                0x0800916c       0xdc CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_control.c.obj
+                0x0800916c                sensorInputTask
  .text.HAL_ADC_ConvHalfCpltCallback
-                0x08009190       0x14 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_control.c.obj
-                0x08009190                HAL_ADC_ConvHalfCpltCallback
+                0x08009248       0x14 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_control.c.obj
+                0x08009248                HAL_ADC_ConvHalfCpltCallback
  .text.HAL_ADC_ConvCpltCallback
-                0x080091a4       0x28 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_control.c.obj
-                0x080091a4                HAL_ADC_ConvCpltCallback
- .text.memcpy   0x080091cc       0x1c C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-memcpy-stub.o)
-                0x080091cc                memcpy
+                0x0800925c       0x28 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_control.c.obj
+                0x0800925c                HAL_ADC_ConvCpltCallback
+ .text.memcpy   0x08009284       0x1c C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-memcpy-stub.o)
+                0x08009284                memcpy
  *(.glue_7)
- .glue_7        0x080091e8        0x0 linker stubs
+ .glue_7        0x080092a0        0x0 linker stubs
  *(.glue_7t)
- .glue_7t       0x080091e8        0x0 linker stubs
+ .glue_7t       0x080092a0        0x0 linker stubs
  *(.eh_frame)
- .eh_frame      0x080091e8        0x0 C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+ .eh_frame      0x080092a0        0x0 C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtbegin.o
  *(.init)
- .init          0x080091e8        0x4 C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crti.o
-                0x080091e8                _init
- .init          0x080091ec        0x8 C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtn.o
+ .init          0x080092a0        0x4 C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crti.o
+                0x080092a0                _init
+ .init          0x080092a4        0x8 C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtn.o
  *(.fini)
- .fini          0x080091f4        0x4 C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crti.o
-                0x080091f4                _fini
- .fini          0x080091f8        0x8 C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtn.o
-                0x08009200                        . = ALIGN (0x4)
-                0x08009200                        _etext = .
+ .fini          0x080092ac        0x4 C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crti.o
+                0x080092ac                _fini
+ .fini          0x080092b0        0x8 C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtn.o
+                0x080092b8                        . = ALIGN (0x4)
+                0x080092b8                        _etext = .
 
-.vfp11_veneer   0x08009200        0x0
- .vfp11_veneer  0x08009200        0x0 linker stubs
+.vfp11_veneer   0x080092b8        0x0
+ .vfp11_veneer  0x080092b8        0x0 linker stubs
 
-.v4_bx          0x08009200        0x0
- .v4_bx         0x08009200        0x0 linker stubs
+.v4_bx          0x080092b8        0x0
+ .v4_bx         0x080092b8        0x0 linker stubs
 
-.iplt           0x08009200        0x0
- .iplt          0x08009200        0x0 C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+.iplt           0x080092b8        0x0
+ .iplt          0x080092b8        0x0 C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtbegin.o
 
-.rodata         0x08009200       0xfc
-                0x08009200                        . = ALIGN (0x4)
+.rodata         0x080092b8       0xfc
+                0x080092b8                        . = ALIGN (0x4)
  *(.rodata)
- .rodata        0x08009200       0x2a CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/freertos.c.obj
- *fill*         0x0800922a        0x2 
- .rodata        0x0800922c        0x5 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
- *fill*         0x08009231        0x3 
- .rodata        0x08009234        0xd CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj
- *fill*         0x08009241        0x3 
- .rodata        0x08009244       0x2c CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_control.c.obj
+ .rodata        0x080092b8       0x2a CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/freertos.c.obj
+ *fill*         0x080092e2        0x2 
+ .rodata        0x080092e4        0x5 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
+ *fill*         0x080092e9        0x3 
+ .rodata        0x080092ec        0xd CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj
+ *fill*         0x080092f9        0x3 
+ .rodata        0x080092fc       0x2c CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_control.c.obj
  *(.rodata*)
  .rodata.status_leds_attributes
-                0x08009270       0x24 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/freertos.c.obj
-                0x08009270                status_leds_attributes
+                0x08009328       0x24 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/freertos.c.obj
+                0x08009328                status_leds_attributes
  .rodata.sensor_input_attributes
-                0x08009294       0x24 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/freertos.c.obj
-                0x08009294                sensor_input_attributes
+                0x0800934c       0x24 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/freertos.c.obj
+                0x0800934c                sensor_input_attributes
  .rodata.state_machine_attributes
-                0x080092b8       0x24 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/freertos.c.obj
-                0x080092b8                state_machine_attributes
+                0x08009370       0x24 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/freertos.c.obj
+                0x08009370                state_machine_attributes
  .rodata.flagBitshiftOffset.0
-                0x080092dc        0x8 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj
+                0x08009394        0x8 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj
  .rodata.AHBPrescTable
-                0x080092e4       0x10 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/system_stm32f4xx.c.obj
-                0x080092e4                AHBPrescTable
+                0x0800939c       0x10 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/system_stm32f4xx.c.obj
+                0x0800939c                AHBPrescTable
  .rodata.APBPrescTable
-                0x080092f4        0x8 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/system_stm32f4xx.c.obj
-                0x080092f4                APBPrescTable
-                0x080092fc                        . = ALIGN (0x4)
+                0x080093ac        0x8 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/system_stm32f4xx.c.obj
+                0x080093ac                APBPrescTable
+                0x080093b4                        . = ALIGN (0x4)
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
 
-.ARM            0x080092fc        0x8
-                0x080092fc                        __exidx_start = .
+.ARM            0x080093b4        0x8
+                0x080093b4                        __exidx_start = .
  *(.ARM.exidx*)
- .ARM.exidx     0x080092fc        0x8 C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard\libgcc.a(_udivmoddi4.o)
-                0x08009304                        __exidx_end = .
+ .ARM.exidx     0x080093b4        0x8 C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard\libgcc.a(_udivmoddi4.o)
+                0x080093bc                        __exidx_end = .
 
-.rel.dyn        0x08009304        0x0
- .rel.iplt      0x08009304        0x0 C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+.rel.dyn        0x080093bc        0x0
+ .rel.iplt      0x080093bc        0x0 C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtbegin.o
 
-.preinit_array  0x08009304        0x0
-                0x08009304                        PROVIDE (__preinit_array_start = .)
+.preinit_array  0x080093bc        0x0
+                0x080093bc                        PROVIDE (__preinit_array_start = .)
  *(.preinit_array*)
-                0x08009304                        PROVIDE (__preinit_array_end = .)
+                0x080093bc                        PROVIDE (__preinit_array_end = .)
 
-.init_array     0x08009304        0x4
-                0x08009304                        PROVIDE (__init_array_start = .)
+.init_array     0x080093bc        0x4
+                0x080093bc                        PROVIDE (__init_array_start = .)
  *(SORT_BY_NAME(.init_array.*))
  *(.init_array*)
- .init_array    0x08009304        0x4 C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtbegin.o
-                0x08009308                        PROVIDE (__init_array_end = .)
+ .init_array    0x080093bc        0x4 C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+                0x080093c0                        PROVIDE (__init_array_end = .)
 
-.fini_array     0x08009308        0x4
+.fini_array     0x080093c0        0x4
                 [!provide]                        PROVIDE (__fini_array_start = .)
  *(SORT_BY_NAME(.fini_array.*))
  *(.fini_array*)
- .fini_array    0x08009308        0x4 C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+ .fini_array    0x080093c0        0x4 C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtbegin.o
                 [!provide]                        PROVIDE (__fini_array_end = .)
-                0x0800930c                        _sidata = LOADADDR (.data)
+                0x080093c4                        _sidata = LOADADDR (.data)
 
-.data           0x20000000       0x4c load address 0x0800930c
+.data           0x20000000       0x54 load address 0x080093c4
                 0x20000000                        . = ALIGN (0x4)
                 0x20000000                        _sdata = .
  *(.data)
@@ -7435,15 +7447,18 @@ LOAD C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/
  .data.state_transitions
                 0x20000024       0x27 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/app_main.c.obj
                 0x20000024                state_transitions
-                0x2000004c                        . = ALIGN (0x4)
  *fill*         0x2000004b        0x1 
-                0x2000004c                        _edata = .
-                0x08009358                        _siccmram = LOADADDR (.ccmram)
+ .data.g_pedal  0x2000004c        0x5 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_control.c.obj
+                0x2000004c                g_pedal
+                0x20000054                        . = ALIGN (0x4)
+ *fill*         0x20000051        0x3 
+                0x20000054                        _edata = .
+                0x08009418                        _siccmram = LOADADDR (.ccmram)
 
-.igot.plt       0x2000004c        0x0 load address 0x08009358
- .igot.plt      0x2000004c        0x0 C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+.igot.plt       0x20000054        0x0 load address 0x08009418
+ .igot.plt      0x20000054        0x0 C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtbegin.o
 
-.ccmram         0x10000000        0x0 load address 0x08009358
+.ccmram         0x10000000        0x0 load address 0x08009418
                 0x10000000                        . = ALIGN (0x4)
                 0x10000000                        _sccmram = .
  *(.ccmram)
@@ -7452,152 +7467,152 @@ LOAD C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/
                 0x10000000                        _eccmram = .
                 0x10000000                        . = ALIGN (0x4)
 
-.bss            0x2000004c     0x5014
-                0x2000004c                        _sbss = .
-                0x2000004c                        __bss_start__ = _sbss
+.bss            0x20000054     0x5014
+                0x20000054                        _sbss = .
+                0x20000054                        __bss_start__ = _sbss
  *(.bss)
- .bss           0x2000004c       0x1c C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+ .bss           0x20000054       0x1c C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtbegin.o
  *(.bss*)
  .bss.status_ledsHandle
-                0x20000068        0x4 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/freertos.c.obj
-                0x20000068                status_ledsHandle
- .bss.sensor_inputHandle
-                0x2000006c        0x4 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/freertos.c.obj
-                0x2000006c                sensor_inputHandle
- .bss.state_machineHandle
                 0x20000070        0x4 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/freertos.c.obj
-                0x20000070                state_machineHandle
- .bss.hadc1     0x20000074       0x48 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/adc.c.obj
-                0x20000074                hadc1
+                0x20000070                status_ledsHandle
+ .bss.sensor_inputHandle
+                0x20000074        0x4 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/freertos.c.obj
+                0x20000074                sensor_inputHandle
+ .bss.state_machineHandle
+                0x20000078        0x4 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/freertos.c.obj
+                0x20000078                state_machineHandle
+ .bss.hadc1     0x2000007c       0x48 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/adc.c.obj
+                0x2000007c                hadc1
  .bss.hdma_adc1
-                0x200000bc       0x60 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/adc.c.obj
-                0x200000bc                hdma_adc1
- .bss.hdac      0x2000011c       0x14 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/dac.c.obj
-                0x2000011c                hdac
- .bss.hspi1     0x20000130       0x58 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/spi.c.obj
-                0x20000130                hspi1
- .bss.htim2     0x20000188       0x48 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/tim.c.obj
-                0x20000188                htim2
+                0x200000c4       0x60 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/adc.c.obj
+                0x200000c4                hdma_adc1
+ .bss.hdac      0x20000124       0x14 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/dac.c.obj
+                0x20000124                hdac
+ .bss.hspi1     0x20000138       0x58 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/spi.c.obj
+                0x20000138                hspi1
+ .bss.htim2     0x20000190       0x48 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/tim.c.obj
+                0x20000190                htim2
  .bss.hpcd_USB_OTG_FS
-                0x200001d0      0x4e4 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/usb_otg.c.obj
-                0x200001d0                hpcd_USB_OTG_FS
- .bss.htim6     0x200006b4       0x48 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/stm32f4xx_hal_timebase_tim.c.obj
-                0x200006b4                htim6
- .bss.uwTick    0x200006fc        0x4 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj
-                0x200006fc                uwTick
+                0x200001d8      0x4e4 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/usb_otg.c.obj
+                0x200001d8                hpcd_USB_OTG_FS
+ .bss.htim6     0x200006bc       0x48 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/stm32f4xx_hal_timebase_tim.c.obj
+                0x200006bc                htim6
+ .bss.uwTick    0x20000704        0x4 CMakeFiles/DMS-24-RTOS-VCU.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj
+                0x20000704                uwTick
  .bss.xQueueRegistry
-                0x20000700       0x40 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/queue.c.obj
-                0x20000700                xQueueRegistry
+                0x20000708       0x40 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/queue.c.obj
+                0x20000708                xQueueRegistry
  .bss.pxCurrentTCB
-                0x20000740        0x4 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
-                0x20000740                pxCurrentTCB
+                0x20000748        0x4 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
+                0x20000748                pxCurrentTCB
  .bss.pxReadyTasksLists
-                0x20000744      0x460 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
+                0x2000074c      0x460 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
  .bss.xDelayedTaskList1
-                0x20000ba4       0x14 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
+                0x20000bac       0x14 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
  .bss.xDelayedTaskList2
-                0x20000bb8       0x14 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
+                0x20000bc0       0x14 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
  .bss.pxDelayedTaskList
-                0x20000bcc        0x4 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
+                0x20000bd4        0x4 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
  .bss.pxOverflowDelayedTaskList
-                0x20000bd0        0x4 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
+                0x20000bd8        0x4 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
  .bss.xPendingReadyList
-                0x20000bd4       0x14 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
+                0x20000bdc       0x14 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
  .bss.xTasksWaitingTermination
-                0x20000be8       0x14 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
+                0x20000bf0       0x14 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
  .bss.uxDeletedTasksWaitingCleanUp
-                0x20000bfc        0x4 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
+                0x20000c04        0x4 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
  .bss.xSuspendedTaskList
-                0x20000c00       0x14 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
+                0x20000c08       0x14 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
  .bss.uxCurrentNumberOfTasks
-                0x20000c14        0x4 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
- .bss.xTickCount
-                0x20000c18        0x4 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
- .bss.uxTopReadyPriority
                 0x20000c1c        0x4 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
- .bss.xSchedulerRunning
+ .bss.xTickCount
                 0x20000c20        0x4 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
- .bss.xPendedTicks
+ .bss.uxTopReadyPriority
                 0x20000c24        0x4 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
- .bss.xYieldPending
+ .bss.xSchedulerRunning
                 0x20000c28        0x4 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
- .bss.xNumOfOverflows
+ .bss.xPendedTicks
                 0x20000c2c        0x4 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
- .bss.uxTaskNumber
+ .bss.xYieldPending
                 0x20000c30        0x4 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
- .bss.xNextTaskUnblockTime
+ .bss.xNumOfOverflows
                 0x20000c34        0x4 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
- .bss.xIdleTaskHandle
+ .bss.uxTaskNumber
                 0x20000c38        0x4 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
- .bss.uxSchedulerSuspended
+ .bss.xNextTaskUnblockTime
                 0x20000c3c        0x4 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
+ .bss.xIdleTaskHandle
+                0x20000c40        0x4 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
+ .bss.uxSchedulerSuspended
+                0x20000c44        0x4 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
  .bss.xActiveTimerList1
-                0x20000c40       0x14 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj
+                0x20000c48       0x14 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj
  .bss.xActiveTimerList2
-                0x20000c54       0x14 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj
+                0x20000c5c       0x14 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj
  .bss.pxCurrentTimerList
-                0x20000c68        0x4 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj
- .bss.pxOverflowTimerList
-                0x20000c6c        0x4 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj
- .bss.xTimerQueue
                 0x20000c70        0x4 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj
- .bss.xTimerTaskHandle
+ .bss.pxOverflowTimerList
                 0x20000c74        0x4 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj
- .bss.xLastTime.2
+ .bss.xTimerQueue
                 0x20000c78        0x4 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj
+ .bss.xTimerTaskHandle
+                0x20000c7c        0x4 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj
+ .bss.xLastTime.2
+                0x20000c80        0x4 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj
  .bss.ucStaticTimerQueueStorage.1
-                0x20000c7c       0xa0 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj
+                0x20000c84       0xa0 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj
  .bss.xStaticTimerQueue.0
-                0x20000d1c       0x50 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj
+                0x20000d24       0x50 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj
  .bss.KernelState
-                0x20000d6c        0x4 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.obj
+                0x20000d74        0x4 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.obj
  .bss.Idle_TCB.3
-                0x20000d70       0x5c CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.obj
+                0x20000d78       0x5c CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.obj
  .bss.Idle_Stack.2
-                0x20000dcc      0x200 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.obj
+                0x20000dd4      0x200 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.obj
  .bss.Timer_TCB.1
-                0x20000fcc       0x5c CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.obj
+                0x20000fd4       0x5c CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.obj
  .bss.Timer_Stack.0
-                0x20001028      0x400 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.obj
- .bss.ucHeap    0x20001428     0x3c00 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.obj
- .bss.xStart    0x20005028        0x8 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.obj
- .bss.pxEnd     0x20005030        0x4 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.obj
+                0x20001030      0x400 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.obj
+ .bss.ucHeap    0x20001430     0x3c00 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.obj
+ .bss.xStart    0x20005030        0x8 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.obj
+ .bss.pxEnd     0x20005038        0x4 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.obj
  .bss.xFreeBytesRemaining
-                0x20005034        0x4 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.obj
- .bss.xMinimumEverFreeBytesRemaining
-                0x20005038        0x4 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.obj
- .bss.xNumberOfSuccessfulAllocations
                 0x2000503c        0x4 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.obj
- .bss.xNumberOfSuccessfulFrees
+ .bss.xMinimumEverFreeBytesRemaining
                 0x20005040        0x4 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.obj
- .bss.xBlockAllocatedBit
+ .bss.xNumberOfSuccessfulAllocations
                 0x20005044        0x4 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.obj
+ .bss.xNumberOfSuccessfulFrees
+                0x20005048        0x4 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.obj
+ .bss.xBlockAllocatedBit
+                0x2000504c        0x4 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.obj
  .bss.ucMaxSysCallPriority
-                0x20005048        0x1 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c.obj
- *fill*         0x20005049        0x3 
+                0x20005050        0x1 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c.obj
+ *fill*         0x20005051        0x3 
  .bss.ulMaxPRIGROUPValue
-                0x2000504c        0x4 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c.obj
- .bss.adc_buf   0x20005050        0xc CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_control.c.obj
-                0x20005050                adc_buf
+                0x20005054        0x4 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c.obj
+ .bss.adc_buf   0x20005058        0xc CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_control.c.obj
+                0x20005058                adc_buf
  .bss.dataReadyFlag
-                0x2000505c        0x1 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_control.c.obj
-                0x2000505c                dataReadyFlag
+                0x20005064        0x1 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_control.c.obj
+                0x20005064                dataReadyFlag
  *(COMMON)
-                0x20005060                        . = ALIGN (0x4)
- *fill*         0x2000505d        0x3 
-                0x20005060                        _ebss = .
-                0x20005060                        __bss_end__ = _ebss
+                0x20005068                        . = ALIGN (0x4)
+ *fill*         0x20005065        0x3 
+                0x20005068                        _ebss = .
+                0x20005068                        __bss_end__ = _ebss
 
 ._user_heap_stack
-                0x20005060      0x600
-                0x20005060                        . = ALIGN (0x8)
+                0x20005068      0x600
+                0x20005068                        . = ALIGN (0x8)
                 [!provide]                        PROVIDE (end = .)
-                0x20005060                        PROVIDE (_end = .)
-                0x20005260                        . = (. + _Min_Heap_Size)
- *fill*         0x20005060      0x200 
-                0x20005660                        . = (. + _Min_Stack_Size)
- *fill*         0x20005260      0x400 
-                0x20005660                        . = ALIGN (0x8)
+                0x20005068                        PROVIDE (_end = .)
+                0x20005268                        . = (. + _Min_Heap_Size)
+ *fill*         0x20005068      0x200 
+                0x20005668                        . = (. + _Min_Stack_Size)
+ *fill*         0x20005268      0x400 
+                0x20005668                        . = ALIGN (0x8)
 
 /DISCARD/
  libc.a(*)
@@ -7705,7 +7720,7 @@ LOAD C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/
 LOAD C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libm.a
 LOAD C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard\libgcc.a
 
-.debug_frame    0x00000000     0x714c
+.debug_frame    0x00000000     0x71b8
  .debug_frame   0x00000000       0x20 C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-memset.o)
  .debug_frame   0x00000020       0x2c C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-init.o)
  .debug_frame   0x0000004c       0x8c CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/main.c.obj
@@ -7742,13 +7757,13 @@ LOAD C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/
  .debug_frame   0x00005f28      0xbe4 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.obj
  .debug_frame   0x00006b0c      0x12c CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.obj
  .debug_frame   0x00006c38      0x1a8 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c.obj
- .debug_frame   0x00006de0      0x138 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/app_main.c.obj
- .debug_frame   0x00006f18      0x1ac CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_control.c.obj
- .debug_frame   0x000070c4       0x2c C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard\libgcc.a(_aeabi_uldivmod.o)
- .debug_frame   0x000070f0       0x34 C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard\libgcc.a(_udivmoddi4.o)
- .debug_frame   0x00007124       0x28 C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-memcpy-stub.o)
+ .debug_frame   0x00006de0      0x130 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/app_main.c.obj
+ .debug_frame   0x00006f10      0x220 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_control.c.obj
+ .debug_frame   0x00007130       0x2c C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard\libgcc.a(_aeabi_uldivmod.o)
+ .debug_frame   0x0000715c       0x34 C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard\libgcc.a(_udivmoddi4.o)
+ .debug_frame   0x00007190       0x28 C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-memcpy-stub.o)
 
-.debug_info     0x00000000    0x1f643
+.debug_info     0x00000000    0x1f6f4
  .debug_info    0x00000000      0xb54 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/main.c.obj
  .debug_info    0x00000b54      0x459 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/gpio.c.obj
  .debug_info    0x00000fad      0x414 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/freertos.c.obj
@@ -7784,11 +7799,11 @@ LOAD C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/
  .debug_info    0x0001d60e      0x4d5 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.obj
  .debug_info    0x0001dae3      0x4de CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c.obj
  .debug_info    0x0001dfc1       0x30 CMakeFiles/DMS-24-RTOS-VCU.dir/startup_stm32f407xx.s.obj
- .debug_info    0x0001dff1      0x449 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/app_main.c.obj
- .debug_info    0x0001e43a     0x10e8 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_control.c.obj
- .debug_info    0x0001f522      0x121 C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-memcpy-stub.o)
+ .debug_info    0x0001dff1      0x463 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/app_main.c.obj
+ .debug_info    0x0001e454     0x117f CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_control.c.obj
+ .debug_info    0x0001f5d3      0x121 C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-memcpy-stub.o)
 
-.debug_abbrev   0x00000000     0x51f1
+.debug_abbrev   0x00000000     0x520d
  .debug_abbrev  0x00000000      0x25e CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/main.c.obj
  .debug_abbrev  0x0000025e      0x152 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/gpio.c.obj
  .debug_abbrev  0x000003b0      0x12f CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/freertos.c.obj
@@ -7824,11 +7839,11 @@ LOAD C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/
  .debug_abbrev  0x000047d7      0x21d CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.obj
  .debug_abbrev  0x000049f4      0x25c CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c.obj
  .debug_abbrev  0x00004c50       0x24 CMakeFiles/DMS-24-RTOS-VCU.dir/startup_stm32f407xx.s.obj
- .debug_abbrev  0x00004c74      0x22a CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/app_main.c.obj
- .debug_abbrev  0x00004e9e      0x292 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_control.c.obj
- .debug_abbrev  0x00005130       0xc1 C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-memcpy-stub.o)
+ .debug_abbrev  0x00004c74      0x246 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/app_main.c.obj
+ .debug_abbrev  0x00004eba      0x292 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_control.c.obj
+ .debug_abbrev  0x0000514c       0xc1 C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-memcpy-stub.o)
 
-.debug_aranges  0x00000000     0x1b78
+.debug_aranges  0x00000000     0x1b90
  .debug_aranges
                 0x00000000       0x38 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/main.c.obj
  .debug_aranges
@@ -7902,12 +7917,12 @@ LOAD C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/
  .debug_aranges
                 0x00001a88       0x60 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/app_main.c.obj
  .debug_aranges
-                0x00001ae8       0x70 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_control.c.obj
+                0x00001ae8       0x88 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_control.c.obj
  .debug_aranges
-                0x00001b58       0x20 C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-memcpy-stub.o)
+                0x00001b70       0x20 C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-memcpy-stub.o)
 
 .debug_rnglists
-                0x00000000     0x14ef
+                0x00000000     0x1502
  .debug_rnglists
                 0x00000000       0x26 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/main.c.obj
  .debug_rnglists
@@ -7981,11 +7996,11 @@ LOAD C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/
  .debug_rnglists
                 0x00001447       0x43 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/app_main.c.obj
  .debug_rnglists
-                0x0000148a       0x52 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_control.c.obj
+                0x0000148a       0x65 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_control.c.obj
  .debug_rnglists
-                0x000014dc       0x13 C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-memcpy-stub.o)
+                0x000014ef       0x13 C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-memcpy-stub.o)
 
-.debug_macro    0x00000000    0x26b7e
+.debug_macro    0x00000000    0x26b97
  .debug_macro   0x00000000      0x321 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/main.c.obj
  .debug_macro   0x00000321      0xab4 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/main.c.obj
  .debug_macro   0x00000dd5      0x2ad CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/main.c.obj
@@ -8093,14 +8108,14 @@ LOAD C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/
  .debug_macro   0x00025e1c       0x56 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.obj
  .debug_macro   0x00025e72      0x19f CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.obj
  .debug_macro   0x00026011      0x196 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c.obj
- .debug_macro   0x000261a7      0x2a7 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/app_main.c.obj
- .debug_macro   0x0002644e      0x3cd CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_control.c.obj
- .debug_macro   0x0002681b       0x22 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_control.c.obj
- .debug_macro   0x0002683d       0x1c CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_control.c.obj
- .debug_macro   0x00026859      0x18a CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_control.c.obj
- .debug_macro   0x000269e3      0x19b CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_control.c.obj
+ .debug_macro   0x000261a7      0x2ba CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/app_main.c.obj
+ .debug_macro   0x00026461       0x22 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/app_main.c.obj
+ .debug_macro   0x00026483      0x3d3 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_control.c.obj
+ .debug_macro   0x00026856       0x1c CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_control.c.obj
+ .debug_macro   0x00026872      0x18a CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_control.c.obj
+ .debug_macro   0x000269fc      0x19b CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_control.c.obj
 
-.debug_line     0x00000000    0x2122a
+.debug_line     0x00000000    0x2126a
  .debug_line    0x00000000      0xa58 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/main.c.obj
  .debug_line    0x00000a58      0x813 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/gpio.c.obj
  .debug_line    0x0000126b      0x9bf CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/freertos.c.obj
@@ -8136,11 +8151,11 @@ LOAD C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/
  .debug_line    0x0001e91f      0x807 CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.obj
  .debug_line    0x0001f126      0x78a CMakeFiles/DMS-24-RTOS-VCU.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c.obj
  .debug_line    0x0001f8b0       0x7a CMakeFiles/DMS-24-RTOS-VCU.dir/startup_stm32f407xx.s.obj
- .debug_line    0x0001f92a      0xa70 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/app_main.c.obj
- .debug_line    0x0002039a      0xc8e CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_control.c.obj
- .debug_line    0x00021028      0x202 C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-memcpy-stub.o)
+ .debug_line    0x0001f92a      0xa97 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/app_main.c.obj
+ .debug_line    0x000203c1      0xca7 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_control.c.obj
+ .debug_line    0x00021068      0x202 C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-memcpy-stub.o)
 
-.debug_str      0x00000000    0xe686d
+.debug_str      0x00000000    0xe68c2
  .debug_str     0x00000000    0xd765f CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/main.c.obj
                               0xd79aa (size before relaxing)
  .debug_str     0x000d765f       0xe3 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/gpio.c.obj
@@ -8211,11 +8226,11 @@ LOAD C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/
                                0x873d (size before relaxing)
  .debug_str     0x000e533c       0x4e CMakeFiles/DMS-24-RTOS-VCU.dir/startup_stm32f407xx.s.obj
                                  0x76 (size before relaxing)
- .debug_str     0x000e538a      0x198 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/app_main.c.obj
-                              0xd54d6 (size before relaxing)
- .debug_str     0x000e5522     0x11bf CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_control.c.obj
-                              0xd9f8d (size before relaxing)
- .debug_str     0x000e66e1      0x18c C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-memcpy-stub.o)
+ .debug_str     0x000e538a      0x1fb CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/app_main.c.obj
+                              0xd553f (size before relaxing)
+ .debug_str     0x000e5585     0x11b1 CMakeFiles/DMS-24-RTOS-VCU.dir/Core/Src/sensor_control.c.obj
+                              0xd9ff5 (size before relaxing)
+ .debug_str     0x000e6736      0x18c C:/ST/STM32CubeCLT_1.15.1/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libg_nano.a(libc_a-memcpy-stub.o)
                                 0x22f (size before relaxing)
 
 .comment        0x00000000       0x43
