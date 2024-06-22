@@ -6,6 +6,7 @@
 #include "stdio.h"
 #include "main.h"
 #include "math.h"
+#include "task.h"
 
 #include "sensor_control.h"
 #include "app_main.h"
@@ -19,13 +20,13 @@
 #define CUT_MOTOR_SIGNAL 0
 
 
+static TaskHandle_t xDMAdataReady = NULL;
+
 extern ADC_HandleTypeDef hadc1;
 extern TIM_HandleTypeDef htim2; 
 extern DAC_HandleTypeDef hdac;
 
 volatile uint16_t adc_buf[ADC_BUFFER_LEN];
-uint8_t dataReadyFlag = 0;
-
 
 typedef struct pedalStatus_s {
     PDP_StatusTypeDef offsetStatus;
@@ -34,20 +35,16 @@ typedef struct pedalStatus_s {
 } pedalStatus_t;
  
 
-
-
-
-
 /**
  * @brief  Normalization
- * @return normalized value
+ * @return normalized value [0.0, 1.0]
  */
 float normalize(uint16_t value, uint16_t min, uint16_t max){
     return (float)(value - min) / (max - min); // TODO: Profile performance
 }
 /**
- * @brief  Normalization
- * @return Inverse of normalized value
+ * @brief  De normalization, 
+ * @return Inverse of normalized value [min - max]
  */
 uint32_t denormalize(float normalizedValue , uint16_t min, uint16_t max){
     return (uint32_t)(normalizedValue * (max - min) + min);
@@ -128,12 +125,6 @@ PDP_StatusTypeDef sensor_out_of_range(float normalizedValue, float  minRange, fl
 }
 
 
-float calculate_temp(void){
-    float temp = (float)(adc_buf[4] * 0.322265625 / ADC_BUFFER_LEN); // TODO: This needs to be re-evaluated 
-    dataReadyFlag = 0;
-    return temp;
-}
-
 // TODO: Update to use RTOS notif 
 void set_throttle(bool enable){
     // g_pedal.throttleOutputEnabled = enable;
@@ -176,9 +167,9 @@ float adc_to_normalized(int adcValue, float minVoltage, float voltageMax, int ad
 }
 
 bool check_faults(pedalStatus_t *pedalStatus, SensorInfo_t *sensors){
-    float appsLatchThresh = 0.4f, // As percent of throttle
-          bpsLatchThresh  = 0.1f, 
-          appsResetThresh = 0.3f;
+    static float appsLatchThresh = 0.4f, // As percent of throttle
+                 bpsLatchThresh  = 0.1f, 
+                 appsResetThresh = 0.3f;
 
     pedalStatus->offsetStatus = apps_offset_check(sensors[APPS1].normalizedValue, sensors[APPS2].normalizedValue, 0.2);
     pedalStatus->latchStatus =  pedal_plasability_check(pedalStatus, sensors[APPS1].normalizedValue, sensors[FBPS].normalizedValue, appsLatchThresh, bpsLatchThresh, appsResetThresh);
@@ -210,16 +201,13 @@ void process_adc(SensorInfo_t *sensors){
     sensors[FBPS].currentAdcValue  = adc_buf[2];
     sensors[RBPS].currentAdcValue  = adc_buf[3];
     
-    
     sensors[FBPS].currentAdcValue = sensors[APPS2].currentAdcValue; // FOR TESTING so that pedal checks can be done !! 
-
 
     for (int i = 0; i < NUM_SENSORS; ++i){
         sensors[i].normalizedValue = adc_to_normalized(sensors[i].currentAdcValue, sensors[i].voltageMin, sensors[i].voltageMax, ADC_RESOLUTION_MAX);
     }
-
     // Do scaling and linear approximations as necessary 
-    
+    return;
  }
 
 
@@ -257,7 +245,7 @@ void sensorInputTask(void *argument) {
             uint32_t dacOut = denormalize(sensors[APPS1].normalizedValue, ADC_RESOLUTION_MIN, ADC_RESOLUTION_MAX);
             HAL_DAC_SetValue(&hdac, DAC_CHANNEL_1, DAC_ALIGN_12B_R, dacOut);  
         }
-
+        
         // Cleanup         
         HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, GPIO_PIN_RESET);
         osDelay(10);
@@ -270,8 +258,6 @@ void HAL_ADC_ConvHalfCpltCallback(ADC_HandleTypeDef* hadc) {
 
 void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef *hadc) {
     (void)hadc;
-    
     HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_13);
-    dataReadyFlag = 1;
 }
 
