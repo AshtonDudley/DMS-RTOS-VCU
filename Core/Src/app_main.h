@@ -17,7 +17,7 @@ typedef enum {
 
 /* called when entering state */
 int entry_state(void);
-int idle_state(void);
+int neutral_state(void);
 int forward_state(void);
 int reverse_state(void);
 int end_state(void);
