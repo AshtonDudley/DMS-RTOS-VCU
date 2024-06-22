@@ -61,7 +61,7 @@ void app_config(){
     return;
 }
 
-int entry_state(void){
+int entry_state(void){    
     return SM_OKAY;
 }
 
@@ -117,6 +117,7 @@ void stateMachineTask(void *argument){
         
         HAL_GPIO_WritePin(GPIOD, GPIO_PIN_15, GPIO_PIN_RESET);
 
+        set_throttle(false);
         osDelay(10);
     }
 }

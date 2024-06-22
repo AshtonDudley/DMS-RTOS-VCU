@@ -10,12 +10,14 @@
 #include "sensor_control.h"
 #include "app_main.h"
 
-#define ADC_RESOLUTION 4096
+#define ADC_RESOLUTION_MAX 4096
+#define ADC_RESOLUTION_MIN 0
 #define ADC_BUFFER_LEN 6 // Should be equal to the number of ADC channels
 
 #define OFFSET_THRESHOLD 10 // Percent 
 
 #define CUT_MOTOR_SIGNAL 0
+
 
 extern ADC_HandleTypeDef hadc1;
 extern TIM_HandleTypeDef htim2; 
@@ -24,12 +26,7 @@ extern DAC_HandleTypeDef hdac;
 volatile uint16_t adc_buf[ADC_BUFFER_LEN];
 uint8_t dataReadyFlag = 0;
 
-typedef struct adcChannel_s {
-	float adcAPPS1;
-	float adcAPPS2;
-	float adcFBPS;
-	float adcRBPS;
-} adcChannel_t;
+
 
 typedef struct pedalStatus_s {
     PDP_StatusTypeDef offsetStatus;
@@ -39,6 +36,7 @@ typedef struct pedalStatus_s {
     bool processADC;
 } pedalStatus_t;
  
+
 /// @brief  Singular instance of the pedal object
 pedalStatus_t g_pedal = {
     .latchStatus = PDP_OKAY,
@@ -81,7 +79,7 @@ float percentDifference(float a, float b) {
 float linear_interpolation(float adc_input, float xarray[11], float yarray[11]) {
 	float x0 = 0.0f, x1 = 0.0f, y0 = 0.0f, y1 = 0.0f;
 	int i = 0;
-	while (xarray[i] < adc_input && i < 11) { // TODO: Improve the safety of this function
+	while (xarray[i] < adc_input && i < 11) {
 		i++;
 	}
 	x0 = xarray[i - 1];
@@ -107,7 +105,7 @@ PDP_StatusTypeDef apps_offset_check(float apps1, float apps2, float thresh) {
     return PDP_OKAY;
 }
 
-PDP_StatusTypeDef pedal_plasability_check(pedalStatus_t *pedal, float apps, float bps, float appsLatchThresh, float bpsLatchThresh, float appsRestThreshold  ) {
+PDP_StatusTypeDef pedal_plasability_check(pedalStatus_t *pedal, float apps, float bps, float appsLatchThresh, float bpsLatchThresh, float appsRestThreshold) {
     
     if (apps > appsLatchThresh && bps > bpsLatchThresh) {
 		return PDP_ERROR;
@@ -148,52 +146,101 @@ void set_throttle(bool enable){
 }
 
 void sensor_init() {
+    // init object 
     HAL_TIM_Base_Start(&htim2);
     HAL_ADC_Start_DMA(&hadc1, (uint32_t*)adc_buf, ADC_BUFFER_LEN);
     HAL_DAC_Start(&hdac, DAC1_CHANNEL_1);
     return;
 }
 
-void process_adc(adcChannel_t *adcChannel){
 
-    // Normalize ADC inputs
-    float apps1Norm = normalize(adc_buf[0], 0, 4096);
-    float apps2Norm = normalize(adc_buf[1], 0, 4096);
-    float fbpsNorm  = normalize(adc_buf[3], 0, 4096); 
-    float rbpsNorm  = normalize(adc_buf[4], 0, 4096);
-    
-    fbpsNorm = apps2Norm; // FOR TESTING !! 
-    float xThrottleMap[] = {0.0f, 0.1f, 0.2f, 0.3f, 0.4f, 0.5f, 0.6f, 0.7f, 0.8f, 0.9f, 1.0f};
-    float yThrottleMap[] = {0.0f, 0.1f, 0.2f, 0.3f, 0.4f, 0.5f, 0.6f, 0.7f, 0.8f, 0.9f, 1.0f};
-
-    // Assign values to channel
-    adcChannel->adcAPPS1 = linear_interpolation(apps1Norm, xThrottleMap, yThrottleMap);
-    adcChannel->adcAPPS2 = linear_interpolation(apps2Norm, xThrottleMap, yThrottleMap);
-    adcChannel->adcFBPS  = linear_interpolation(fbpsNorm, xThrottleMap, yThrottleMap);
-    adcChannel->adcRBPS  = linear_interpolation(rbpsNorm, xThrottleMap, yThrottleMap);
-    return;
+/// @brief Store Raw ADC values to sensor struct
+/// @param sensors 
+void set_sensor_adc_values(SensorInfo_t sensors[]) {
+    for (int i = 0; i < NUM_SENSORS; i++){
+        sensors[i].currentAdcValue = adc_buf[i];
+    }
 }
+/**
+ * @brief Convert ADC value to normalized value based on min and max voltage.
+ *
+ * @param adcValue Raw ADC value to convert.
+ * @param minVoltage Minimum voltage corresponding to 0 ADC value.
+ * @param maxVoltage Maximum voltage corresponding to maximum ADC value.
+ * @return Normalized value in the range [0.0, 1.0].
+ */
+float adc_to_normalized(int adcValue, float minVoltage, float voltageMax, int adcMax) {
+    float adcRefVoltage = 3.3f;    
+    // Convert ADC value to voltage
+    float adc_voltage = (adcValue / (float)adcMax) * adcRefVoltage;
+
+    // Normalize voltage to a range of 0 to 1
+    float normalized = (adc_voltage - minVoltage) / (voltageMax - minVoltage);
+
+    // Ensure normalized value is between 0 and 1
+    // if (normalized < 0.0f) normalized = 0.0f;
+    // if (normalized > 1.0f) normalized = 1.0f;
+    return normalized;
+}
+
+void process_adc(SensorInfo_t *sensors){
+    
+    sensors[APPS1].currentAdcValue = adc_buf[0];
+    sensors[APPS2].currentAdcValue = adc_buf[1];
+    sensors[FBPS].currentAdcValue  = adc_buf[2];
+    sensors[RBPS].currentAdcValue  = adc_buf[3];
+
+    for (int i = 0; i < NUM_SENSORS; ++i){
+        sensors[i].normalizedValue = adc_to_normalized(sensors[i].currentAdcValue, sensors[i].voltageMin, sensors[i].voltageMax, ADC_RESOLUTION_MAX);
+    }
+
+    // set_sensor_adc_values(sensors);
+
+    // Do scaling and linear approximations as necessary 
+    // fbpsNorm = apps2Norm; // FOR TESTING !! 
+    
+ }
+
 
 void sensorInputTask(void *argument) {
     (void)argument;
-    adcChannel_t adcChannel;
-
     sensor_init();
 
+    
+    float appsLatchThresh = 0.4f, // As percent of throttle
+          bpsLatchThresh  = 0.1f, 
+          appsResetThresh = 0.3f;
+    
+    SensorInfo_t sensors[] = {
+        [APPS1] = {"APPS1", 1.0f, 2.0f, 0, 0.0f},
+        [APPS2] = {"APPS2", 1.0f, 2.0f, 0, 0.0f},
+        [FBPS]  = {"FBPS" , 0.0f, 3.3f, 0, 0.0f},
+        [RBPS]  = {"RBPS" , 0.0f, 3.3f, 0, 0.0f},       
+    };
+
     for(;;) {
-        HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, GPIO_PIN_SET);
+        HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, GPIO_PIN_SET);    // LEDs are used for time profiling 
 
-        g_pedal.offsetStatus = apps_offset_check(adcChannel.adcAPPS1, adcChannel.adcAPPS2, 0.2);
-        g_pedal.latchStatus = pedal_plasability_check(&g_pedal, adcChannel.adcAPPS1, adcChannel.adcFBPS, 0.4, 0.1, 0.3);
-
+        
+        // ADC Processing 
         if (g_pedal.processADC){
-            process_adc(&adcChannel);
+            process_adc(sensors);
             g_pedal.throttleOutputEnabled =  check_faults(&g_pedal);
         }
 
+        // g_pedal.offsetStatus = apps_offset_check(adcChannel.adcAPPS1, adcChannel.adcAPPS2, 0.2);
+        // g_pedal.latchStatus = pedal_plasability_check(&g_pedal, adcChannel.adcAPPS1, adcChannel.adcFBPS, appsLatchThresh, bpsLatchThresh, appsResetThresh);
+
+        // Check if brake light should be enabled
+        // TODO: Add brake light as pedal object paramater?
+        if (true){          
+            // check_brake_light(adcChannel); 
+        }
+        
+        // throttle Output
         if (g_pedal.throttleOutputEnabled == true){
-            uint32_t dacOut = denormalize(adcChannel.adcAPPS1, 0, 4096);
-            HAL_DAC_SetValue(&hdac, DAC_CHANNEL_1, DAC_ALIGN_12B_R, dacOut);  
+            // uint32_t dacOut = denormalize(adcChannel.adcAPPS1, ADC_RESOLUTION_MIN, ADC_RESOLUTION_MAX);
+            // HAL_DAC_SetValue(&hdac, DAC_CHANNEL_1, DAC_ALIGN_12B_R, dacOut);  
         }
 
         // Cleanup         
@@ -201,7 +248,6 @@ void sensorInputTask(void *argument) {
         osDelay(10);
     }
 }
-
 
 void HAL_ADC_ConvHalfCpltCallback(ADC_HandleTypeDef* hadc) {
 	(void)hadc;
