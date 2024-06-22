@@ -27,24 +27,15 @@ volatile uint16_t adc_buf[ADC_BUFFER_LEN];
 uint8_t dataReadyFlag = 0;
 
 
-
 typedef struct pedalStatus_s {
     PDP_StatusTypeDef offsetStatus;
     PDP_StatusTypeDef latchStatus;
     PDP_StatusTypeDef sensorStatus;
-    bool throttleOutputEnabled;
-    bool processADC;
 } pedalStatus_t;
  
 
-/// @brief  Singular instance of the pedal object
-pedalStatus_t g_pedal = {
-    .latchStatus = PDP_OKAY,
-    .offsetStatus = PDP_OKAY,
-    .sensorStatus = PDP_OKAY,
-    .throttleOutputEnabled = false,
-    .processADC = true
-};
+
+
 
 
 /**
@@ -91,12 +82,10 @@ float linear_interpolation(float adc_input, float xarray[11], float yarray[11]) 
 	return outputValue;
 } 
 
-/**
-  * @brief  APPS Agreement Check. Checks if both APPS sensors are within
-  * %error threshold of each other.
-  * @retval 0 no fault
-  * @retval 1 AAC_fault, difference between pedal sensors > %threshold
-  */
+/// @brief  APPS Agreement Check. Checks if both APPS sensors are within
+///         %error threshold of each other.
+/// @retval PDP_OKAY no fault
+/// @retval PDP_ERROR AAC_fault, difference between pedal sensors > %threshold
 PDP_StatusTypeDef apps_offset_check(float apps1, float apps2, float thresh) {
     float diff = percentDifference(apps1, apps2);
     if (diff >= thresh) {
@@ -104,12 +93,20 @@ PDP_StatusTypeDef apps_offset_check(float apps1, float apps2, float thresh) {
     }
     return PDP_OKAY;
 }
-
-PDP_StatusTypeDef pedal_plasability_check(pedalStatus_t *pedal, float apps, float bps, float appsLatchThresh, float bpsLatchThresh, float appsRestThreshold) {
+/// @brief Check if both the throttle and break are being pressed. If so latch the    
+///        throttle until it returns below a value
+/// @param pedal Current pedal state 
+/// @param apps  Accelerator pedal position sensor value [0.0, 1.0]
+/// @param bps   Brake pressure sensor value [0.0, 1.0]
+/// @param appsLatchThresh    Accelerator pedal position sensor threshold [0.0, 1.0]
+/// @param bpsLatchThresh     Brake pressure sensor threshold [0.0, 1.0]
+/// @param appsRestThreshold  Throttle will not unlatch until below this value [0.0, 1.0]
+/// @return PDP_StatusTypeDef
+PDP_StatusTypeDef pedal_plasability_check(pedalStatus_t *pedal, float apps, float bps, float appsLatchThresh, float bpsLatchThresh, float appsRestThresh) {
     
     if (apps > appsLatchThresh && bps > bpsLatchThresh) {
 		return PDP_ERROR;
-	} else if (pedal->latchStatus != PDP_OKAY && apps < appsRestThreshold){     // Check if latch can be reset
+	} else if (pedal->latchStatus != PDP_OKAY && apps < appsRestThresh){     // Check if latch can be reset
         return PDP_OKAY;                                                        // Disable latch
     } else if (pedal->latchStatus != PDP_OKAY && apps > appsLatchThresh){       // Waiting for latch to reset fault
         return PDP_ERROR;
@@ -118,18 +115,18 @@ PDP_StatusTypeDef pedal_plasability_check(pedalStatus_t *pedal, float apps, floa
     }
 }
 
-bool check_faults(pedalStatus_t *pedal){
-    if (pedal->latchStatus != PDP_OKAY){
-        return false;
-    }
-    else if (pedal->offsetStatus != PDP_OKAY){
-        return false;
-    }
-    else if (pedal->sensorStatus != PDP_OKAY){
-        return false;
-    }
-    return true;
+/// @brief Check if a normalized value is out of range
+/// @param normalizedValue Value to check, typically [0.0, 1.0]
+/// @param minRange Minium threshold to cause a fault [less than 0] 
+/// @param maxRange Maximum threshold to cause a fault [greater than 0]
+/// @return PDP_StatusTypeDef
+PDP_StatusTypeDef sensor_out_of_range(float normalizedValue, float  minRange, float maxRange){
+    if (normalizedValue > maxRange || normalizedValue > minRange){
+        return PDP_ERROR;
+    } 
+    return PDP_OKAY;
 }
+
 
 float calculate_temp(void){
     float temp = (float)(adc_buf[4] * 0.322265625 / ADC_BUFFER_LEN); // TODO: This needs to be re-evaluated 
@@ -137,8 +134,9 @@ float calculate_temp(void){
     return temp;
 }
 
+// TODO: Update to use RTOS notif 
 void set_throttle(bool enable){
-    g_pedal.throttleOutputEnabled = enable;
+    // g_pedal.throttleOutputEnabled = enable;
     if (!enable){
         HAL_DAC_SetValue(&hdac, DAC_CHANNEL_1, DAC_ALIGN_12B_R, CUT_MOTOR_SIGNAL);
     }
@@ -161,14 +159,12 @@ void set_sensor_adc_values(SensorInfo_t sensors[]) {
         sensors[i].currentAdcValue = adc_buf[i];
     }
 }
-/**
- * @brief Convert ADC value to normalized value based on min and max voltage.
- *
- * @param adcValue Raw ADC value to convert.
- * @param minVoltage Minimum voltage corresponding to 0 ADC value.
- * @param maxVoltage Maximum voltage corresponding to maximum ADC value.
- * @return Normalized value in the range [0.0, 1.0].
- */
+
+///@brief Convert ADC value to normalized value based on min and max voltage
+///@param adcValue Raw ADC value to convert
+///@param minVoltage Minimum voltage corresponding to 0 ADC value
+///@param maxVoltage Maximum voltage corresponding to maximum ADC value
+///@return Normalized value in the range [0.0, 1.0]. Values may be larger then 1
 float adc_to_normalized(int adcValue, float minVoltage, float voltageMax, int adcMax) {
     float adcRefVoltage = 3.3f;    
     // Convert ADC value to voltage
@@ -176,11 +172,35 @@ float adc_to_normalized(int adcValue, float minVoltage, float voltageMax, int ad
 
     // Normalize voltage to a range of 0 to 1
     float normalized = (adc_voltage - minVoltage) / (voltageMax - minVoltage);
-
-    // Ensure normalized value is between 0 and 1
-    // if (normalized < 0.0f) normalized = 0.0f;
-    // if (normalized > 1.0f) normalized = 1.0f;
     return normalized;
+}
+
+bool check_faults(pedalStatus_t *pedalStatus, SensorInfo_t *sensors){
+    float appsLatchThresh = 0.4f, // As percent of throttle
+          bpsLatchThresh  = 0.1f, 
+          appsResetThresh = 0.3f;
+
+    pedalStatus->offsetStatus = apps_offset_check(sensors[APPS1].normalizedValue, sensors[APPS2].normalizedValue, 0.2);
+    pedalStatus->latchStatus =  pedal_plasability_check(pedalStatus, sensors[APPS1].normalizedValue, sensors[FBPS].normalizedValue, appsLatchThresh, bpsLatchThresh, appsResetThresh);
+
+    float minRange = -0.1f,
+          maxRange =  1.1f;      
+
+    for (int i = 0; i < NUM_SENSORS; i++){
+        PDP_StatusTypeDef rc = sensor_out_of_range(sensors[i].normalizedValue, minRange, maxRange);
+        if (rc == PDP_ERROR){
+            pedalStatus->sensorStatus = PDP_ERROR;
+            return false;
+        }
+    }
+    
+    if (pedalStatus->latchStatus != PDP_OKAY){
+        return false;
+    }
+    else if (pedalStatus->offsetStatus != PDP_OKAY){
+        return false;
+    }
+    return true;
 }
 
 void process_adc(SensorInfo_t *sensors){
@@ -189,15 +209,16 @@ void process_adc(SensorInfo_t *sensors){
     sensors[APPS2].currentAdcValue = adc_buf[1];
     sensors[FBPS].currentAdcValue  = adc_buf[2];
     sensors[RBPS].currentAdcValue  = adc_buf[3];
+    
+    
+    sensors[FBPS].currentAdcValue = sensors[APPS2].currentAdcValue; // FOR TESTING so that pedal checks can be done !! 
+
 
     for (int i = 0; i < NUM_SENSORS; ++i){
         sensors[i].normalizedValue = adc_to_normalized(sensors[i].currentAdcValue, sensors[i].voltageMin, sensors[i].voltageMax, ADC_RESOLUTION_MAX);
     }
 
-    // set_sensor_adc_values(sensors);
-
     // Do scaling and linear approximations as necessary 
-    // fbpsNorm = apps2Norm; // FOR TESTING !! 
     
  }
 
@@ -206,11 +227,6 @@ void sensorInputTask(void *argument) {
     (void)argument;
     sensor_init();
 
-    
-    float appsLatchThresh = 0.4f, // As percent of throttle
-          bpsLatchThresh  = 0.1f, 
-          appsResetThresh = 0.3f;
-    
     SensorInfo_t sensors[] = {
         [APPS1] = {"APPS1", 1.0f, 2.0f, 0, 0.0f},
         [APPS2] = {"APPS2", 1.0f, 2.0f, 0, 0.0f},
@@ -218,19 +234,18 @@ void sensorInputTask(void *argument) {
         [RBPS]  = {"RBPS" , 0.0f, 3.3f, 0, 0.0f},       
     };
 
+    pedalStatus_t pedalStatus = {
+    .latchStatus = PDP_OKAY,
+    .offsetStatus = PDP_OKAY,
+    .sensorStatus = PDP_OKAY,
+};
+
     for(;;) {
-        HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, GPIO_PIN_SET);    // LEDs are used for time profiling 
-
-        
+        HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, GPIO_PIN_SET);    // LEDs are used for time profiling       
         // ADC Processing 
-        if (g_pedal.processADC){
-            process_adc(sensors);
-            g_pedal.throttleOutputEnabled =  check_faults(&g_pedal);
-        }
-
-        // g_pedal.offsetStatus = apps_offset_check(adcChannel.adcAPPS1, adcChannel.adcAPPS2, 0.2);
-        // g_pedal.latchStatus = pedal_plasability_check(&g_pedal, adcChannel.adcAPPS1, adcChannel.adcFBPS, appsLatchThresh, bpsLatchThresh, appsResetThresh);
-
+        process_adc(sensors);
+        bool outputThrottle =  check_faults(&pedalStatus, sensors);
+        
         // Check if brake light should be enabled
         // TODO: Add brake light as pedal object paramater?
         if (true){          
@@ -238,9 +253,9 @@ void sensorInputTask(void *argument) {
         }
         
         // throttle Output
-        if (g_pedal.throttleOutputEnabled == true){
-            // uint32_t dacOut = denormalize(adcChannel.adcAPPS1, ADC_RESOLUTION_MIN, ADC_RESOLUTION_MAX);
-            // HAL_DAC_SetValue(&hdac, DAC_CHANNEL_1, DAC_ALIGN_12B_R, dacOut);  
+        if (outputThrottle == true){
+            uint32_t dacOut = denormalize(sensors[APPS1].normalizedValue, ADC_RESOLUTION_MIN, ADC_RESOLUTION_MAX);
+            HAL_DAC_SetValue(&hdac, DAC_CHANNEL_1, DAC_ALIGN_12B_R, dacOut);  
         }
 
         // Cleanup         
