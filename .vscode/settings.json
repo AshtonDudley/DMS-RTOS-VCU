@@ -12,7 +12,8 @@
         "stdio.h": "c",
         "compare": "c",
         "freertos.h": "c",
-        "stdbool.h": "c"
+        "stdbool.h": "c",
+        "sensor_control.h": "c"
     },
     "cSpell.words": [
         "fbps",

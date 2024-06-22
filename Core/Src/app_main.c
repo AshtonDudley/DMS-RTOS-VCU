@@ -105,10 +105,12 @@ void stateMachineTask(void *argument){
 	int (*state_fun)(void);
 
     for(;;) {
-
+        HAL_GPIO_WritePin(GPIOD, GPIO_PIN_15, GPIO_PIN_SET);
 	    state_fun = state[cur_state];       
 	    rc = state_fun();                   // runs the corresponding state function, and returns a return code
 	    cur_state = lookup_transitions(cur_state, rc);
+        
+        HAL_GPIO_WritePin(GPIOD, GPIO_PIN_15, GPIO_PIN_RESET);
 
         osDelay(10);
     }

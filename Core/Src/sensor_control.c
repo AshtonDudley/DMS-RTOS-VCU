@@ -5,6 +5,7 @@
 #include "stdlib.h"
 #include "stdio.h"
 #include "main.h"
+#include "math.h"
 
 #include "sensor_control.h"
 #include "app_main.h"
@@ -35,8 +36,30 @@ typedef struct pedalStatus_s {
 } pedalStatus_t;
  
 
+/**
+ * @brief  Normalization
+ * @return normalized value
+ */
+float normalize(uint16_t value, uint16_t min, uint16_t max){
+    return (float)(value - min) / (max - min); // TODO: Profile performance
+}
+/**
+ * @brief  Normalization
+ * @return Inverse of normalized value
+ */
+uint32_t denormalize(float normalizedValue , uint16_t min, uint16_t max){
+    return (uint32_t)(normalizedValue * (max - min) + min);
+}
 
-
+float percentDifference(float a, float b) {
+    if (a == b) {
+        return 0.0f; // If both numbers are equal, percent difference is 0%
+    } else {
+        float avg = (a + b) / 2.0f;
+        float diff = fabs(a - b); // Absolute difference
+        return (diff / avg);
+    }
+}
 
 
 
@@ -46,11 +69,9 @@ typedef struct pedalStatus_s {
   * @retval 0 no fault
   * @retval 1 AAC_fault, difference between pedal sensors > %threshold
   */
-PDP_StatusTypeDef apps_offset_check(uint32_t apps1, uint32_t apps2) {
-    float absDif = abs((int) apps1 - (int) apps2);                      // Calculating percent Difference
-	float percentDifference = (absDif / ((apps1 + apps2) / 2)) * 100;   // 
-
-    if (percentDifference >= OFFSET_THRESHOLD) {
+PDP_StatusTypeDef apps_offset_check(float apps1, float apps2, float thresh) {
+    float diff = percentDifference(apps1, apps2);
+    if (diff >= thresh) {
 		return PDP_ERROR;
     }
     return PDP_OKAY;
@@ -69,20 +90,6 @@ PDP_StatusTypeDef pedal_plasability_check(pedalStatus_t *pedal, float apps, floa
     }
 }
 
-/**
- * @brief  Normalization
- * @return normalized value
- */
-float normalize(uint16_t value, uint16_t min, uint16_t max){
-    return (float)(value - min) / (max - min); // TODO: Profile performance
-}
-/**
- * @brief  Normalization
- * @return Inverse of normalized value
- */
-uint32_t denormalize(float normalizedValue , uint16_t min, uint16_t max){
-    return (uint32_t)(normalizedValue * (max - min) + min);
-}
 
 
 
@@ -131,6 +138,8 @@ void sensorInputTask(void *argument) {
     float xThrottleMap[] = {0.0f, 0.1f, 0.2f, 0.3f, 0.4f, 0.5f, 0.6f, 0.7f, 0.8f, 0.9f, 1.0f};
     float yThrottleMap[] = {0.0f, 0.1f, 0.2f, 0.3f, 0.4f, 0.5f, 0.6f, 0.7f, 0.8f, 0.9f, 1.0f};
     for(;;) {
+        HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, GPIO_PIN_SET);
+
         // Normalize ADC inputs
         float apps1Norm = normalize(adc_buf[0], 0, 4096);
         float apps2Norm = normalize(adc_buf[1], 0, 4096);
@@ -146,12 +155,16 @@ void sensorInputTask(void *argument) {
         adcChannel.adcRBPS  = linear_interpolation(rbpsNorm, xThrottleMap, yThrottleMap);
             
 
-        pedals.offsetStatus = apps_offset_check(adcChannel.adcAPPS1, adcChannel.adcAPPS2);
-        pedals.latchStatus = pedal_plasability_check(&pedals, adcChannel.adcAPPS1, adcChannel.adcFBPS, 0.4, 0.1, 0.1);
+        pedals.offsetStatus = apps_offset_check(adcChannel.adcAPPS1, adcChannel.adcAPPS2, 0.2);
+        pedals.latchStatus = pedal_plasability_check(&pedals, adcChannel.adcAPPS1, adcChannel.adcFBPS, 0.4, 0.1, 0.3);
 
         uint32_t dacOut = denormalize(adcChannel.adcAPPS1, 0, 4096);
-        HAL_DAC_SetValue(&hdac, DAC_CHANNEL_1, DAC_ALIGN_12B_R, dacOut);      
         
+        
+        
+        // TODO Check pedals status
+        HAL_DAC_SetValue(&hdac, DAC_CHANNEL_1, DAC_ALIGN_12B_R, dacOut);      
+        HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, GPIO_PIN_RESET);
         
         osDelay(10);
     }
