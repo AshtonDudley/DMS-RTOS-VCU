@@ -5,7 +5,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/github_username/repo_name">
-    <img src="images/dms_logo.jpg" alt="Logo" width="2000" height="800">
+    <img src="images/dms_logo.jpg" alt="Logo" width="1000" height="400">
   </a>
 
 <h3 align="center">project_title</h3>
