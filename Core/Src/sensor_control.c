@@ -142,11 +142,10 @@ float calculate_temp(void){
 void set_throttle(bool enable){
     g_pedal.throttleOutputEnabled = enable;
     if (!enable){
-         HAL_DAC_SetValue(&hdac, DAC_CHANNEL_1, DAC_ALIGN_12B_R, CUT_MOTOR_SIGNAL);
+        HAL_DAC_SetValue(&hdac, DAC_CHANNEL_1, DAC_ALIGN_12B_R, CUT_MOTOR_SIGNAL);
     }
     return;
 }
-
 
 void sensor_init() {
     HAL_TIM_Base_Start(&htim2);
@@ -154,7 +153,6 @@ void sensor_init() {
     HAL_DAC_Start(&hdac, DAC1_CHANNEL_1);
     return;
 }
-
 
 void process_adc(adcChannel_t *adcChannel){
 
@@ -192,8 +190,6 @@ void sensorInputTask(void *argument) {
             process_adc(&adcChannel);
             g_pedal.throttleOutputEnabled =  check_faults(&g_pedal);
         }
-
-
 
         if (g_pedal.throttleOutputEnabled == true){
             uint32_t dacOut = denormalize(adcChannel.adcAPPS1, 0, 4096);
