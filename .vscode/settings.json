@@ -15,7 +15,9 @@
         "stdbool.h": "c"
     },
     "cSpell.words": [
+        "fbps",
         "plasability",
+        "rbps",
         "yarray"
     ]
 }

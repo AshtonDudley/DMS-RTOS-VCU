@@ -56,12 +56,18 @@ PDP_StatusTypeDef apps_offset_check(uint32_t apps1, uint32_t apps2) {
     return PDP_OKAY;
 }
 
-// PDP_StatusTypeDef pedal_plasability_check(uint32_t apps, uint32_t bps, pedalStatus_t *pedal) {
-// 	if (apps > APPS_PAG_THRESHOLD && fbps > FBPS_PAG_THRESHOLD) {
-// 		PAG_fault = PDP_ERROR;
-// 		return PAG_fault;
-// 	}
-// }
+PDP_StatusTypeDef pedal_plasability_check(pedalStatus_t *pedal, float apps, float bps, float appsLatchThresh, float bpsLatchThresh, float appsRestThreshold  ) {
+    
+    if (apps > appsLatchThresh && bps > bpsLatchThresh) {
+		return PDP_ERROR;
+	} else if (pedal->latchStatus != PDP_OKAY && apps < appsRestThreshold){     // Check if latch can be reset
+        return PDP_OKAY;                                                        // Disable latch
+    } else if (pedal->latchStatus != PDP_OKAY && apps > appsLatchThresh){       // Waiting for latch to reset fault
+        return PDP_ERROR;
+    } else {
+        return pedal->latchStatus;
+    }
+}
 
 /**
  * @brief  Normalization
@@ -74,8 +80,8 @@ float normalize(uint16_t value, uint16_t min, uint16_t max){
  * @brief  Normalization
  * @return Inverse of normalized value
  */
-float denormalize(uint16_t normalizedValue , uint16_t min, uint16_t max){
-    return (int)(normalizedValue * (max - min) + min);
+uint32_t denormalize(float normalizedValue , uint16_t min, uint16_t max){
+    return (uint32_t)(normalizedValue * (max - min) + min);
 }
 
 
@@ -122,20 +128,28 @@ void sensorInputTask(void *argument) {
     pedalStatus_t pedals;
 
 
-    float xarray[] = {0.0f, 0.1f, 0.2f, 0.3f, 0.4f, 0.5f, 0.6f, 0.7f, 0.8f, 0.9f, 1.0f};
-    float yarray[] = {0.0f, 0.1f, 0.2f, 0.3f, 0.4f, 0.5f, 0.6f, 0.7f, 0.8f, 0.9f, 1.0f};
+    float xThrottleMap[] = {0.0f, 0.1f, 0.2f, 0.3f, 0.4f, 0.5f, 0.6f, 0.7f, 0.8f, 0.9f, 1.0f};
+    float yThrottleMap[] = {0.0f, 0.1f, 0.2f, 0.3f, 0.4f, 0.5f, 0.6f, 0.7f, 0.8f, 0.9f, 1.0f};
     for(;;) {
+        // Normalize ADC inputs
         float apps1Norm = normalize(adc_buf[0], 0, 4096);
         float apps2Norm = normalize(adc_buf[1], 0, 4096);
+        float fbpsNorm  = normalize(adc_buf[3], 0, 4096); 
+        float rbpsNorm  = normalize(adc_buf[4], 0, 4096);
+        
+        fbpsNorm = apps2Norm; // FOR TESTING !!
 
-        adcChannel.adcAPPS1 = linear_interpolation(apps1Norm, xarray, yarray);
-        adcChannel.adcAPPS2 = linear_interpolation(apps2Norm, xarray, yarray);
-    
+        // Assign values to channel
+        adcChannel.adcAPPS1 = linear_interpolation(apps1Norm, xThrottleMap, yThrottleMap);
+        adcChannel.adcAPPS2 = linear_interpolation(apps2Norm, xThrottleMap, yThrottleMap);
+        adcChannel.adcFBPS  = linear_interpolation(fbpsNorm, xThrottleMap, yThrottleMap);
+        adcChannel.adcRBPS  = linear_interpolation(rbpsNorm, xThrottleMap, yThrottleMap);
+            
 
         pedals.offsetStatus = apps_offset_check(adcChannel.adcAPPS1, adcChannel.adcAPPS2);
+        pedals.latchStatus = pedal_plasability_check(&pedals, adcChannel.adcAPPS1, adcChannel.adcFBPS, 0.4, 0.1, 0.1);
 
-
-        uint32_t dacOut = (float)denormalize(adcChannel.adcAPPS1, 0, 4096);
+        uint32_t dacOut = denormalize(adcChannel.adcAPPS1, 0, 4096);
         HAL_DAC_SetValue(&hdac, DAC_CHANNEL_1, DAC_ALIGN_12B_R, dacOut);      
         
         
