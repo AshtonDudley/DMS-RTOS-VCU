@@ -8,7 +8,7 @@
     <img src="images/dms_logo.jpg" alt="Logo" width="1000" height="400">
   </a>
 
-<h3 align="center">project_title</h3>
+<h3 align="center">Real Time Vehicle Control Unit</h3>
 
   <p align="center">
     DMS-RTOS-VCU
@@ -27,9 +27,9 @@ To get a local copy up and running follow these simple example steps.
 ### TODO: Prerequisites
 
 This is an example of how to list things you need to use the software and how to install them.
-* npm
+* VSCode
   ```sh
-  npm install npm@latest -g
+  todo
   ```
 
 ### TODO: Installation
