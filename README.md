@@ -5,7 +5,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/github_username/repo_name">
-    <img src="images/dms_logo.jpg" alt="Logo" width="1000" height="400">
+    <img src="images/dms_logo.jpg" alt="Logo" width="500" height="200">
   </a>
 
 <h3 align="center">Real Time Vehicle Control Unit</h3>
@@ -21,16 +21,25 @@
 <!-- GETTING STARTED -->
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+To get a local copy up and running follow these steps.
 
 ### TODO: Prerequisites
 
 This is an example of how to list things you need to use the software and how to install them.
-* VSCode
+* VSCode with the following extensions:
   ```sh
-  todo
+  STM32 VS Code Extension (https://marketplace.visualstudio.com/items?itemName=stmicroelectronics.stm32-vscode-extension)
+  Cortex-Debug (https://marketplace.visualstudio.com/items?itemName=marus25.cortex-debug)
   ```
+* STM32Cube Tools
+    ```sh
+    STM32CubeMX (https://www.st.com/en/development-tools/stm32cubemx.html)
+    STM32CubeCLT (https://www.st.com/en/development-tools/stm32cubeclt.html)
+    ```
+* Arm GNU Toolchain
+    ```sh
+    https://developer.arm.com/downloads/-/arm-gnu-toolchain-downloads
+    ```
 
 ### TODO: Installation
 <!--
