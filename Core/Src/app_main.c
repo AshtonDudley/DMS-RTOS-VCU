@@ -1,9 +1,10 @@
-#include "app_main.h"
 #include "stm32f4xx_hal.h"
 #include "FreeRTOS.h"
 #include "cmsis_os2.h"
 #include "stdbool.h"
+#include "usbd_cdc_if.h"
 
+#include "app_main.h"
 #include "sensor_control.h"
 
 #define EXIT_STATE end
@@ -22,7 +23,6 @@ int (*state[])(void) = {
     reverse_state, 
     end_state
 };
-
 
 struct transition {
 	state_codes_t src_state;
@@ -109,6 +109,7 @@ void stateMachineTask(void *argument){
 	ret_codes_t rc;
 	int (*state_fun)(void);
 
+    CDC_Transmit_FS(Buf, *Len);
     for(;;) {
         HAL_GPIO_WritePin(GPIOD, GPIO_PIN_15, GPIO_PIN_SET);
 	    state_fun = state[cur_state];       
