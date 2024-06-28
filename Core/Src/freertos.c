@@ -58,14 +58,14 @@ const osThreadAttr_t status_leds_attributes = {
 osThreadId_t sensor_inputHandle;
 const osThreadAttr_t sensor_input_attributes = {
   .name = "sensor_input",
-  .stack_size = 128 * 4,
+  .stack_size = 2048 * 4,
   .priority = (osPriority_t) osPriorityAboveNormal1,
 };
 /* Definitions for state_machine */
 osThreadId_t state_machineHandle;
 const osThreadAttr_t state_machine_attributes = {
   .name = "state_machine",
-  .stack_size = 2048 * 4,
+  .stack_size = 256 * 4,
   .priority = (osPriority_t) osPriorityNormal,
 };
 

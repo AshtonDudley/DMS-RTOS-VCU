@@ -7,7 +7,9 @@
 
 #define USB_BUF_SIZE 256
 
-void dms_printf(const char *format, ...){
+
+void dms_printf(const char *format, ...){ 
+    // TODO: MPU will crash if two print statements are called dirrectly after each other
     static char USB_buf[USB_BUF_SIZE];
     va_list args;
     va_start(args, format);

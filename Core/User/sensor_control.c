@@ -252,8 +252,17 @@ void sensorInputTask(void *argument) {
 
             static uint32_t count = 0;
             if (count > 50) {
-                dms_printf("[SENSOR] APPS1: %d\n\r",  sensors[APPS1].currentAdcValue);
-                dms_printf("[SENSOR] APPS2: %d\n\n\r",  sensors[APPS2].currentAdcValue);
+
+                int apps1 = (int)(sensors[APPS1].normalizedValue * 100);
+                int apps2 = (int)(sensors[APPS2].normalizedValue * 100);
+                int fbps = (int)(sensors[FBPS].normalizedValue * 100);
+                int rbps = (int)(sensors[RBPS].normalizedValue * 100);
+
+                dms_printf( "[SENSOR] APPS1: %d%% \n"
+                            "[SENSOR] APPS2: %d%% \n"
+                            "[SENSOR] FBPS:  %d%% \n"
+                            "[SENSOR] RPBS:  %d%% \n\n\r",
+                            apps1, apps2, fbps, rbps);
                 count = 0;
             }
             count++;
