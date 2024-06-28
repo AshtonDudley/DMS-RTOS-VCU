@@ -50,8 +50,12 @@ target_sources(${CMAKE_PROJECT_NAME} PRIVATE
     # Add user sources here
     ${CMAKE_SOURCE_DIR}/Core/User/app_main.c
     ${CMAKE_SOURCE_DIR}/Core/User/sensor_control.c
+    ${CMAKE_SOURCE_DIR}/Core/User/dms_logging.c
+    
     ${CMAKE_SOURCE_DIR}/Core/User/app_main.h
+    ${CMAKE_SOURCE_DIR}/Core/User/dms_logging.h
     ${CMAKE_SOURCE_DIR}/Core/User/sensor_control.h
+
 )
 
 # Add include paths
@@ -68,6 +72,6 @@ target_compile_definitions(${CMAKE_PROJECT_NAME} PRIVATE
 # Add linked libraries
 target_link_libraries(${CMAKE_PROJECT_NAME}
     stm32cubemx
-
     # Add user defined libraries
-) 
+    -u _printf_float
+)   

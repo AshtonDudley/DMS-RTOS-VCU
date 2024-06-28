@@ -10,6 +10,7 @@
 
 #include "sensor_control.h"
 #include "app_main.h"
+#include "dms_logging.h"
 
 #define ADC_RESOLUTION_MAX 4096
 #define ADC_RESOLUTION_MIN 0
@@ -230,14 +231,14 @@ void sensorInputTask(void *argument) {
     .latchStatus = PDP_OKAY,
     .offsetStatus = PDP_OKAY,
     .sensorStatus = PDP_OKAY,
-};
+    };
 
+    dms_printf("[DEBUG] Sensor input task started\n\r");
     for(;;) {
         HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, GPIO_PIN_SET);    // LEDs are used for time profiling       
         // ADC Processing 
         process_adc(sensors);
         bool outputThrottle =  check_faults(&pedalStatus, sensors);
-        
         // Check if brake light should be enabled
         // TODO: Add brake light as pedal object paramater?
         if (true){          
@@ -245,13 +246,23 @@ void sensorInputTask(void *argument) {
         }
         
         // throttle Output
+        outputThrottle = true; // DEBUG !!
         if (outputThrottle == true){
             set_throttle(sensors[APPS1].normalizedValue); 
+
+            static uint32_t count = 0;
+            if (count > 50) {
+                dms_printf("[SENSOR] APPS1: %d\n\r",  sensors[APPS1].currentAdcValue);
+                dms_printf("[SENSOR] APPS2: %d\n\n\r",  sensors[APPS2].currentAdcValue);
+                count = 0;
+            }
+            count++;
+  
         }
         
         // Cleanup         
         HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, GPIO_PIN_RESET);
-        osDelay(10);
+        osDelay(20);
     }
 }
 

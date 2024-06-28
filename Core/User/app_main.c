@@ -6,6 +6,7 @@
 
 #include "app_main.h"
 #include "sensor_control.h"
+#include "dms_logging.h"
 
 #include "stdio.h"
 
@@ -112,12 +113,8 @@ void stateMachineTask(void *argument){
 	ret_codes_t rc;
 	int (*state_fun)(void);
     
-    char USB_buf[128] = "";
-    uint16_t Len = (uint16_t)sizeof(USB_buf);
+    dms_printf("[DEBUG] State machine task started\n\r");
 
-    sprintf(USB_buf, "State Machine Entry\r\n"); 
-    CDC_Transmit_FS((uint8_t*)USB_buf, Len);
-    
     for(;;) {
         HAL_GPIO_WritePin(GPIOD, GPIO_PIN_15, GPIO_PIN_SET);
 	    state_fun = state[cur_state];       
@@ -127,7 +124,6 @@ void stateMachineTask(void *argument){
         HAL_GPIO_WritePin(GPIOD, GPIO_PIN_15, GPIO_PIN_RESET);
 
         enable_throttle(false);
-
 
         
         osDelay(10);
