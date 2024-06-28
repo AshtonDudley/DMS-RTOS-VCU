@@ -11,6 +11,7 @@
 #include "sensor_control.h"
 #include "app_main.h"
 #include "dms_logging.h"
+#include "dms_defines.h"
 
 #define ADC_RESOLUTION_MAX 4096
 #define ADC_RESOLUTION_MIN 0
@@ -200,6 +201,18 @@ bool check_faults(pedalStatus_t *pedalStatus, SensorInfo_t *sensors){
     return true;
 }
 
+bool check_brake_light(float brakeLight){
+    // Check brake light 
+    if (brakeLight > BRAKE_LIGHT_THRESH){
+        HAL_GPIO_WritePin(BREAK_LIGHT_PORT, BRAKE_LIGHT_PIN, GPIO_PIN_SET);
+        return true;
+    }
+    // TODO Enable brake light if deceleration rate exceeds 1.3m/s2 (approximately 0.13 g)
+    
+    HAL_GPIO_WritePin(BREAK_LIGHT_PORT, BRAKE_LIGHT_PIN, GPIO_PIN_RESET);
+    return false;
+}
+
 void process_adc(SensorInfo_t *sensors){
     
     sensors[APPS1].currentAdcValue = adc_buf[0];
@@ -239,10 +252,10 @@ void sensorInputTask(void *argument) {
         // ADC Processing 
         process_adc(sensors);
         bool outputThrottle =  check_faults(&pedalStatus, sensors);
+        
         // Check if brake light should be enabled
-        // TODO: Add brake light as pedal object paramater?
         if (true){          
-            // check_brake_light(adcChannel); 
+            check_brake_light(sensors[FBPS].normalizedValue); 
         }
         
         // throttle Output
@@ -271,7 +284,7 @@ void sensorInputTask(void *argument) {
         
         // Cleanup         
         HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, GPIO_PIN_RESET);
-        osDelay(20);
+        osDelay(10);
     }
 }
 
@@ -281,6 +294,6 @@ void HAL_ADC_ConvHalfCpltCallback(ADC_HandleTypeDef* hadc) {
 
 void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef *hadc) {
     (void)hadc;
-    HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_13);
+    // HAL_GPIO_TogglePin(BREAK_LIGHT_PORT, BRAKE_LIGHT_PIN);
 }
 
