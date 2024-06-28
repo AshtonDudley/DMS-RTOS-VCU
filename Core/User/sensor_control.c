@@ -35,17 +35,15 @@ typedef struct pedalStatus_s {
 } pedalStatus_t;
  
 
-/**
- * @brief  Normalization
- * @return normalized value [0.0, 1.0]
- */
+
+///@brief  Normalization
+///@return normalized value [0.0, 1.0]
 float normalize(uint16_t value, uint16_t min, uint16_t max){
     return (float)(value - min) / (max - min); // TODO: Profile performance
 }
-/**
- * @brief  De normalization, 
- * @return Inverse of normalized value [min - max]
- */
+
+///@brief  De normalization of value, to be used for ADC output
+///@return Inverse of normalized value [min - max]
 uint32_t denormalize(float normalizedValue , uint16_t min, uint16_t max){
     return (uint32_t)(normalizedValue * (max - min) + min);
 }
@@ -60,10 +58,9 @@ float percentDifference(float a, float b) {
     }
 }
 
-/**
- * @brief Throttle Input Module
- * @return Throttle value scaled to desired map
- */
+
+/// @brief Throttle Input Module
+/// @return Throttle value scaled to desired map
 float linear_interpolation(float adc_input, float xarray[11], float yarray[11]) {
 	float x0 = 0.0f, x1 = 0.0f, y0 = 0.0f, y1 = 0.0f;
 	int i = 0;

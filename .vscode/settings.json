@@ -13,7 +13,8 @@
         "compare": "c",
         "freertos.h": "c",
         "stdbool.h": "c",
-        "sensor_control.h": "c"
+        "sensor_control.h": "c",
+        "usbd_cdc_if.h": "c"
     },
     "cSpell.words": [
         "AHBCLK",
