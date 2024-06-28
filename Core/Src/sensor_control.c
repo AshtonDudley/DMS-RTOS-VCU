@@ -126,12 +126,20 @@ PDP_StatusTypeDef sensor_out_of_range(float normalizedValue, float  minRange, fl
 
 
 // TODO: Update to use RTOS notif 
-void set_throttle(bool enable){
+void enable_throttle(bool enable){
     // g_pedal.throttleOutputEnabled = enable;
     if (!enable){
         HAL_DAC_SetValue(&hdac, DAC_CHANNEL_1, DAC_ALIGN_12B_R, CUT_MOTOR_SIGNAL);
     }
     return;
+}
+
+
+/// @brief Set's ADC output value for throttle 
+/// @param throttlePercent throttle percent [0, 1.0]
+void set_throttle(float throttlePercent){
+    uint32_t dacOut = denormalize(throttlePercent, ADC_RESOLUTION_MIN, ADC_RESOLUTION_MAX);
+    HAL_DAC_SetValue(&hdac, DAC_CHANNEL_1, DAC_ALIGN_12B_R, dacOut);  
 }
 
 void sensor_init() {
@@ -210,7 +218,6 @@ void process_adc(SensorInfo_t *sensors){
     return;
  }
 
-
 void sensorInputTask(void *argument) {
     (void)argument;
     sensor_init();
@@ -242,8 +249,7 @@ void sensorInputTask(void *argument) {
         
         // throttle Output
         if (outputThrottle == true){
-            uint32_t dacOut = denormalize(sensors[APPS1].normalizedValue, ADC_RESOLUTION_MIN, ADC_RESOLUTION_MAX);
-            HAL_DAC_SetValue(&hdac, DAC_CHANNEL_1, DAC_ALIGN_12B_R, dacOut);  
+            set_throttle(sensors[APPS1].normalizedValue); 
         }
         
         // Cleanup         

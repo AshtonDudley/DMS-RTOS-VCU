@@ -7,6 +7,8 @@
 #include "app_main.h"
 #include "sensor_control.h"
 
+#include "stdio.h"
+
 #define EXIT_STATE end
 #define ENTRY_STATE entry
 
@@ -23,6 +25,7 @@ int (*state[])(void) = {
     reverse_state, 
     end_state
 };
+
 
 struct transition {
 	state_codes_t src_state;
@@ -67,13 +70,13 @@ int entry_state(void){
 
 int neutral_state(void){
     // Check if forward or reverse selected
-    set_throttle(false);
+    enable_throttle(false);
     return SM_DIR_FORWARD;
 }
 
 int forward_state(void){
     // Check if neutral or reverse sw is selected
-    set_throttle(true);
+    enable_throttle(true);
     return SM_OKAY;
 }
 
@@ -108,17 +111,25 @@ void stateMachineTask(void *argument){
     state_codes_t cur_state = ENTRY_STATE;
 	ret_codes_t rc;
 	int (*state_fun)(void);
+    
+    char USB_buf[128] = "";
+    uint16_t Len = (uint16_t)sizeof(USB_buf);
 
-    CDC_Transmit_FS(Buf, *Len);
+    sprintf(USB_buf, "State Machine Entry\r\n"); 
+    CDC_Transmit_FS((uint8_t*)USB_buf, Len);
+    
     for(;;) {
         HAL_GPIO_WritePin(GPIOD, GPIO_PIN_15, GPIO_PIN_SET);
 	    state_fun = state[cur_state];       
-	    rc = state_fun();                   // runs the corresponding state function, and returns a return code
+	    rc = state_fun();                   // runs the corresponding state function, and returns the state code
 	    cur_state = lookup_transitions(cur_state, rc);
         
         HAL_GPIO_WritePin(GPIOD, GPIO_PIN_15, GPIO_PIN_RESET);
 
-        set_throttle(false);
+        enable_throttle(false);
+
+
+        
         osDelay(10);
     }
 }

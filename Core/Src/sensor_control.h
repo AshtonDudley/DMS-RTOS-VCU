@@ -40,7 +40,7 @@ typedef enum {
 
 /// @brief Enable or disable the throttle output
 /// @param enable true = output enabled 
-void set_throttle(bool enable);
+void enable_throttle(bool enable);
 
 void sensor_init();
 
