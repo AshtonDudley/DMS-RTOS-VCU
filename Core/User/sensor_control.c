@@ -22,11 +22,11 @@
 #define CUT_MOTOR_SIGNAL 0
 
 
-static TaskHandle_t xDMAdataReady = NULL;
-
 extern ADC_HandleTypeDef hadc1;
 extern TIM_HandleTypeDef htim2; 
 extern DAC_HandleTypeDef hdac;
+
+extern osThreadId_t sensor_inputHandle;
 
 volatile uint16_t adc_buf[ADC_BUFFER_LEN];
 
@@ -248,7 +248,10 @@ void sensorInputTask(void *argument) {
 
     dms_printf("[DEBUG] Sensor input task started\n\r");
     for(;;) {
-        HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, GPIO_PIN_SET);    // LEDs are used for time profiling       
+
+        ulTaskNotifyTake(pdTRUE, portMAX_DELAY); // Block task until ADC is ready
+
+         HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, GPIO_PIN_SET);    // LEDs are used for time profiling       
         // ADC Processing 
         process_adc(sensors);
         bool outputThrottle =  check_faults(&pedalStatus, sensors);
@@ -264,7 +267,7 @@ void sensorInputTask(void *argument) {
             set_throttle(sensors[APPS1].normalizedValue); 
 
             static uint32_t count = 0;
-            if (count > 50) {
+            if (count > 10) {
 
                 int apps1 = (int)(sensors[APPS1].normalizedValue * 100);
                 int apps2 = (int)(sensors[APPS2].normalizedValue * 100);
@@ -284,9 +287,10 @@ void sensorInputTask(void *argument) {
         
         // Cleanup         
         HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, GPIO_PIN_RESET);
-        osDelay(10);
+        // osDelay(10);
     }
 }
+
 
 void HAL_ADC_ConvHalfCpltCallback(ADC_HandleTypeDef* hadc) {
 	(void)hadc;
@@ -294,6 +298,11 @@ void HAL_ADC_ConvHalfCpltCallback(ADC_HandleTypeDef* hadc) {
 
 void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef *hadc) {
     (void)hadc;
+    // Unblock sensorInputTask(...)  
+    BaseType_t xHigherPriorityTaskWoken = pdFALSE;
+    vTaskNotifyGiveFromISR(sensor_inputHandle, &xHigherPriorityTaskWoken);
+    portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
+
     // HAL_GPIO_TogglePin(BREAK_LIGHT_PORT, BRAKE_LIGHT_PIN);
 }
 
