@@ -48,6 +48,8 @@ target_link_directories(${CMAKE_PROJECT_NAME} PRIVATE
 # Add sources to executable
 target_sources(${CMAKE_PROJECT_NAME} PRIVATE
     # Add user sources here
+    ../../Core/Src/app_main.c
+    ../../Core/Src/sensor_control.c
 )
 
 # Add include paths
@@ -65,4 +67,4 @@ target_link_libraries(${CMAKE_PROJECT_NAME}
     stm32cubemx
 
     # Add user defined libraries
-)
+) 
