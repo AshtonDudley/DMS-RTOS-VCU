@@ -49,6 +49,7 @@
         "PLLSOURCE",
         "rbps",
         "reent",
+        "RPBS",
         "SYSCLK",
         "SYSCLKSOURCE",
         "Systick",

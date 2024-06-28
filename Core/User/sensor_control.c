@@ -267,7 +267,7 @@ void sensorInputTask(void *argument) {
             set_throttle(sensors[APPS1].normalizedValue); 
 
             static uint32_t count = 0;
-            if (count > 10) {
+            if (count > 1) {
 
                 int apps1 = (int)(sensors[APPS1].normalizedValue * 100);
                 int apps2 = (int)(sensors[APPS2].normalizedValue * 100);
