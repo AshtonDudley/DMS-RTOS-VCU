@@ -24,7 +24,7 @@
 #include "dma.h"
 #include "spi.h"
 #include "tim.h"
-#include "usb_otg.h"
+#include "usb_device.h"
 #include "gpio.h"
 
 /* Private includes ----------------------------------------------------------*/
@@ -79,7 +79,7 @@ int main(void)
   /* MCU Configuration--------------------------------------------------------*/
 
   /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
-   HAL_Init();
+  HAL_Init();
 
   /* USER CODE BEGIN Init */
   app_config(); 
@@ -99,7 +99,6 @@ int main(void)
   MX_ADC1_Init();
   MX_DAC_Init();
   MX_TIM2_Init();
-  MX_USB_OTG_FS_PCD_Init();
   /* USER CODE BEGIN 2 */
 
   /* USER CODE END 2 */
