@@ -9,7 +9,7 @@
 
 
 void dms_printf(const char *format, ...){ 
-    // TODO: MPU will crash if two print statements are called dirrectly after each other
+    // TODO: MPU will crash if two print statements are called directly after each other
     static char USB_buf[USB_BUF_SIZE];
     va_list args;
     va_start(args, format);

@@ -247,7 +247,7 @@ void sensorInputTask(void *argument) {
 
     dms_printf("[DEBUG] Sensor input task started\n\r");
     for(;;) {
-
+ 
         ulTaskNotifyTake(pdTRUE, portMAX_DELAY); // Block task until ADC is ready
 
          HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, GPIO_PIN_SET);    // LEDs are used for time profiling       
@@ -260,11 +260,12 @@ void sensorInputTask(void *argument) {
             check_brake_light(sensors[FBPS].normalizedValue); 
         }
         
-        // Throttle o   utput
+        // Throttle output
         outputThrottle = true; // DEBUG !!
         if (outputThrottle == true){
             set_throttle(sensors[APPS1].normalizedValue); 
         }
+
 
         // Output data to VCP
         static uint32_t count = 0;
