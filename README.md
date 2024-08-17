@@ -23,7 +23,7 @@
 
 To get a local copy up and running follow these steps.
 
-### TODO: Prerequisites
+### Prerequisites
 
 This is an example of how to list things you need to use the software and how to install them.
 * VSCode with the following extensions:
@@ -41,7 +41,7 @@ This is an example of how to list things you need to use the software and how to
     https://developer.arm.com/downloads/-/arm-gnu-toolchain-downloads
     ```
 
-### TODO: Installation
+### Installation
 <!--
 1. Get a free API Key at [https://example.com](https://example.com)
 2. Clone the repo
