@@ -60,7 +60,6 @@ float percentDifference(float a, float b) {
     }
 }
 
-
 /// @brief Throttle Input Module
 /// @return Throttle value scaled to desired map
 float linear_interpolation(float adc_input, float xarray[11], float yarray[11]) {
@@ -261,30 +260,29 @@ void sensorInputTask(void *argument) {
             check_brake_light(sensors[FBPS].normalizedValue); 
         }
         
-        // throttle Output
+        // Throttle o   utput
         outputThrottle = true; // DEBUG !!
         if (outputThrottle == true){
             set_throttle(sensors[APPS1].normalizedValue); 
-
-            static uint32_t count = 0;
-            if (count > 1) {
-
-                int apps1 = (int)(sensors[APPS1].normalizedValue * 100);
-                int apps2 = (int)(sensors[APPS2].normalizedValue * 100);
-                int fbps = (int)(sensors[FBPS].normalizedValue * 100);
-                int rbps = (int)(sensors[RBPS].normalizedValue * 100);
-
-                dms_printf( "[SENSOR] APPS1: %d%% \n"
-                            "[SENSOR] APPS2: %d%% \n"
-                            "[SENSOR] FBPS:  %d%% \n"
-                            "[SENSOR] RPBS:  %d%% \n\n\r",
-                            apps1, apps2, fbps, rbps);
-                count = 0;
-            }
-            count++;
-  
         }
-        
+
+        // Output data to VCP
+        static uint32_t count = 0;
+        if (count > 1) {
+
+            int apps1 = (int)(sensors[APPS1].normalizedValue * 100);
+            int apps2 = (int)(sensors[APPS2].normalizedValue * 100);
+            int fbps = (int)(sensors[FBPS].normalizedValue * 100);
+            int rbps = (int)(sensors[RBPS].normalizedValue * 100);
+
+            dms_printf( "[SENSOR] APPS1: %d%% \n"
+                        "[SENSOR] APPS2: %d%% \n"
+                        "[SENSOR] FBPS:  %d%% \n"
+                        "[SENSOR] RPBS:  %d%% \n\n\r",
+                        apps1, apps2, fbps, rbps);
+            count = 0;
+        }
+        count++;
         // Cleanup         
         HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, GPIO_PIN_RESET);
         // osDelay(10);

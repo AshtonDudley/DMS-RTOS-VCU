@@ -17,7 +17,10 @@
         "usbd_cdc_if.h": "c",
         "string.h": "c",
         "usbd_def.h": "c",
-        "usbd_conf.h": "c"
+        "usbd_conf.h": "c",
+        "lis3dsh.h": "c",
+        "cstdlib": "c",
+        "stdlib.h": "c"
     },
     "cSpell.words": [
         "AHBCLK",

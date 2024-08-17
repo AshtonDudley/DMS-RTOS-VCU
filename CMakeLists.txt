@@ -51,7 +51,9 @@ target_sources(${CMAKE_PROJECT_NAME} PRIVATE
     ${CMAKE_SOURCE_DIR}/Core/User/app_main.c
     ${CMAKE_SOURCE_DIR}/Core/User/sensor_control.c
     ${CMAKE_SOURCE_DIR}/Core/User/dms_logging.c
+    ${CMAKE_SOURCE_DIR}/Core/User/LIS3DSH.c
     
+    ${CMAKE_SOURCE_DIR}/Core/User/LIS3DSH.h
     ${CMAKE_SOURCE_DIR}/Core/User/app_main.h
     ${CMAKE_SOURCE_DIR}/Core/User/dms_logging.h
     ${CMAKE_SOURCE_DIR}/Core/User/sensor_control.h
