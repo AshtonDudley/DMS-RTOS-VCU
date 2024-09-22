@@ -16,7 +16,4 @@ Configure VSCode for Embedded project (STM32) with Make | VIDEO 43 			[https://w
 Flashing STM32 with ST-LINK, JLINK and UART Bootloader, cross platform | VIDEO 44 	[https://www.youtube.com/watch?v=1cleO3mHjWw]
 
 
-OTHER KEY NOTE: MX will overwrite 
-
-    ../../Core/Src/app_main.c
-    ../../Core/Src/sensor_input.c
+OTHER KEY NOTE: Use STM32CubeMX to add paths and files to CMAKE
